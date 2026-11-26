@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
-import { ButtonLink, ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ButtonLink, ExternalButton } from "@/components/Buttons";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeading } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("home");
 
@@ -232,7 +232,6 @@ export default function HomePage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/agency.html">Join as Agency</ButtonLink>
             <ButtonLink href="/host.html">Join as Host</ButtonLink>
-            <WhatsAppButton message={WA.general}>Ask on WhatsApp</WhatsAppButton>
           </div>
         </div>
       </Section>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ExternalButton } from "@/components/Buttons";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
@@ -9,7 +9,7 @@ import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("host");
 
@@ -59,7 +59,6 @@ export default function HostPage() {
         actions={
           <>
             {REGISTER}
-            <WhatsAppButton message={WA.host}>Get Setup Help</WhatsAppButton>
           </>
         }
       >
@@ -182,7 +181,6 @@ export default function HostPage() {
         />
         <div className="mt-8 flex flex-wrap gap-3">
           {REGISTER}
-          <WhatsAppButton message={WA.host}>Ask About Host Registration</WhatsAppButton>
         </div>
         <p className="mt-4 text-sm">
           Want to recruit a team instead? See <Link href="/agency.html">Chamet agency registration</Link>.

@@ -1,11 +1,11 @@
-import { ButtonLink, ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ButtonLink, ExternalButton } from "@/components/Buttons";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { Hero } from "@/components/Hero";
 import { NextSteps } from "@/components/NextSteps";
 import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("download");
 
@@ -76,9 +76,6 @@ export default function DownloadPage() {
 
       <Section labelledBy="faq">
         <Faq id="faq" heading="Download Questions" items={FAQ} />
-        <div className="mt-8">
-          <WhatsAppButton message={WA.download}>Ask a Download Question</WhatsAppButton>
-        </div>
       </Section>
 
       <Section tone="surface">

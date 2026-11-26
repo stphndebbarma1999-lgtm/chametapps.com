@@ -1,4 +1,4 @@
-import { ButtonLink, ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ButtonLink, ExternalButton } from "@/components/Buttons";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
@@ -7,7 +7,7 @@ import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("dashboard");
 
@@ -138,7 +138,6 @@ export default function DashboardPage() {
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             {PORTAL}
-            <WhatsAppButton message={WA.dashboard}>Ask a Dashboard Question</WhatsAppButton>
           </div>
         </div>
       </Section>

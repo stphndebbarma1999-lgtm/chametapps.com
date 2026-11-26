@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ChannelButton, WhatsAppButton } from "@/components/Buttons";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("contact");
 
@@ -16,15 +15,10 @@ export default function ContactPage() {
         hero="aboutContact"
         accent="Direct WhatsApp help"
         title="Contact ChametApps.com"
-        actions={
-          <WhatsAppButton message={WA.contact} variant="primary">
-            Message ChametApps.com
-          </WhatsAppButton>
-        }
       >
         <p>
           Need help choosing between host and agency registration, finding a dashboard option or following a guide? Send a WhatsApp message with a short description of
-          your question.
+          your question using the WhatsApp button at the bottom of your screen.
         </p>
       </Hero>
 
@@ -39,10 +33,8 @@ export default function ContactPage() {
             <p>
               WhatsApp: <strong>{LINKS.whatsappDisplay}</strong>
             </p>
+            <p>Tap the round WhatsApp button at the bottom-right of any page to start a chat.</p>
             <p>Suggested message: “Hello, I need help with Chamet [host/agency] registration. I am at the [step name] step.”</p>
-            <WhatsAppButton message={WA.contact} variant="primary">
-              Message ChametApps.com
-            </WhatsAppButton>
           </div>
           <div className="card prose-site">
             <h3 className="text-xl">Follow our WhatsApp channel</h3>
@@ -50,7 +42,11 @@ export default function ContactPage() {
               Our channel <strong>{LINKS.whatsappChannelName}</strong> shares updates. Following a channel is separate from chatting with us — use the direct chat for
               questions about your account.
             </p>
-            <ChannelButton />
+            <p>
+              <a href={LINKS.whatsappChannel} target="_blank" rel="noopener" data-track="whatsapp_channel_follow">
+                Open the {LINKS.whatsappChannelName} channel
+              </a>
+            </p>
           </div>
         </div>
       </Section>

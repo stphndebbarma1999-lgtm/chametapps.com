@@ -1,5 +1,4 @@
 import { Banner } from "@/components/Banner";
-import { WhatsAppButton } from "@/components/Buttons";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
@@ -8,7 +7,6 @@ import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
-import { WA } from "@/lib/site";
 
 export const metadata = pageMetadata("hostWithdrawal");
 
@@ -121,11 +119,6 @@ export default function HostWithdrawalPage() {
 
       <Section labelledBy="help-cta">
         <Banner kind="support" />
-        <div className="mt-8 flex flex-wrap gap-3">
-          <WhatsAppButton message={WA.hostWithdrawal} variant="primary">
-            Ask About Host Withdrawal
-          </WhatsAppButton>
-        </div>
         <div className="mt-10">
           <NextSteps
             items={[

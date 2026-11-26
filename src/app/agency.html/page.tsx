@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ExternalButton } from "@/components/Buttons";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
@@ -9,7 +9,7 @@ import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("agency");
 
@@ -69,7 +69,6 @@ export default function AgencyPage() {
         actions={
           <>
             {REGISTER}
-            <WhatsAppButton message={WA.agency}>Registration Help</WhatsAppButton>
           </>
         }
       >
@@ -170,7 +169,6 @@ export default function AgencyPage() {
         />
         <div className="mt-8 flex flex-wrap gap-3">
           {REGISTER}
-          <WhatsAppButton message={WA.agency}>Ask About Agency Registration</WhatsAppButton>
         </div>
       </Section>
     </>

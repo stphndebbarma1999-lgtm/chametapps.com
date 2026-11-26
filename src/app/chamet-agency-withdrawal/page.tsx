@@ -1,5 +1,5 @@
 import { Banner } from "@/components/Banner";
-import { ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ExternalButton } from "@/components/Buttons";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
@@ -8,7 +8,7 @@ import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("agencyWithdrawal");
 
@@ -130,11 +130,6 @@ export default function AgencyWithdrawalPage() {
 
       <Section tone="surface" labelledBy="help-cta">
         <Banner kind="support" />
-        <div className="mt-8 flex flex-wrap gap-3">
-          <WhatsAppButton message={WA.agencyWithdrawal} variant="primary">
-            Ask About Agency Withdrawal
-          </WhatsAppButton>
-        </div>
         <div className="mt-10">
           <NextSteps
             items={[

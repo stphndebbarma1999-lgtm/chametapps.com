@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
-import { WhatsAppButton } from "@/components/Buttons";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeading } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { WA } from "@/lib/site";
 
 export const metadata = pageMetadata("withdrawal");
 
@@ -95,12 +93,7 @@ export default function WithdrawalPage() {
           <h2 id="support-cta" className="text-[1.5rem] sm:text-[1.9rem]" data-reveal>
             Not sure which guide fits?
           </h2>
-          <p className="mt-3">Tell us your account type and the screen you reached. Never send passwords, OTPs or payment passwords.</p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <WhatsAppButton message={WA.withdrawal} variant="primary">
-              Ask on WhatsApp
-            </WhatsAppButton>
-          </div>
+          <p className="mt-3">Tap the WhatsApp button at the bottom of your screen and tell us your account type and the screen you reached. Never send passwords, OTPs or payment passwords.</p>
         </div>
       </Section>
     </>
