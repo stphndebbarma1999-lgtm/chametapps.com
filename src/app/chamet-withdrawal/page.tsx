@@ -8,8 +8,8 @@ import { pageMetadata } from "@/lib/routes";
 export const metadata = pageMetadata("withdrawal");
 
 const ROUTES_TABLE = [
-  { situation: "You are a host and need to find Withdraw or link MetWallet", href: "/chamet-host-withdrawal/", label: "Host withdrawal guide" },
-  { situation: "You manage an agency and need to connect its wallet", href: "/chamet-agency-withdrawal/", label: "Agency withdrawal guide" },
+  { situation: "You are a host and need to find Withdraw or link MetWallet", href: "/chamet-host-withdrawal/", label: "How to withdraw host salary" },
+  { situation: "You manage an agency and need to connect its wallet", href: "/chamet-agency-withdrawal/", label: "How to withdraw agency salary" },
   { situation: "Your money is already available in MetWallet", href: "/metwallet-withdrawal/", label: "MetWallet cash-out guide" },
   { situation: "A transaction is pending, failed or not received", href: "/chamet-help/#payment-problems", label: "Payment problem help" },
 ];
