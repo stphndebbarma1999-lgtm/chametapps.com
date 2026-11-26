@@ -365,6 +365,35 @@
     0 0 36px rgb(240 44 196 / 0.18);
 }
 
+/* Step photos: lift + stronger glow on hover (desktop) and a glow on tap (phones).
+   Uses `translate` so it never fights the scroll-reveal `transform`. */
+.guide-photos .glow-frame {
+  transition:
+    opacity 0.7s ease var(--reveal-delay, 0ms),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--reveal-delay, 0ms),
+    translate 0.25s ease,
+    box-shadow 0.25s ease;
+}
+@media (hover: hover) {
+  .guide-photos .glow-frame:hover {
+    translate: 0 -4px;
+    box-shadow:
+      0 0 26px rgb(146 43 238 / 0.8),
+      0 0 60px rgb(240 44 196 / 0.35);
+  }
+}
+.guide-photos .glow-frame:active,
+.guide-photos .glow-frame:focus-within {
+  box-shadow:
+    0 0 26px rgb(146 43 238 / 0.8),
+    0 0 60px rgb(240 44 196 / 0.35);
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-photos .glow-frame:hover {
+    translate: none;
+  }
+}
+
 /* ---------- Animated wavy dividers (transform only) ---------- */
 .wave-divider {
   position: relative;
@@ -480,6 +509,7 @@
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal-in.card,
+.reveal-in.glow-frame,
 .reveal-in .glow-frame {
   animation: border-brighten 1.6s ease-out 1;
 }
