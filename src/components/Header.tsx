@@ -59,7 +59,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-lavender/15 bg-ink/85 backdrop-blur-md">
       <div className="container-site flex h-16 items-center justify-between gap-4">
-        <Logo />
+        <Logo variant="agency" />
         <button
           type="button"
           className="grid h-11 w-11 place-items-center rounded-full border border-lavender/40 text-white lg:hidden"
