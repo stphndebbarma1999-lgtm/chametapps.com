@@ -1,0 +1,80 @@
+# Complete Next.js implementation prompt — ChametApps.com
+
+Act as a senior Next.js developer, accessible UI designer and technical/on-page SEO specialist. Build the complete production-ready ChametApps.com website from this package. Implement the work, not just a plan. Read all files before implementation. Use the original researched copy in content/ChametApps-SEO-Content-and-Research.md, the real links in LINKS.json and every mapped asset. This prompt takes priority over earlier conflicting design instructions in the research document. Do not invent research, claims, credentials or contacts. Deliver working source, build verification and deployment instructions; do not deploy or alter DNS without authorization.
+
+## 1. Stack and project behavior
+Use Next.js App Router, TypeScript, Tailwind CSS and lightweight reusable components. Use stable compatible versions available in the project; for a new project verify current official documentation and pin a lockfile. Use server components by default and prerender the public content routes. Use client components only for navigation, carousels and necessary interactions. Use next/image, next/font, Metadata API, metadata routes for sitemap and robots. No unnecessary database, authentication or CMS. Configure a deployable production build for Vercel or any supported Node host; do not claim static export support if relying on server features.
+
+If an existing repository is supplied, inspect its routes, assets and instructions first and preserve useful URLs and content. No gratuitous migrations. Keep /agency.html and /host.html as the established canonical paths, supported with actual App Router pages. Other existing equivalent URLs take priority over proposed new slugs. Do not blindly redirect existing pages. If migration is necessary, implement one-hop permanent redirects to exact replacements, never everything to home. Keep internal links, canonicals and sitemap consistent.
+
+## 2. Brand, facts and writing
+Public brand is ChametApps.com. Never use SD Agency. Use natural clear English aimed at India and relevant international visitors. The owner states that ChametApps.com is a certified Chamet agency; use that wording as an owner-provided claim, not independently verified certification. Do not invent certificate numbers, endorsement badges or suggest ChametApps.com operates Chamet itself. Distinguish the agency website from Chamet's official platform. Do not reproduce competitor paragraphs. Use chametagency.org for the authorized link/contact references, not as canonical domain or site identity.
+
+Do not promise income, ranking, immediate approval, fixed commission, fixed INR exchange rates or guaranteed payment times. Recheck dated financial/platform claims against official sources before launch; if unverifiable, direct readers to their displayed account requirements. Keep source/review notes concise on policy-bearing pages. Do not label a generated portrait as actual staff, a named customer or a testimonial. No fake reviews, counts, rating stars or fabricated social proof.
+
+## 3. Pages, intent and navigation
+Use the supplied detailed content and metadata, adapting repetition for readability without deleting important steps. Build these pages:
+- / — agency/host choice, short app explanation, guide cards, dashboard shortcut, payment-stage explanation, about snippet, FAQs and CTA.
+- /agency.html — agency registration, six-step guide, invitation links, account-specific commission explanation and next actions.
+- /host.html — host registration, profile setup, fourteen-image walkthrough, earnings clarification and next actions.
+- /chamet-agency-login/ — actual portal outbound button, password recovery guidance, homepage invitation cards, dashboard menu and functions table.
+- /chamet-withdrawal/ — routing hub distinguishing host, agency and wallet cash out.
+- /chamet-host-withdrawal/ — app profile → My Earning → Withdraw → conditions → MetWallet connection → return and submit eligible request.
+- /chamet-agency-withdrawal/ — dashboard → My Profile → bind MetWallet → confirm masked linked account → Withdraw From Wallet.
+- /metwallet-withdrawal/ — Basic Level details → submit → Cash Out → bind available method → set/re-enter payment password when prompted → amount/fee → confirm → status and receipt.
+- /chamet-app-download/ — official download destination and app versus agency login distinction.
+- /chamet-help/ — login/registration checks and status-specific payment problem table.
+- /about/ and /contact/ — separate useful pages based on the supplied shared content group.
+- /privacy/, /terms/ and /disclaimer/ — concise policies that reflect the actual implementation. Do not invent a postal address, legal entity, retention promise or legal jurisdiction. Describe outgoing WhatsApp and platform links, affiliate/referral relationship, generated promotional imagery and variable requirements accurately.
+Preserve an existing useful blog if supplied; do not create empty blog, search or category pages.
+
+Navigation: Home, Agency, Host, Dashboard, Withdrawals, Help. Withdrawals submenu: Overview, Host, Agency, MetWallet. Footer includes Download, About, Contact, legal pages and distinct official-platform links. Home CTAs go to internal agency/host pages; those pages expose the correct external registration CTA plus WhatsApp help. Keep internal anchor labels descriptive.
+
+## 4. Exact visual direction
+Dark black/deep-purple theme inspired by the provided chamet.agency reference, but original composition. Absolutely no green decorative theme or green CTA gradients. Palette: #08030E background, #180725 and #32104F surfaces, #922BEE primary, #C584FF lavender, #F02CC4 pink accent, #FFFFFF headings, #DDC5F2 body. Verify contrast rather than assuming these combinations pass. Preserve meaningful green status checks inside original tutorial screenshots.
+
+Use bold modern white headings, readable lavender body, occasional restrained italic accent subtitle, rounded purple cards, generous spacing and purple-pink gradient CTA buttons. Use a consistent modern font such as locally loaded Inter. Keep body text left aligned, not justified. Avoid excessive labels or clutter. Mobile first at 320, 375, 390 and 430px, tablet and 1440px desktop. No horizontal page overflow.
+
+Use the actual Chamet emblem for header branding and favicon, plus the text ChametApps.com. Locate a usable original logo from the authorized reference site's assets, preserving shape; do not substitute a generic heart/chat icon or distort it. If only a raster original is available, derive favicon sizes from it rather than inventing a different symbol. Record source and deliver icon files. Use a moderate number of transparent decorative Chamet logos behind sections (roughly 4–6 desktop, 2–3 mobile), low opacity and soft glow. Do not blanket the page with logos. Decorative logos have empty alt and aria-hidden.
+
+Add visibly glowing purple photo borders with soft outer glow, never blur the actual photo or screenshot text. Use the supplied 11 page heroes and two wide banners. Photography is colourful livestream style with adult women in their 20s, casual Gen Z fashion, natural portraits and pink/violet/cobalt lighting. Preserve these assets. No further generic AI artwork or invented UI screenshots. Place HTML headings/buttons in the blank left area on wide screens, and above images on mobile if needed. Never crop faces or important logos. Reuse the About/Contact hero on those two pages. Recruitment banner goes before final recruitment CTA; support banner goes near help/withdrawal CTA, not repeatedly between every paragraph.
+
+## 5. Motion
+Section dividers are animated wavy purple SVG shapes with gentle lateral/vertical motion. Use small translating paths or transforms, not expensive animated blur filters. Add distinctive restrained scroll reveals: headings fade/rise, related cards stagger, borders softly brighten; optional very slight background-logo parallax. No scroll hijacking, forced scrolling, text hidden until JavaScript, or aggressive zoom. Respect prefers-reduced-motion, stop offscreen animations and keep content visible if animation fails. Small decorative logos gently float and pulse their glow. Keep mobile battery/performance in mind; use transform and opacity wherever possible.
+
+## 6. Screenshot tutorials — latest user requirements
+Display written, indexable numbered steps first, then the image carousel BELOW them. Exactly TWO portrait screenshots must fit side by side in one mobile viewport width; account for outer padding and the inter-card gap. Example: each card width calc((100% - gap)/2). Use image width 100%, height auto and contain sizing. All photos must remain intact. Two-photo view applies at 320px and larger; do not switch to one-card mobile mode. The user chose this design deliberately.
+
+The ONLY visible instruction adjacent to the carousel is a tiny minimal “← Swipe →” ABOVE the photos. No “illustration”, “illustrative preview”, “tap to enlarge”, extra captions, duplicated step titles or paragraphs below photos. Keep written steps outside the carousel above it. Preserve any step marks already embedded in the supplied photos. No autoplay. Allow native horizontal touch swipe and scroll snap; keyboard accessible previous/next controls can be visually compact arrows with accessible names. Optional enlargement on click is allowed without a visible text hint; use an accessible dialog with Escape, focus trap and close button. Do not stretch, redraw or silently crop instructional UI. Give images accurate short alt text based on actual screen contents; do not keyword-stuff or use filenames as alt.
+
+Use these folders in numerical order:
+01-Create-Agency → agency page (6).
+02-Create-Host-Account → host page (14).
+03-Agency-Withdrawal-and-MetWallet → agency withdrawal (10).
+04-Host-Withdrawal-and-MetWallet → host withdrawal (10).
+05-MetWallet-Cash-Out → wallet cash out (8).
+06-Dashboard-Guide → login/dashboard (3).
+There are 51 tutorial image instances. Some wallet images intentionally recur between guides. Do not add archive images or duplicate them again.
+
+Host withdrawal images 05–09 retain their original 1–5 wallet numbering. Split that journey into the first four Chamet screens, a five-image MetWallet linking sub-guide, and the final linked-wallet screen; place subsection headings in the written guide above each carousel. Do not imply the internal numbers already form a continuous 1–10 sequence. The final odd image of a sequence may have an empty partner slot; do not duplicate it to fill the slot. Never infer missing app fields from promotional hero art.
+
+## 7. Links and contact
+Use LINKS.json as the centralized configuration. Reference links were extracted from https://www.chametagency.org/ and /contact/ on 26 November 2026. The agency/host links share companyId=87692 and are intentionally different endpoints. Preserve every query parameter. Never send a host to the agent invitation link or vice versa.
+The live reference uses agent.ichamet.com, while earlier screenshots/research use agent.rchamet.com. Prefer the current reference portal in config; test destination reachability and document any unresolved issue rather than claiming successful authenticated login. Never collect platform credentials on our site.
+WhatsApp channel comes from the owner's saved message: Best Apps Hiring ✅💯. Include a clear channel-follow button on Contact and footer, distinct from the direct chat CTA. Add a compact dismissible channel invitation only if unobtrusive; no recurring ten-second interruption was requested for this project. Direct chat button remains sticky but does not cover carousel controls, footer or device safe area. Use purple/white styling to respect no-green design. No invented email or address. URL-encode WhatsApp prefilled messages with page-specific intent. No contact form unless it has a real working delivery endpoint; direct WhatsApp is sufficient.
+
+## 8. On-page and technical SEO
+Use the attached Ahrefs research from 25 November 2026 as the baseline, not a claim of fresh measurements. Primary page keyword ownership is in the content document. Do not promise #1. One clear H1 per page; logical H2/H3 hierarchy, unique descriptive title and meta description; natural variations without repeated keyword blocks. Render meaningful copy and internal links server-side. Implement self-referencing absolute canonical URLs on https://chametapps.com with consistent slash/path rules. No canonical to chametagency.org. Add unique Open Graph/Twitter metadata, correct absolute image URLs and branded site name. No fake hreflang: only implement if real translated equivalents exist.
+
+Generate XML sitemap with only indexable canonical 200 pages; lastmod should reflect real content changes. Robots must not block CSS/JS/images required to render public pages. Preview deployments should be noindex; production pages indexable. Build useful custom 404 and accurate status codes. Avoid soft 404s, redirect loops, query-driven duplicate pages and duplicate metadata. Add Organization/WebSite JSON-LD with real name/domain/contact; BreadcrumbList consistent with visible breadcrumbs. FAQ schema only for actual visible FAQs and without a rich-result promise. No Review/AggregateRating or fabricated LocalBusiness details. No fabricated certification identifiers.
+
+Image alt text describes the particular image/action, not broad keyword lists. Inspect every tutorial before finalizing its alt text. Promotional hero alt suggestions are in Image-Guide.md; decorative background placement can use empty alt when redundant. Give semantic source filenames to delivery copies; preserve originals in the package. Convert website delivery images to WebP/AVIF and use responsive sizes with explicit dimensions. Load only the main above-fold hero eagerly, lazy-load below-fold carousels; avoid loading all 51 full-size images on initial view. Keep visual text legible after compression. No intrusive interstitial, excessive JS, autoplay video or image-based essential text.
+
+Use accessible buttons, skip link, visible focus, semantic landmarks, touch targets and contrast. Performance targets, measured rather than promised: LCP ≤2.5s, CLS ≤0.1, INP ≤200ms at the 75th percentile after field data exists. Before launch use local Lighthouse/available lab checks as diagnostics, not guaranteed field results. Keep fonts limited and self-hosted; reserve image space. Avoid embedding YouTube until a real video URL and working fallback are configured; do not recreate the reference screenshot's broken YouTube player.
+
+Optional analytics: implement env-configured GA4/GSC verification only with real IDs; absent IDs means no fake scripts or broken placeholders. Track agency/host outbound registration, dashboard outbound, WhatsApp chat, channel follow and guide interactions without passwords, phone form data or other PII. Consent behavior must match actual tracking implementation and applicable requirements.
+
+## 9. Completion and validation
+Implement all routes and reusable components. Test build, TypeScript and lint if configured. Check all internal URLs, missing assets, production canonicals, sitemap/robots, headings and JSON-LD. Check registration link-role matching against LINKS.json. Test desktop and mobile: two intact carousel photos, working swipe and keyboard navigation, correct sequence, readable steps, reduced-motion, stable images and dismissible UI. Run available accessibility and performance checks. Do not claim tests that were not run.
+
+Deliver full working source, package scripts, lockfile, README with setup/build/deployment, environment example with no secrets, asset manifest, route/metadata map and a short validation report with any unresolved external-link checks. No placeholder pages, lorem ipsum, dead buttons or invented facts. Finish all authorized local implementation before requesting a final deployment decision. Explain clearly that this package is the website build specification and the implementation agent must produce and test the code.

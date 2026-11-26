@@ -1,0 +1,17 @@
+{
+  "siteUrl": "https://chametapps.com",
+  "brand": "ChametApps.com",
+  "agencyRegistration": "https://h5.schamet.com/webH5/inviteAgent/bind.html?companyId=87692",
+  "hostRegistration": "https://h5.schamet.com/webH5/agent/bind.html?companyId=87692",
+  "agencyDashboard": "https://agent.ichamet.com/",
+  "earlierDashboardReference": "https://agent.rchamet.com/",
+  "officialChamet": "https://www.chamet.com/",
+  "whatsappChat": "https://wa.me/919233262700",
+  "whatsappDisplay": "+91 9233262700",
+  "whatsappChannel": "https://whatsapp.com/channel/0029VbCCYeQ2P59t8LBOSe1V",
+  "whatsappChannelName": "Best Apps Hiring ✅💯",
+  "linkReference": "https://www.chametagency.org/",
+  "contactReference": "https://www.chametagency.org/contact/",
+  "checkedOn": "2026-11-26",
+  "verificationNote": "Registration, dashboard and direct chat links extracted from reference HTML; authenticated flows not tested. Channel recovered from owner-provided prior message."
+}

@@ -1,0 +1,457 @@
+@import "tailwindcss";
+
+/* Palette from the brief. Contrast checked (WCAG 2.x):
+   body #DDC5F2 on #08030E 12.9:1, on #180725 12.2:1, on #32104F 10.1:1
+   lavender #C584FF on #08030E 7.9:1, on #32104F 6.1:1
+   pink #F02CC4 on #08030E 5.7:1 (accent text only)
+   white on #922BEE 5.5:1, white on #C2269F 5.2:1 (CTA gradient end; white on #F02CC4 is only 3.6:1, so it is not used under text) */
+@theme {
+  --color-ink: #08030e;
+  --color-surface: #180725;
+  --color-surface-2: #32104f;
+  --color-primary: #922bee;
+  --color-lavender: #c584ff;
+  --color-pink: #f02cc4;
+  --color-pink-deep: #c2269f;
+  --color-body: #ddc5f2;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    color: var(--color-body);
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background: var(--color-ink);
+    overflow-x: clip;
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    text-align: left;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  a {
+    color: var(--color-lavender);
+  }
+  /* Links inside running text are always underlined (not distinguished by colour alone). */
+  p a:not(.btn),
+  td a:not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  :focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--color-primary);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .container-site {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-site {
+      padding-inline: 1.5rem;
+    }
+  }
+
+  /* Prose for guide pages */
+  .prose-site > * + * {
+    margin-top: 1rem;
+  }
+  .prose-site h2 {
+    font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.1rem);
+    margin-top: 0;
+  }
+  .prose-site h3 {
+    font-size: 1.2rem;
+  }
+  .prose-site p,
+  .prose-site li {
+    max-width: 70ch;
+  }
+  .prose-site a:not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prose-site strong {
+    color: #fff;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background-color 0.2s ease;
+  }
+  .btn-primary {
+    color: #fff;
+    background: linear-gradient(100deg, var(--color-primary), var(--color-pink-deep));
+    box-shadow: 0 6px 24px -6px rgb(240 44 196 / 0.55);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px -6px rgb(240 44 196 / 0.7);
+  }
+  .btn-secondary {
+    color: #fff;
+    background: rgb(50 16 79 / 0.85);
+    border: 1.5px solid var(--color-lavender);
+  }
+  .btn-secondary:hover {
+    background: var(--color-surface-2);
+    box-shadow: 0 0 22px -4px rgb(197 132 255 / 0.6);
+  }
+
+  .card {
+    background: linear-gradient(160deg, rgb(50 16 79 / 0.9), rgb(24 7 37 / 0.95));
+    border: 1px solid rgb(197 132 255 / 0.28);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    transition:
+      border-color 0.6s ease,
+      box-shadow 0.6s ease;
+  }
+  @media (min-width: 640px) {
+    .card {
+      padding: 1.6rem;
+    }
+  }
+
+  /* Glowing purple photo border — glow is a box-shadow on the frame; the photo itself is never blurred. */
+  .glow-frame {
+    position: relative;
+    border-radius: 1.25rem;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--color-lavender), var(--color-primary) 45%, var(--color-pink));
+    box-shadow:
+      0 0 18px rgb(146 43 238 / 0.55),
+      0 0 46px rgb(240 44 196 / 0.22);
+  }
+  .glow-frame > img,
+  .glow-frame > picture,
+  .glow-frame > button > img {
+    border-radius: calc(1.25rem - 3px);
+  }
+
+  .eyebrow-italic {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--color-pink);
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: 1rem;
+    border: 1px solid rgb(197 132 255 / 0.28);
+    background: rgb(24 7 37 / 0.85);
+  }
+  .table-site {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .table-site th,
+  .table-site td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.75rem 0.9rem;
+    border-bottom: 1px solid rgb(197 132 255 / 0.16);
+  }
+  .table-site thead th {
+    color: #fff;
+    background: rgb(50 16 79 / 0.9);
+    font-weight: 700;
+  }
+  .table-site tbody th {
+    color: #fff;
+    font-weight: 600;
+  }
+  .table-site tr:last-child td,
+  .table-site tr:last-child th {
+    border-bottom: 0;
+  }
+  /* Stacked tables on narrow screens so nothing scrolls sideways */
+  @media (max-width: 639px) {
+    .table-stack thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+    .table-stack tr {
+      display: block;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgb(197 132 255 / 0.16);
+    }
+    .table-stack tr:last-child {
+      border-bottom: 0;
+    }
+    .table-stack th,
+    .table-stack td {
+      display: block;
+      border: 0;
+      padding: 0.25rem 0.9rem;
+    }
+    .table-stack td::before {
+      content: attr(data-label);
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-lavender);
+    }
+  }
+
+  /* Numbered written steps */
+  .steps {
+    counter-reset: step var(--start, 0);
+    display: grid;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+  }
+  .steps > li {
+    counter-increment: step;
+    position: relative;
+    padding: 0.85rem 1rem 0.85rem 3.4rem;
+    background: rgb(24 7 37 / 0.85);
+    border: 1px solid rgb(197 132 255 / 0.22);
+    border-radius: 1rem;
+    max-width: none;
+  }
+  .steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0.85rem;
+    top: 0.8rem;
+    width: 1.9rem;
+    height: 1.9rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-pink-deep));
+  }
+}
+
+/* ---------- Carousel: exactly two portrait screenshots per view from 320px up ---------- */
+.carousel-track {
+  --gap: 0.75rem;
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding: 10px 6px 14px;
+  margin-inline: -6px;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+.carousel-slide {
+  flex: 0 0 calc((100% - var(--gap)) / 2);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+@media (min-width: 1024px) {
+  .carousel-track {
+    --gap: 1.25rem;
+  }
+}
+@layer components {
+  .carousel-shot {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: #fff;
+  }
+}
+.carousel-wrap {
+  max-width: 46rem;
+}
+
+/* ---------- Animated wavy dividers (transform only) ---------- */
+.wave-divider {
+  position: relative;
+  height: 56px;
+  overflow: hidden;
+  pointer-events: none;
+}
+@media (min-width: 768px) {
+  .wave-divider {
+    height: 80px;
+  }
+}
+.wave-divider svg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+}
+.wave-a {
+  animation: wave-drift 18s linear infinite;
+}
+.wave-b {
+  animation: wave-drift 26s linear infinite reverse, wave-bob 7s ease-in-out infinite alternate;
+}
+@keyframes wave-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes wave-bob {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 0 6px;
+  }
+}
+
+/* ---------- Decorative floating logos ---------- */
+.deco-logo {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.09;
+  filter: drop-shadow(0 0 14px rgb(197 132 255 / 0.9));
+  animation: float-logo 9s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes float-logo {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(var(--rot, -8deg));
+    opacity: 0.07;
+  }
+  100% {
+    transform: translate3d(0, -14px, 0) rotate(calc(var(--rot, -8deg) + 4deg));
+    opacity: 0.13;
+  }
+}
+.deco-hide-mobile {
+  display: none;
+}
+@media (min-width: 768px) {
+  .deco-hide-mobile {
+    display: block;
+  }
+}
+
+/* Pause animations that are offscreen (toggled by IntersectionObserver). */
+.anim-paused,
+.anim-paused * {
+  animation-play-state: paused !important;
+}
+
+/* ---------- Scroll reveal: content is visible by default; JS only adds the
+   pending state to elements below the fold, and removes it on intersection. ---------- */
+.reveal-pending {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+}
+.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal-in.card,
+.reveal-in .glow-frame {
+  animation: border-brighten 1.6s ease-out 1;
+}
+@keyframes border-brighten {
+  0% {
+    border-color: rgb(197 132 255 / 0.15);
+    box-shadow: 0 0 0 rgb(146 43 238 / 0);
+  }
+  50% {
+    border-color: rgb(197 132 255 / 0.75);
+    box-shadow: 0 0 28px rgb(146 43 238 / 0.45);
+  }
+  100% {
+    border-color: rgb(197 132 255 / 0.28);
+  }
+}
+
+/* Hero: text over the empty left area on wide screens, above the full image on small screens. */
+.hero-grid {
+  display: grid;
+}
+@media (min-width: 1280px) {
+  .hero-grid > * {
+    grid-area: 1 / 1;
+  }
+}
+
+/* Native dialog for enlarged screenshots */
+dialog.lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(94vw, 34rem);
+  max-height: 94dvh;
+  margin: auto;
+  overflow: visible;
+}
+dialog.lightbox::backdrop {
+  background: rgb(8 3 14 / 0.95);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
+  }
+}
