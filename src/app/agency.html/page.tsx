@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ExternalButton } from "@/components/Buttons";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
@@ -9,7 +9,7 @@ import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("agency");
 
@@ -69,7 +69,6 @@ export default function AgencyPage() {
         actions={
           <>
             {REGISTER}
-            <WhatsAppButton message={WA.agency}>Registration Help</WhatsAppButton>
           </>
         }
       >
@@ -101,7 +100,12 @@ export default function AgencyPage() {
           carouselLabel="Agency registration screenshots"
           images={guideImages("create-agency")}
           steps={[
-            <>Open the agency registration link. Select your country code and enter your phone number.</>,
+            <>
+              <a href={LINKS.agencyRegistration} target="_blank" rel="sponsored noopener" data-track="agency_registration">
+                Click on this link
+              </a>{" "}
+              to open agency registration. Select your country code and enter your phone number.
+            </>,
             <>Complete the security check shown on the screen and request the verification code.</>,
             <>
               Enter the code, create your password, repeat it where requested and select <strong>Register</strong>.
@@ -165,7 +169,6 @@ export default function AgencyPage() {
         />
         <div className="mt-8 flex flex-wrap gap-3">
           {REGISTER}
-          <WhatsAppButton message={WA.agency}>Ask About Agency Registration</WhatsAppButton>
         </div>
       </Section>
     </>

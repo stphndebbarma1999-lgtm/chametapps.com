@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
-import { WhatsAppButton } from "@/components/Buttons";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeading } from "@/components/Section";
-import { SourceNote } from "@/components/SourceNote";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
 
 export const metadata = pageMetadata("withdrawal");
 
@@ -84,17 +81,10 @@ export default function WithdrawalPage() {
             Minimums, Fees and Timing
           </h2>
           <p>
-            The official host-earnings page stated a US$10 minimum for host withdrawal when we last reviewed it. MetWallet cash-out requirements and charges depend on the
-            available method. Review the values displayed before submitting — your account&apos;s screen takes priority over this summary.
+            Host withdrawals have a minimum amount, currently US$10. MetWallet cash-out requirements and charges depend on the available method. Review the values
+            displayed before submitting — your account&apos;s screen always takes priority.
           </p>
         </div>
-        <SourceNote>
-          Host minimum from{" "}
-          <a href={LINKS.hostEarnings} target="_blank" rel="noopener">
-            chamet.com/host-earnings
-          </a>{" "}
-          (research dated 25 November 2026; recheck before relying on it).
-        </SourceNote>
       </Section>
 
       <Section labelledBy="support-cta">
@@ -103,12 +93,7 @@ export default function WithdrawalPage() {
           <h2 id="support-cta" className="text-[1.5rem] sm:text-[1.9rem]" data-reveal>
             Not sure which guide fits?
           </h2>
-          <p className="mt-3">Tell us your account type and the screen you reached. Never send passwords, OTPs or payment passwords.</p>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <WhatsAppButton message={WA.withdrawal} variant="primary">
-              Ask on WhatsApp
-            </WhatsAppButton>
-          </div>
+          <p className="mt-3">Tap the WhatsApp button at the bottom of your screen and tell us your account type and the screen you reached. Never send passwords, OTPs or payment passwords.</p>
         </div>
       </Section>
     </>

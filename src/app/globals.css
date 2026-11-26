@@ -29,6 +29,7 @@
     overflow-x: clip;
     font-family: var(--font-sans);
     line-height: 1.65;
+    font-weight: 500;
     text-align: left;
   }
   h1,
@@ -43,10 +44,12 @@
   }
   a {
     color: var(--color-lavender);
+    font-weight: 600;
   }
   /* Links inside running text are always underlined (not distinguished by colour alone). */
   p a:not(.btn),
-  td a:not(.btn) {
+  td a:not(.btn),
+  .steps li a:not(.btn) {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -251,6 +254,7 @@
     border: 1px solid rgb(197 132 255 / 0.22);
     border-radius: 1rem;
     max-width: none;
+    font-weight: 600;
   }
   .steps > li::before {
     content: counter(step);
@@ -294,6 +298,69 @@
     object-fit: contain;
     background: #fff;
   }
+}
+
+/* ---------- Light (white) sections: dark text, light cards. Contrast checked:
+   #3B1B55 on white 14.3:1, #1E0833 18.5:1, links #7B1FD0 7.1:1, accent #B5179E 5.9:1 ---------- */
+.tone-light {
+  color: #3b1b55;
+}
+.tone-light h1,
+.tone-light h2,
+.tone-light h3,
+.tone-light h4,
+.tone-light strong,
+.tone-light .text-white {
+  color: #1e0833;
+}
+.tone-light .text-body,
+.tone-light .text-body\/90 {
+  color: #3b1b55;
+}
+.tone-light a:not(.btn),
+.tone-light .text-lavender {
+  color: #7b1fd0;
+}
+.tone-light .eyebrow-italic,
+.tone-light .text-pink {
+  color: #b5179e;
+}
+.tone-light :focus-visible {
+  outline-color: #1e0833;
+}
+.tone-light .card,
+.tone-light .steps > li,
+.tone-light .table-wrap,
+.tone-light aside {
+  background: #f6eeff;
+  border-color: rgb(146 43 238 / 0.28);
+}
+.tone-light .card:hover {
+  border-color: rgb(146 43 238 / 0.6);
+}
+.tone-light .table-site thead th {
+  background: #ead9ff;
+  color: #1e0833;
+}
+.tone-light .table-site tbody th {
+  color: #1e0833;
+}
+.tone-light .table-site th,
+.tone-light .table-site td,
+.tone-light .table-stack tr {
+  border-color: rgb(146 43 238 / 0.18);
+}
+.tone-light .table-stack td::before {
+  color: #6a1bb3;
+}
+.tone-light .deco-logo {
+  /* white emblem → soft purple on white backgrounds */
+  filter: brightness(0) saturate(100%) invert(22%) sepia(93%) saturate(4400%) hue-rotate(268deg) drop-shadow(0 0 10px rgb(146 43 238 / 0.5));
+}
+.tone-light .glow-frame {
+  box-shadow:
+    0 0 16px rgb(146 43 238 / 0.45),
+    0 0 36px rgb(240 44 196 / 0.18);
 }
 
 /* ---------- Animated wavy dividers (transform only) ---------- */
@@ -415,6 +482,15 @@
   }
 }
 
+.hero-media {
+  aspect-ratio: var(--ratio-centred);
+}
+@media (min-width: 1280px) {
+  .hero-media {
+    aspect-ratio: var(--ratio-full);
+  }
+}
+
 /* Native dialog for enlarged screenshots */
 dialog.lightbox {
   border: 0;
@@ -442,4 +518,9 @@ dialog.lightbox::backdrop {
     opacity: 1;
     transform: none;
   }
+}
+
+/* The enlarged-photo dialog stays dark even inside a white section. */
+.tone-light dialog .text-white {
+  color: #fff;
 }

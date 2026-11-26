@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ButtonLink, WhatsAppButton } from "@/components/Buttons";
+import { ButtonLink } from "@/components/Buttons";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("about");
 
@@ -79,7 +79,6 @@ export default function AboutPage() {
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/contact/">Contact ChametApps.com</ButtonLink>
-          <WhatsAppButton message={WA.general}>Chat on WhatsApp</WhatsAppButton>
         </div>
       </Section>
     </>

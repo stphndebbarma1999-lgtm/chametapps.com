@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
-import { ButtonLink, ExternalButton, WhatsAppButton } from "@/components/Buttons";
+import { ButtonLink, ExternalButton } from "@/components/Buttons";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeading } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("home");
 
@@ -65,7 +65,7 @@ export default function HomePage() {
       <Hero
         page="home"
         hero="home"
-        accent="Registration guides for new hosts and agents"
+        accent="Chamet App Certified Agency"
         title="Chamet Agency — Join as an Agency or Host"
         actions={
           <>
@@ -150,8 +150,8 @@ export default function HomePage() {
       </Section>
 
       <Section tone="surface" labelledBy="guides" deco={[{ top: "4%", left: "45%", size: 70 }, { bottom: "8%", right: "4%", size: 100, mobile: true }]}>
-        <SectionHeading id="guides" accent="Step-by-step, with screenshots">
-          Six Guides to Help You Get Started
+        <SectionHeading id="guides" accent="Every step explained, with screenshots">
+          Step-by-Step Process to Get Started
         </SectionHeading>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
           {GUIDES.map((g, i) => (
@@ -163,7 +163,7 @@ export default function HomePage() {
                 <span className="text-lg font-bold text-white">{g.title}</span>
                 <span className="mt-2 text-body">{g.text}</span>
                 <span className="mt-4 font-semibold text-lavender" aria-hidden="true">
-                  Open guide <span className="inline-block transition group-hover:translate-x-1">→</span>
+                  Step-by-step process <span className="inline-block transition group-hover:translate-x-1">→</span>
                 </span>
               </Link>
             </li>
@@ -232,7 +232,6 @@ export default function HomePage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <ButtonLink href="/agency.html">Join as Agency</ButtonLink>
             <ButtonLink href="/host.html">Join as Host</ButtonLink>
-            <WhatsAppButton message={WA.general}>Ask on WhatsApp</WhatsAppButton>
           </div>
         </div>
       </Section>

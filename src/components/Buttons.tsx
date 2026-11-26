@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { LINKS, whatsappHref } from "@/lib/site";
 
 type Variant = "primary" | "secondary";
 
@@ -59,23 +58,4 @@ export function WhatsAppIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-/** Direct WhatsApp chat with a page-specific, URL-encoded message. */
-export function WhatsAppButton({ message, children, variant = "secondary" }: { message: string; children: ReactNode; variant?: Variant }) {
-  return (
-    <a href={whatsappHref(message)} target="_blank" rel="noopener" className={`btn btn-${variant}`} data-track="whatsapp_chat">
-      <WhatsAppIcon />
-      {children}
-    </a>
-  );
-}
 
-export function ChannelButton({ variant = "secondary" }: { variant?: Variant }) {
-  return (
-    <a href={LINKS.whatsappChannel} target="_blank" rel="noopener" className={`btn btn-${variant}`} data-track="whatsapp_channel_follow">
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0">
-        <path d="M4 10v4h3l5 4V6L7 10H4Zm12-1.5a4 4 0 0 1 0 7M18.5 6a7.5 7.5 0 0 1 0 12" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-      Follow WhatsApp Channel
-    </a>
-  );
-}

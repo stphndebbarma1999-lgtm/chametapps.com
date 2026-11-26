@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
-import { WhatsAppButton } from "@/components/Buttons";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeading } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { WA } from "@/lib/site";
 
 export const metadata = pageMetadata("help");
 
@@ -88,14 +86,9 @@ export default function HelpPage() {
             Ask for Help With the Right Details
           </h2>
           <p>
-            Include your account type, the step you reached, the exact error message and the time it happened. For payment enquiries, keep the transaction reference
+            Message us with the WhatsApp button at the bottom of your screen. Include your account type, the step you reached, the exact error message and the time it happened. For payment enquiries, keep the transaction reference
             ready. Hide private information in screenshots and do not send passwords, OTPs or payment passwords.
           </p>
-          <div className="pt-2">
-            <WhatsAppButton message={WA.help} variant="primary">
-              Ask ChametApps.com on WhatsApp
-            </WhatsAppButton>
-          </div>
           <p className="text-sm">Account restrictions and payment-provider decisions must be reviewed by the relevant service. Our guidance does not override them.</p>
         </div>
       </Section>

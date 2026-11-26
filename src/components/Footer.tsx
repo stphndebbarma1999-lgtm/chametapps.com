@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { LINKS, WA, whatsappHref } from "@/lib/site";
-import { ChannelButton, ExternalIcon, WhatsAppIcon } from "./Buttons";
+import { LINKS } from "@/lib/site";
+import { ExternalIcon } from "./Buttons";
 import { Logo } from "./Logo";
 
 const GUIDES = [
@@ -72,17 +72,12 @@ export function Footer() {
                   Chamet agency portal ({LINKS.agencyDashboardLabel}) <ExternalIcon />
                 </a>
               </li>
+              <li>
+                <a href={LINKS.whatsappChannel} target="_blank" rel="noopener" className={`${linkCls} inline-flex items-center gap-1.5`} data-track="whatsapp_channel_follow">
+                  WhatsApp channel: {LINKS.whatsappChannelName} <ExternalIcon />
+                </a>
+              </li>
             </ul>
-          </div>
-          <div>
-            <h2 className="mb-3 text-base">Talk to us</h2>
-            <div className="flex flex-col items-start gap-3">
-              <a href={whatsappHref(WA.general)} target="_blank" rel="noopener" className="btn btn-primary" data-track="whatsapp_chat">
-                <WhatsAppIcon /> Chat on WhatsApp
-              </a>
-              <ChannelButton />
-              <p className="text-xs">Channel: {LINKS.whatsappChannelName}</p>
-            </div>
           </div>
         </div>
       </div>

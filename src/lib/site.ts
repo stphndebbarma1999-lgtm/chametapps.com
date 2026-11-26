@@ -17,7 +17,6 @@ export const LINKS = {
   earlierDashboardReference: links.earlierDashboardReference,
   officialChamet: links.officialChamet,
   officialChametLabel: new URL(links.officialChamet).host,
-  hostEarnings: "https://www.chamet.com/host-earnings",
   whatsappChat: links.whatsappChat,
   whatsappDisplay: links.whatsappDisplay,
   whatsappChannel: links.whatsappChannel,
