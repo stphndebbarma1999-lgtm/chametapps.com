@@ -101,7 +101,12 @@ export default function AgencyPage() {
           carouselLabel="Agency registration screenshots"
           images={guideImages("create-agency")}
           steps={[
-            <>Open the agency registration link. Select your country code and enter your phone number.</>,
+            <>
+              <a href={LINKS.agencyRegistration} target="_blank" rel="sponsored noopener" data-track="agency_registration">
+                Click on this link
+              </a>{" "}
+              to open agency registration. Select your country code and enter your phone number.
+            </>,
             <>Complete the security check shown on the screen and request the verification code.</>,
             <>
               Enter the code, create your password, repeat it where requested and select <strong>Register</strong>.

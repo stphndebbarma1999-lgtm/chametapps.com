@@ -48,7 +48,8 @@
   }
   /* Links inside running text are always underlined (not distinguished by colour alone). */
   p a:not(.btn),
-  td a:not(.btn) {
+  td a:not(.btn),
+  .steps li a:not(.btn) {
     text-decoration: underline;
     text-underline-offset: 3px;
   }

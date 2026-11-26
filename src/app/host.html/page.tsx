@@ -6,7 +6,6 @@ import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
 import { NextSteps } from "@/components/NextSteps";
 import { Section } from "@/components/Section";
-import { SourceNote } from "@/components/SourceNote";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
@@ -92,7 +91,12 @@ export default function HostPage() {
           carouselLabel="Host registration and sign-in screenshots"
           images={guideImages("create-host", 1, 4)}
           steps={[
-            <>Open the host invitation link and enter your registration details. Complete the image check and enter the code sent to your email.</>,
+            <>
+              <a href={LINKS.hostRegistration} target="_blank" rel="sponsored noopener" data-track="host_registration">
+                Click on this link
+              </a>{" "}
+              to open host registration and enter your registration details. Complete the image check and enter the code sent to your email.
+            </>,
             <>
               Finish registration. On the success screen, tap <strong>Download</strong> to install Chamet.
             </>,
@@ -155,20 +159,13 @@ export default function HostPage() {
             Chamet Beans to Dollars
           </h2>
           <p>
-            Chamet&apos;s published host-earnings page lists 10,000 Beans as US$1. A simple conversion is Beans divided by 10,000. This dollar value is not a guaranteed net
+            On Chamet, 10,000 Beans equal US$1. A simple conversion is Beans divided by 10,000. This dollar value is not a guaranteed net
             bank receipt.
           </p>
           <p>
             For India, check the exchange rate, fee and final payout quote displayed by your withdrawal provider. Do not assume a fixed rupee value for every dollar.
           </p>
         </div>
-        <SourceNote>
-          Bean conversion and agency-optional wording from{" "}
-          <a href={LINKS.hostEarnings} target="_blank" rel="noopener">
-            chamet.com/host-earnings
-          </a>
-          ; recheck before relying on it, as platform figures can change.
-        </SourceNote>
       </Section>
 
       <Section tone="surface" labelledBy="faq">

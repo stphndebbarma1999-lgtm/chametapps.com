@@ -3,10 +3,9 @@ import { Banner } from "@/components/Banner";
 import { WhatsAppButton } from "@/components/Buttons";
 import { Hero } from "@/components/Hero";
 import { Section, SectionHeading } from "@/components/Section";
-import { SourceNote } from "@/components/SourceNote";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS, WA } from "@/lib/site";
+import { WA } from "@/lib/site";
 
 export const metadata = pageMetadata("withdrawal");
 
@@ -84,17 +83,10 @@ export default function WithdrawalPage() {
             Minimums, Fees and Timing
           </h2>
           <p>
-            The official host-earnings page stated a US$10 minimum for host withdrawal when we last reviewed it. MetWallet cash-out requirements and charges depend on the
-            available method. Review the values displayed before submitting — your account&apos;s screen takes priority over this summary.
+            Host withdrawals have a minimum amount, currently US$10. MetWallet cash-out requirements and charges depend on the available method. Review the values
+            displayed before submitting — your account&apos;s screen always takes priority.
           </p>
         </div>
-        <SourceNote>
-          Host minimum from{" "}
-          <a href={LINKS.hostEarnings} target="_blank" rel="noopener">
-            chamet.com/host-earnings
-          </a>{" "}
-          (research dated 25 November 2026; recheck before relying on it).
-        </SourceNote>
       </Section>
 
       <Section labelledBy="support-cta">
