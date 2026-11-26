@@ -58,6 +58,12 @@
     outline-offset: 3px;
     border-radius: 6px;
   }
+  /* Deter casual saving: no iOS long-press save menu, no image dragging or selection. */
+  img {
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
   ::selection {
     background: var(--color-primary);
     color: #fff;
