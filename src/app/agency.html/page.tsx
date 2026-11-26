@@ -64,7 +64,6 @@ export default function AgencyPage() {
       <Hero
         page="agency"
         hero="agency"
-        accent="Six steps from sign-up to invitation links"
         title="Chamet Agency Registration"
         actions={
           <>
@@ -73,8 +72,7 @@ export default function AgencyPage() {
         }
       >
         <p>
-          Create an agency account, complete the requested contact information and learn where to find your invitation links. This guide follows the registration
-          screens shown in our six-image walkthrough.
+          Create an agency account, complete the requested contact information and learn where to find your invitation links.
         </p>
       </Hero>
 

@@ -11,8 +11,8 @@ import { LINKS } from "@/lib/site";
 export const metadata = pageMetadata("home");
 
 const GUIDES = [
-  { href: "/agency.html", title: "Create an agency", text: "Six illustrated steps from registration to your host and agent invitation links." },
-  { href: "/host.html", title: "Set up a host account", text: "Fourteen steps covering registration, sign-in, verification and profile preparation." },
+  { href: "/agency.html", title: "Create an agency", text: "Every step from registration to your host and agent invitation links." },
+  { href: "/host.html", title: "Set up a host account", text: "Registration, sign-in, verification and profile preparation, step by step." },
   { href: "/chamet-agency-login/", title: "Use the agency dashboard", text: "Sign in, find your invitation links and learn what each menu does." },
   { href: "/chamet-agency-withdrawal/", title: "Prepare agency payments", text: "Connect MetWallet from My Profile in your agency dashboard." },
   { href: "/chamet-host-withdrawal/", title: "Withdraw host earnings", text: "Open My Earning, check the conditions and complete the wallet-linking steps." },

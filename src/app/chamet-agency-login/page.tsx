@@ -37,7 +37,6 @@ export default function DashboardPage() {
       <Hero
         page="dashboard"
         hero="dashboard"
-        accent="For agency accounts — not the personal app sign-in"
         title="Chamet Agency Login and Dashboard Guide"
         actions={
           <>

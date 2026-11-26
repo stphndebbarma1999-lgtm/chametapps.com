@@ -32,7 +32,7 @@ export const ROUTES = {
     label: "Agency",
     title: "Chamet Agency Registration: Create Your Agent Account",
     description:
-      "Follow six Chamet agency registration steps, verify your phone, complete your profile and find separate invitation links for hosts and agents.",
+      "Follow the Chamet agency registration steps, verify your phone, complete your profile and find separate invitation links for hosts and agents.",
     hero: "agency",
     priority: 0.9,
   },
@@ -41,7 +41,7 @@ export const ROUTES = {
     label: "Host",
     title: "Chamet Host Registration & Account Setup Guide",
     description:
-      "Create your Chamet host account with an illustrated registration guide. Learn sign-in, profile setup, verification and the next steps for withdrawals.",
+      "Create your Chamet host account with a step-by-step registration guide. Learn sign-in, profile setup, verification and the next steps for withdrawals.",
     hero: "host",
     priority: 0.9,
   },
@@ -68,7 +68,7 @@ export const ROUTES = {
     label: "Host Withdrawal",
     title: "How to Withdraw Money From Chamet: Host Guide",
     description:
-      "Find My Earning, check withdrawal conditions and bind MetWallet in Chamet. Follow ten illustrated steps and continue to wallet cash out.",
+      "Find My Earning, check withdrawal conditions and bind MetWallet in Chamet. Follow the steps and continue to wallet cash out.",
     hero: "hostWithdrawal",
     parent: "withdrawal",
     priority: 0.7,
@@ -88,7 +88,7 @@ export const ROUTES = {
     label: "MetWallet Cash Out",
     title: "MetWallet Withdrawal for Chamet: Cash-Out Steps",
     description:
-      "Complete MetWallet details, link a withdrawal method, set your payment password and review your cash-out request with an eight-step guide.",
+      "Complete MetWallet details, link a withdrawal method, set your payment password and review your cash-out request step by step.",
     hero: "metwallet",
     parent: "withdrawal",
     priority: 0.7,

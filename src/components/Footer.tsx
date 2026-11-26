@@ -72,11 +72,6 @@ export function Footer() {
                   Chamet agency portal ({LINKS.agencyDashboardLabel}) <ExternalIcon />
                 </a>
               </li>
-              <li>
-                <a href={LINKS.whatsappChannel} target="_blank" rel="noopener" className={`${linkCls} inline-flex items-center gap-1.5`} data-track="whatsapp_channel_follow">
-                  WhatsApp channel: {LINKS.whatsappChannelName} <ExternalIcon />
-                </a>
-              </li>
             </ul>
           </div>
         </div>

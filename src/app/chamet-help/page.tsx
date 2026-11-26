@@ -54,7 +54,7 @@ function Table({ caption, cols, rows }: { caption: string; cols: [string, string
 export default function HelpPage() {
   return (
     <>
-      <Hero page="help" hero="help" accent="Find the step where the process stopped" title="Chamet Registration, Login and Withdrawal Help">
+      <Hero page="help" hero="help" title="Chamet Registration, Login and Withdrawal Help">
         <p>Find the step where the process stopped. A specific screen message and the correct account type make it easier to choose the right guide.</p>
       </Hero>
 

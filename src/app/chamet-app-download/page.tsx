@@ -32,7 +32,6 @@ export default function DownloadPage() {
       <Hero
         page="download"
         hero="download"
-        accent="Official source only"
         title="Chamet App Download and Login"
         actions={
           <ExternalButton href={LINKS.officialChamet} track="official_chamet">

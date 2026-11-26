@@ -13,7 +13,7 @@ export const metadata = pageMetadata("hostWithdrawal");
 export default function HostWithdrawalPage() {
   return (
     <>
-      <Hero page="hostWithdrawal" hero="hostWithdrawal" accent="Profile → My Earning → Withdraw → MetWallet" title="How to Withdraw Money From Chamet as a Host">
+      <Hero page="hostWithdrawal" hero="hostWithdrawal" title="How to Withdraw Money From Chamet as a Host">
         <p>
           Start in your Chamet profile. Open your earnings, review the withdrawal conditions and link the correct MetWallet account before submitting an eligible
           request.

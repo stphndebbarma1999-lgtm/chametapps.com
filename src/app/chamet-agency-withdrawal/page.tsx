@@ -18,7 +18,6 @@ export default function AgencyWithdrawalPage() {
       <Hero
         page="agencyWithdrawal"
         hero="agencyWithdrawal"
-        accent="Dashboard → My Profile → Bind Wallet"
         title="Chamet Agency Withdrawal and MetWallet Setup"
         actions={
           <ExternalButton href={LINKS.agencyDashboard} track="dashboard_outbound">

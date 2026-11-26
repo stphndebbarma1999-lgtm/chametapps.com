@@ -13,7 +13,6 @@ export default function ContactPage() {
       <Hero
         page="contact"
         hero="aboutContact"
-        accent="Direct WhatsApp help"
         title="Contact ChametApps.com"
       >
         <p>
@@ -27,7 +26,7 @@ export default function ContactPage() {
         <h2 id="ways" className="mb-6 text-[1.65rem] sm:text-[2.1rem]" data-reveal>
           Ways to Reach Us
         </h2>
-        <div className="grid gap-5 lg:grid-cols-2" data-reveal-stagger>
+        <div className="grid max-w-3xl gap-5" data-reveal-stagger>
           <div className="card prose-site">
             <h3 className="text-xl">Chat directly on WhatsApp</h3>
             <p>
@@ -35,18 +34,6 @@ export default function ContactPage() {
             </p>
             <p>Tap the round WhatsApp button at the bottom-right of any page to start a chat.</p>
             <p>Suggested message: “Hello, I need help with Chamet [host/agency] registration. I am at the [step name] step.”</p>
-          </div>
-          <div className="card prose-site">
-            <h3 className="text-xl">Follow our WhatsApp channel</h3>
-            <p>
-              Our channel <strong>{LINKS.whatsappChannelName}</strong> shares updates. Following a channel is separate from chatting with us — use the direct chat for
-              questions about your account.
-            </p>
-            <p>
-              <a href={LINKS.whatsappChannel} target="_blank" rel="noopener" data-track="whatsapp_channel_follow">
-                Open the {LINKS.whatsappChannelName} channel
-              </a>
-            </p>
           </div>
         </div>
       </Section>

@@ -11,7 +11,7 @@ export const metadata = pageMetadata("about");
 export default function AboutPage() {
   return (
     <>
-      <Hero page="about" hero="aboutContact" accent="Agency guidance, explained plainly" title="About ChametApps.com">
+      <Hero page="about" hero="aboutContact" title="About ChametApps.com">
         <p>
           ChametApps.com is a certified Chamet agency website providing agency and host registration guidance. Our illustrated tutorials cover account setup, the agency
           dashboard, wallet linking and cash out.

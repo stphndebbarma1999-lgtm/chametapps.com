@@ -24,7 +24,7 @@ const STAGES = [
 export default function WithdrawalPage() {
   return (
     <>
-      <Hero page="withdrawal" hero="withdrawals" accent="Host, agency or wallet — start in the right place" title="Chamet Withdrawal Guide">
+      <Hero page="withdrawal" hero="withdrawals" title="Chamet Withdrawal Guide">
         <p>
           Choose your account type first. Host withdrawals begin in the Chamet app. Agency wallet setup begins in the agency dashboard. Cashing out an available
           MetWallet balance is a further step.

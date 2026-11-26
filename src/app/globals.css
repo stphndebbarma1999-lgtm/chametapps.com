@@ -491,6 +491,19 @@
   }
 }
 
+/* WhatsApp channel popup */
+dialog.channel-popup {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  width: min(92vw, 24rem);
+  margin: auto;
+  color: var(--color-body);
+}
+dialog.channel-popup::backdrop {
+  background: rgb(8 3 14 / 0.75);
+}
+
 /* Native dialog for enlarged screenshots */
 dialog.lightbox {
   border: 0;
