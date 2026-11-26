@@ -65,7 +65,7 @@ export default function HomePage() {
       <Hero
         page="home"
         hero="home"
-        accent="Registration guides for new hosts and agents"
+        accent="Chamet App Certified Agency"
         title="Chamet Agency — Join as an Agency or Host"
         actions={
           <>

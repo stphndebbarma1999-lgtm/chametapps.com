@@ -482,6 +482,15 @@
   }
 }
 
+.hero-media {
+  aspect-ratio: var(--ratio-centred);
+}
+@media (min-width: 1280px) {
+  .hero-media {
+    aspect-ratio: var(--ratio-full);
+  }
+}
+
 /* Native dialog for enlarged screenshots */
 dialog.lightbox {
   border: 0;

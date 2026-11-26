@@ -41,18 +41,24 @@ export function Hero({ page, hero, title, accent, children, actions }: Props) {
           </div>
         </div>
         <div className="relative px-4 sm:px-6 xl:px-0">
-          <div className="glow-frame xl:rounded-none xl:bg-none xl:p-0 xl:shadow-none">
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={img.width}
-              height={img.height}
-              sizes="(min-width: 1536px) 1536px, 100vw"
-              loading="eager"
-              fetchPriority="high"
-              quality={75}
-              className="block h-auto w-full xl:rounded-none"
-            />
+          {/* One image: below 1280px the empty left area is trimmed so the people sit centred;
+              from 1280px the full image shows and the heading is overlaid on its empty left area. */}
+          <div className="glow-frame mx-auto max-w-2xl xl:max-w-none xl:rounded-none xl:bg-none xl:p-0 xl:shadow-none">
+            <div
+              className="hero-media relative overflow-hidden rounded-[calc(1.25rem-3px)] xl:rounded-none"
+              style={{ ["--ratio-centred" as string]: img.centredRatio, ["--ratio-full" as string]: `${img.width} / ${img.height}` }}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(min-width: 1536px) 1536px, (min-width: 1280px) 100vw, (min-width: 672px) 672px, 100vw"
+                loading="eager"
+                fetchPriority="high"
+                quality={75}
+                className="object-cover object-right"
+              />
+            </div>
           </div>
           {/* Soft fade on wide screens so the HTML heading stays readable over the image's empty left area. */}
           <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-ink/85 via-ink/30 via-45% to-transparent xl:block" />
