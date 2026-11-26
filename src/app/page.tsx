@@ -39,7 +39,7 @@ const FAQ: FaqItem[] = [
   },
   {
     q: "Where is Chamet agency login?",
-    text: `The agency portal is ${LINKS.agencyDashboardLabel}. Our login guide explains the sign-in screen and the menu you see afterward.`,
+    text: `The agency portal is ${LINKS.agencyDashboardLabel}. Our agency login and dashboard guide explains the sign-in screen and the menu you see afterward.`,
     a: (
       <p>
         The agency portal is <strong>{LINKS.agencyDashboardLabel}</strong>. Our <Link href="/chamet-agency-login/">agency login and dashboard guide</Link> explains the
@@ -50,12 +50,10 @@ const FAQ: FaqItem[] = [
   {
     q: "Can I get help before registering?",
     text: "Yes. Message ChametApps.com on WhatsApp and tell us whether you want to join as a host or an agency.",
-    a: <p>Yes. Message ChametApps.com on WhatsApp and tell us whether you want to join as a host or an agency.</p>,
   },
   {
     q: "Can the agency promise a fixed income?",
     text: "No. Account activity and applicable rules determine earnings. A commission percentage or example balance is not a guaranteed salary.",
-    a: <p>No. Account activity and applicable rules determine earnings. A commission percentage or example balance is not a guaranteed salary.</p>,
   },
 ];
 

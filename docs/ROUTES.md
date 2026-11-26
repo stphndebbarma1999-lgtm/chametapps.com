@@ -24,4 +24,4 @@ OG/Twitter image for each page = its hero as a 1200×800 JPEG in /og/.
 
 Structured data: Organization + WebSite (every page, layout), BreadcrumbList (every page except home, matching the visible breadcrumb), FAQPage (home, /agency.html, /host.html, /chamet-app-download/ — only the visible FAQs). No Review, AggregateRating or LocalBusiness.
 
-Metadata routes: /sitemap.xml (15 URLs, lastmod = CONTENT_UPDATED in src/lib/site.ts), /robots.txt, /manifest.webmanifest, /favicon.ico, /icon.svg, /apple-icon.png.
+Metadata routes: /sitemap.xml (15 URLs, lastmod = each route's `lastModified` in src/lib/routes.ts), /robots.txt, /manifest.webmanifest, /favicon.ico, /icon.svg, /apple-icon.png.

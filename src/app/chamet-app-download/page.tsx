@@ -13,16 +13,10 @@ const FAQ: FaqItem[] = [
   {
     q: "Do agents need a separate agency APK?",
     text: "The management flow in our guide uses the browser-based agency portal. Start with the dashboard link if your goal is to invite members or review agency reports.",
-    a: (
-      <p>
-        The management flow in our guide uses the browser-based agency portal. Start with the dashboard link if your goal is to invite members or review agency reports.
-      </p>
-    ),
   },
   {
     q: "Does ChametApps.com host the Chamet APK?",
     text: "No. This page does not host a modified APK or any app file. Use the options on Chamet's official website for your device and region.",
-    a: <p>No. This page does not host a modified APK or any app file. Use the options on Chamet&apos;s official website for your device and region.</p>,
   },
 ];
 
@@ -62,11 +56,11 @@ export default function DownloadPage() {
           </div>
           <div className="card prose-site">
             <h2 id="devices" className="text-2xl!">
-              Android and iPhone Download Options
+              Download Options for Your Device
             </h2>
             <p>
-              Check the official website for the options currently offered for your device and region. We do not label a link “App Store” or “Google Play” unless it
-              actually opens the verified listing. This page does not host a modified APK.
+              Open Chamet&apos;s official website and choose the download option available for your device and region. After installation, sign in using the same account
+              details used during registration. This page does not host an APK or any app file.
             </p>
           </div>
         </div>

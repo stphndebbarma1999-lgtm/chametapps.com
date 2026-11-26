@@ -41,7 +41,7 @@ src/app/sitemap.ts       robots.ts, manifest.ts, not-found.tsx
 src/components/          Hero, GuideBlock (two steps + two photos, repeated), GuidePhotos, WaveDivider, DecoLogos, Faq, …
 src/content/links.json   ← single source of all outbound links (copied from LINKS.json)
 src/content/*.json       image filenames, alt text and dimensions
-src/lib/site.ts          link helpers, WhatsApp messages, indexing switch, CONTENT_UPDATED date
+src/lib/site.ts          link helpers, WhatsApp messages, indexing switch, cited sources + date checked
 src/lib/routes.ts        titles, descriptions, heroes, breadcrumbs, metadata builder
 public/images/           delivery images (semantic filenames) and brand icons
 docs/                    asset manifest, route/metadata map, validation report
@@ -53,7 +53,9 @@ Edit `src/content/links.json` only. The agency and host registration URLs are **
 
 ### Changing content
 
-Page copy is in each `src/app/**/page.tsx`. When you change copy, update `CONTENT_UPDATED` in `src/lib/site.ts` so the sitemap `lastmod` stays truthful.
+Page copy is in each `src/app/**/page.tsx`. When you materially change a page, update that route's `lastModified` in `src/lib/routes.ts` so its sitemap `lastmod` stays truthful (dates are never generated at build time). If you re-check the official Chamet sources, update `SOURCES_CHECKED` / `SOURCES_CHECKED_LABEL` in `src/lib/site.ts`.
+
+FAQ answers: each FAQ item's `text` is used for the FAQPage structured data. Leave out `a` to render the same text visibly; if you add `a` (for links), keep its wording identical — `npm run validate` fails otherwise.
 
 ## Environment variables
 
@@ -92,6 +94,10 @@ Put it behind HTTPS (reverse proxy such as Nginx or Caddy) on `chametapps.com`. 
 ### Replacing the old site
 
 The old site's `/agency.html` and `/host.html` URLs are preserved as real pages, so they need no redirects. If the previous host served other URLs that still get traffic (for example a blog), list them before switching DNS. Each one should then either be kept or redirected once to its exact replacement in `next.config.ts` (`redirects()`). Don't redirect everything to the homepage.
+
+### Vercel production alias
+
+`next.config.ts` permanently redirects `chametapps-com.vercel.app` (that exact host only) to `https://chametapps.com`, preserving path and query. Preview URLs, `localhost` and the main domain are not affected. A non-canonical no-slash URL on that alias (e.g. `/chamet-help`) takes two hops because Next.js adds the trailing slash first.
 
 ## Known open items before launch
 

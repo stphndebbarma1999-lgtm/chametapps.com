@@ -15,6 +15,11 @@ type RouteDef = {
   parent?: string;
   /** Sitemap priority hint. */
   priority: number;
+  /**
+   * Sitemap lastmod: date of this page's last material content change (YYYY-MM-DD).
+   * Update by hand only when the page's content changes; never generated at build time.
+   */
+  lastModified: string;
 };
 
 export const ROUTES = {
@@ -26,6 +31,7 @@ export const ROUTES = {
       "Join as a Chamet agency or host with step-by-step registration guides. Find agency login, dashboard help and MetWallet withdrawal instructions.",
     hero: "home",
     priority: 1,
+    lastModified: "2026-11-26",
   },
   agency: {
     path: "/agency.html",
@@ -35,6 +41,7 @@ export const ROUTES = {
       "Follow the Chamet agency registration steps, verify your phone, complete your profile and find separate invitation links for hosts and agents.",
     hero: "agency",
     priority: 0.9,
+    lastModified: "2026-11-26",
   },
   host: {
     path: "/host.html",
@@ -44,6 +51,7 @@ export const ROUTES = {
       "Create your Chamet host account with a step-by-step registration guide. Learn sign-in, profile setup, verification and the next steps for withdrawals.",
     hero: "host",
     priority: 0.9,
+    lastModified: "2026-11-26",
   },
   dashboard: {
     path: "/chamet-agency-login/",
@@ -53,6 +61,7 @@ export const ROUTES = {
       "Open Chamet agency login and learn password recovery, invitation links, host lists, agent reports and MetWallet settings in the dashboard.",
     hero: "dashboard",
     priority: 0.8,
+    lastModified: "2026-11-26",
   },
   withdrawal: {
     path: "/chamet-withdrawal/",
@@ -62,6 +71,7 @@ export const ROUTES = {
       "Choose the right Chamet withdrawal steps for hosts or agencies. Understand wallet linking, cash out and what to check when a payment is delayed.",
     hero: "withdrawals",
     priority: 0.8,
+    lastModified: "2026-11-26",
   },
   hostWithdrawal: {
     path: "/chamet-host-withdrawal/",
@@ -72,6 +82,7 @@ export const ROUTES = {
     hero: "hostWithdrawal",
     parent: "withdrawal",
     priority: 0.7,
+    lastModified: "2026-11-26",
   },
   agencyWithdrawal: {
     path: "/chamet-agency-withdrawal/",
@@ -82,6 +93,7 @@ export const ROUTES = {
     hero: "agencyWithdrawal",
     parent: "withdrawal",
     priority: 0.7,
+    lastModified: "2026-11-26",
   },
   metwallet: {
     path: "/metwallet-withdrawal/",
@@ -92,6 +104,7 @@ export const ROUTES = {
     hero: "metwallet",
     parent: "withdrawal",
     priority: 0.7,
+    lastModified: "2026-11-26",
   },
   download: {
     path: "/chamet-app-download/",
@@ -101,6 +114,7 @@ export const ROUTES = {
       "Find Chamet's official download destination and understand the difference between app login, host registration and the agency dashboard.",
     hero: "download",
     priority: 0.7,
+    lastModified: "2026-11-26",
   },
   help: {
     path: "/chamet-help/",
@@ -110,6 +124,7 @@ export const ROUTES = {
       "Check common Chamet registration and login problems. Find separate steps for unlinked wallets, pending withdrawals and payments not received.",
     hero: "help",
     priority: 0.7,
+    lastModified: "2026-11-26",
   },
   about: {
     path: "/about/",
@@ -119,6 +134,7 @@ export const ROUTES = {
       "Learn about ChametApps.com, its agency and host registration guidance, illustrated tutorials and relationship with the Chamet platform.",
     hero: "aboutContact",
     priority: 0.5,
+    lastModified: "2026-11-26",
   },
   contact: {
     path: "/contact/",
@@ -128,6 +144,7 @@ export const ROUTES = {
       "Contact ChametApps.com for agency or host registration guidance, dashboard questions and help finding the relevant withdrawal instructions.",
     hero: "aboutContact",
     priority: 0.5,
+    lastModified: "2026-11-26",
   },
   privacy: {
     path: "/privacy/",
@@ -137,6 +154,7 @@ export const ROUTES = {
       "How ChametApps.com handles visits, outbound WhatsApp and Chamet links, optional analytics and the information you choose to send us.",
     hero: "aboutContact",
     priority: 0.3,
+    lastModified: "2026-11-26",
   },
   terms: {
     path: "/terms/",
@@ -146,6 +164,7 @@ export const ROUTES = {
       "Terms for using ChametApps.com guides, referral registration links and WhatsApp help, including the limits of our guidance.",
     hero: "aboutContact",
     priority: 0.3,
+    lastModified: "2026-11-26",
   },
   disclaimer: {
     path: "/disclaimer/",
@@ -155,6 +174,7 @@ export const ROUTES = {
       "ChametApps.com is an agency guidance website, not the official Chamet platform. Read about referral links, earnings, images and changing requirements.",
     hero: "aboutContact",
     priority: 0.3,
+    lastModified: "2026-11-26",
   },
 } as const satisfies Record<string, RouteDef>;
 

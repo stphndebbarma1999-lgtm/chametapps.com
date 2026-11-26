@@ -42,8 +42,18 @@ export const WA = {
   contact: "Hello, I need help with Chamet [host/agency] registration. I am at the [step name] step.",
 } as const;
 
-/** Date of the last real content change; used for sitemap lastmod. Update only when copy changes. */
-export const CONTENT_UPDATED = "2026-11-26";
+/**
+ * Date the official Chamet source pages cited on the site were last checked.
+ * Fixed value: update it only after re-checking the sources, never automatically.
+ */
+export const SOURCES_CHECKED = "2026-11-26";
+export const SOURCES_CHECKED_LABEL = "26 November 2026";
+
+/** Official Chamet pages cited as sources. */
+export const SOURCES = {
+  hostTraining: "https://www.chamet.com/host-training",
+  hostEarnings: "https://www.chamet.com/host-earnings",
+} as const;
 
 /** Production indexing: Vercel previews and explicit opt-outs are noindex. */
 export const IS_INDEXABLE =

@@ -4,9 +4,11 @@ import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
 import { NextSteps } from "@/components/NextSteps";
 import { Section } from "@/components/Section";
+import { SourcesReview } from "@/components/SourcesReview";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
+import { SOURCES } from "@/lib/site";
 
 export const metadata = pageMetadata("hostWithdrawal");
 
@@ -31,6 +33,19 @@ export default function HostWithdrawalPage() {
             their own 1–5 numbering because the same wallet steps are used in other guides.
           </p>
           <ImageNote />
+        </div>
+        <div className="card prose-site mt-8 max-w-3xl" data-reveal>
+          <h2 id="minimum" className="text-2xl!">
+            What is the minimum Chamet host withdrawal?
+          </h2>
+          <p>
+            Chamet currently publishes a US$10 minimum for withdrawing an eligible host balance to MetWallet (source:{" "}
+            <a href={SOURCES.hostEarnings} target="_blank" rel="noopener">
+              Chamet host earnings page
+            </a>
+            ). Cashing out from MetWallet to a bank account or e-wallet is a separate stage with its own method-specific conditions. Check the current requirements shown
+            in your account before submitting.
+          </p>
         </div>
       </Section>
       <WaveDivider from="#180725" flip />
@@ -115,6 +130,9 @@ export default function HostWithdrawalPage() {
             screenshot&apos;s balance to judge your own eligibility.
           </p>
         </div>
+        <SourcesReview
+          sources={[{ href: SOURCES.hostEarnings, label: "Chamet host earnings", usedFor: "the US$10 minimum for withdrawing an eligible host balance to MetWallet" }]}
+        />
       </Section>
 
       <Section labelledBy="help-cta">

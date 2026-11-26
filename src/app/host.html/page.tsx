@@ -5,11 +5,12 @@ import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
 import { NextSteps } from "@/components/NextSteps";
+import { SourcesReview } from "@/components/SourcesReview";
 import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
-import { LINKS } from "@/lib/site";
+import { LINKS, SOURCES } from "@/lib/site";
 
 export const metadata = pageMetadata("host");
 
@@ -23,28 +24,24 @@ const REGISTER = (
 const FAQ: FaqItem[] = [
   {
     q: "Do I have to join an agency to host?",
-    text: "Chamet's published guidance says agency membership is optional. Our service provides registration and setup assistance for people who choose agency support.",
+    text: "Chamet's published guidance says agency membership is optional (source: Chamet host earnings page). Our service provides registration and setup assistance for people who choose agency support.",
     a: (
       <p>
-        Chamet&apos;s published guidance says agency membership is optional. Our service provides registration and setup assistance for people who choose agency
-        support.
+        Chamet&apos;s published guidance says agency membership is optional (source:{" "}
+        <a href={SOURCES.hostEarnings} target="_blank" rel="noopener">
+          Chamet host earnings page
+        </a>
+        ). Our service provides registration and setup assistance for people who choose agency support.
       </p>
     ),
   },
   {
     q: "Why does my screen look different?",
     text: "Menu names and available steps can vary with the app version and account. Follow the current instruction on your screen; the guide helps you recognize the overall process.",
-    a: (
-      <p>
-        Menu names and available steps can vary with the app version and account. Follow the current instruction on your screen; the guide helps you recognize the
-        overall process.
-      </p>
-    ),
   },
   {
     q: "Is host salary a fixed monthly amount?",
     text: "This guide uses “earnings” because the balance depends on eligible activity. A screenshot balance is an example, not a monthly salary promise.",
-    a: <p>This guide uses “earnings” because the balance depends on eligible activity. A screenshot balance is an example, not a monthly salary promise.</p>,
   },
 ];
 
@@ -74,9 +71,14 @@ export default function HostPage() {
             Prepare Your Account Details
           </h2>
           <p>
-            Use a phone number or email address you can access. Have a suitable profile photo and a short introduction ready. Follow the age and account requirements
-            displayed by Chamet.
+            Chamet&apos;s published host guidance is for adults aged 18 or older. Prepare a smartphone with a working camera and microphone, a stable internet
+            connection, and access to the phone number or email used for registration. Complete the setup and verification requirements shown in your account (source:{" "}
+            <a href={SOURCES.hostTraining} target="_blank" rel="noopener">
+              Chamet host training page
+            </a>
+            ).
           </p>
+          <p>Have a suitable profile photo and a short introduction ready. Any extra conditions set by an individual agency are separate from Chamet&apos;s general host eligibility.</p>
           <ImageNote />
         </div>
       </Section>
@@ -157,13 +159,22 @@ export default function HostPage() {
             Chamet Beans to Dollars
           </h2>
           <p>
-            On Chamet, 10,000 Beans equal US$1. A simple conversion is Beans divided by 10,000. This dollar value is not a guaranteed net
-            bank receipt.
+            Chamet&apos;s published host earnings page lists 10,000 Beans as US$1 (source:{" "}
+            <a href={SOURCES.hostEarnings} target="_blank" rel="noopener">
+              Chamet host earnings page
+            </a>
+            ). A simple conversion is Beans divided by 10,000. This dollar value is not a guaranteed net bank receipt.
           </p>
           <p>
             For India, check the exchange rate, fee and final payout quote displayed by your withdrawal provider. Do not assume a fixed rupee value for every dollar.
           </p>
         </div>
+        <SourcesReview
+          sources={[
+            { href: SOURCES.hostTraining, label: "Chamet host training", usedFor: "adult (18+) host guidance and device requirements" },
+            { href: SOURCES.hostEarnings, label: "Chamet host earnings", usedFor: "optional agency membership and the 10,000 Beans = US$1 conversion" },
+          ]}
+        />
       </Section>
 
       <Section tone="surface" labelledBy="faq">
