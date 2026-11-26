@@ -4,6 +4,7 @@ import { Analytics } from "@/components/Analytics";
 import { ChannelPopup } from "@/components/ChannelPopup";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ImageGuard } from "@/components/ImageGuard";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteEffects } from "@/components/SiteEffects";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <WhatsAppFab />
         <ChannelPopup />
         <SiteEffects />
+        <ImageGuard />
         <Analytics />
         <JsonLd
           data={{
