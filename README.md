@@ -30,7 +30,7 @@ npm run dev                  # http://localhost:3000
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run validate [-- http://localhost:3000]` | Crawls a running build and checks status codes, H1s, unique titles/descriptions, canonicals, sitemap, JSON-LD, internal links, assets and registration-link roles |
 
-`scripts/prepare-assets.py` regenerates `public/images/**`, `public/og/*` and `src/content/image-dimensions.json` from `design-source/assets/` (requires Python 3 + Pillow). You only need it if you change source images.
+`scripts/prepare-assets.py` regenerates `public/images/**`, `public/og/*` and `src/content/image-dimensions.json` from `design-source/assets/` (requires Python 3 + Pillow). You only need it if you change source images. Afterwards run `python3 -I scripts/redact-screenshots.py`, which blurs personal details (names, IDs, phone numbers, emails, account numbers) in the served screenshots.
 
 ## Where things live
 

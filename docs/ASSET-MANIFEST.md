@@ -33,6 +33,8 @@ Why not the reference site's logo file: https://www.chametagency.org/ does not r
 
 ## Tutorial screenshots (51 instances)
 
+**Privacy redaction:** 27 delivery screenshots have personal details blurred (usernames, names, profile photos, IDs, phone numbers, emails, wallet/payout account numbers, age and location). Run `python3 -I scripts/redact-screenshots.py` after `prepare-assets.py`; the blur boxes are listed in that script. The originals in `design-source/` are unchanged.
+
 Wallet screens intentionally recur between the agency withdrawal, host withdrawal and cash-out guides (as supplied). No archive images are used.
 
 ### 01-Create-Agency → `/agency.html` (6)
