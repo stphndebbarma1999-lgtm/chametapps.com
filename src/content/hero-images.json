@@ -1,15 +1,93 @@
 {
-  "home": ["01-home-hero.webp", "chamet-agency-host-registration-hero.webp", "Two adult livestream creators beside the Chamet logo on a colourful purple background", 1536, 1024],
-  "agency": ["02-agency-hero.webp", "chamet-agency-registration-hero.webp", "Adult creators in colourful livestream panels beside the Chamet logo and a team symbol", 1536, 1024],
-  "host": ["03-host-hero.webp", "chamet-host-registration-hero.webp", "Adult creator at a streaming desk beside the Chamet logo", 1536, 1024],
-  "dashboard": ["04-dashboard-hero.webp", "chamet-agency-dashboard-hero.webp", "Woman using a laptop beside Chamet branding and livestream portrait tiles", 1536, 1024],
-  "withdrawals": ["05-withdrawals-hero.webp", "chamet-withdrawal-guide-hero.webp", "Two creators with a wallet symbol and Chamet branding", 1536, 1024],
-  "hostWithdrawal": ["06-host-withdrawal-hero.webp", "chamet-host-withdrawal-hero.webp", "Host checking a smartphone beside Chamet and wallet symbols", 1536, 1024],
-  "agencyWithdrawal": ["07-agency-withdrawal-hero.webp", "chamet-agency-withdrawal-hero.webp", "Woman at a laptop with Chamet, team and wallet symbols", 1536, 1024],
-  "metwallet": ["08-metwallet-hero.webp", "metwallet-cash-out-hero.webp", "Creator checking a phone beside Chamet, wallet and lock symbols", 1536, 1024],
-  "download": ["09-download-hero.webp", "chamet-app-download-hero.webp", "Adult woman holding a phone beside the Chamet logo and download arrow", 1536, 1024],
-  "help": ["10-help-hero.webp", "chamet-help-hero.webp", "Woman wearing a headset beside Chamet branding and chat symbols", 1536, 1024],
-  "aboutContact": ["11-about-contact-hero.webp", "chametapps-about-contact-hero.webp", "Two women collaborating at a creator desk beside Chamet branding", 1536, 1024],
-  "recruitment": ["12-recruitment-banner.webp", "chamet-recruitment-banner.webp", "Adult livestream creators in colourful video tiles beside the Chamet logo", 2172, 724],
-  "support": ["13-support-banner.webp", "chamet-support-banner.webp", "Creator checking a phone beside Chamet branding and chat and wallet symbols", 2172, 724]
+  "home": [
+    "01-home-hero.webp",
+    "chamet-agency-host-registration-hero-centred.webp",
+    "Smiling adult livestream creator waving beside the Chamet logo",
+    933,
+    583
+  ],
+  "agency": [
+    "02-agency-hero.webp",
+    "chamet-agency-registration-hero-centred.webp",
+    "Adult livestream creator waving beside the Chamet logo and a team symbol",
+    933,
+    583
+  ],
+  "host": [
+    "03-host-hero.webp",
+    "chamet-host-registration-hero-centred.webp",
+    "Adult creator at a streaming desk beside the Chamet logo",
+    1475,
+    922
+  ],
+  "dashboard": [
+    "04-dashboard-hero.webp",
+    "chamet-agency-dashboard-hero-centred.webp",
+    "Woman using a laptop beside the Chamet logo",
+    1475,
+    922
+  ],
+  "withdrawals": [
+    "05-withdrawals-hero.webp",
+    "chamet-withdrawal-guide-hero-centred.webp",
+    "Creator checking a phone beside the Chamet logo and a wallet symbol",
+    941,
+    588
+  ],
+  "hostWithdrawal": [
+    "06-host-withdrawal-hero.webp",
+    "chamet-host-withdrawal-hero-centred.webp",
+    "Host checking a smartphone beside Chamet and wallet symbols",
+    1475,
+    922
+  ],
+  "agencyWithdrawal": [
+    "07-agency-withdrawal-hero.webp",
+    "chamet-agency-withdrawal-hero-centred.webp",
+    "Woman at a laptop with Chamet, team and wallet symbols",
+    1475,
+    922
+  ],
+  "metwallet": [
+    "08-metwallet-hero.webp",
+    "metwallet-cash-out-hero-centred.webp",
+    "Creator checking a phone beside Chamet, wallet and lock symbols",
+    1509,
+    943
+  ],
+  "download": [
+    "09-download-hero.webp",
+    "chamet-app-download-hero-centred.webp",
+    "Adult woman holding a phone beside the Chamet logo and download arrow",
+    1475,
+    922
+  ],
+  "help": [
+    "10-help-hero.webp",
+    "chamet-help-hero-centred.webp",
+    "Woman wearing a headset beside Chamet branding and chat symbols",
+    1410,
+    881
+  ],
+  "aboutContact": [
+    "11-about-contact-hero.webp",
+    "chametapps-about-contact-hero-centred.webp",
+    "Two women collaborating at a creator desk beside Chamet branding",
+    1573,
+    983
+  ],
+  "recruitment": [
+    "12-recruitment-banner.webp",
+    "chamet-recruitment-banner-centred.webp",
+    "Adult livestream creator waving beside the Chamet logo",
+    880,
+    550
+  ],
+  "support": [
+    "13-support-banner.webp",
+    "chamet-support-banner-centred.webp",
+    "Creator checking a phone beside Chamet branding and chat and wallet symbols",
+    1195,
+    724
+  ]
 }
