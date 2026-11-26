@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LINKS } from "@/lib/site";
 import { ExternalIcon } from "./Buttons";
+import { DecoField } from "./DecoField";
 import { Logo } from "./Logo";
 
 const GUIDES = [
@@ -25,7 +26,8 @@ const SITE_LINKS = [
 export function Footer() {
   const linkCls = "text-body no-underline hover:text-white hover:underline underline-offset-4";
   return (
-    <footer className="relative border-t border-lavender/15 bg-surface pb-24 lg:pb-10" data-footer>
+    <footer className="relative isolate overflow-hidden border-t border-lavender/15 bg-surface pb-24 lg:pb-10" data-footer>
+      <DecoField />
       <div className="container-site grid gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div className="space-y-4">
           <Logo />

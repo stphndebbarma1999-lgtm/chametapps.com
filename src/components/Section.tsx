@@ -1,21 +1,19 @@
 import type { ReactNode } from "react";
-import { DecoLogos } from "./DecoLogos";
-
-type Spot = Parameters<typeof DecoLogos>[0]["spots"][number];
+import { DecoField } from "./DecoField";
 
 /** Page section with optional heading id, tone and decorative logos. tone="surface" renders a white (light) section. */
 export function Section({
   id,
   children,
   tone = "ink",
-  deco,
   className = "",
   labelledBy,
 }: {
   id?: string;
   children: ReactNode;
   tone?: "ink" | "surface";
-  deco?: Spot[];
+  /** @deprecated decorative logos are now added automatically to every section */
+  deco?: unknown;
   className?: string;
   labelledBy?: string;
 }) {
@@ -25,7 +23,7 @@ export function Section({
       aria-labelledby={labelledBy}
       className={`relative isolate py-12 sm:py-16 ${tone === "surface" ? "tone-light bg-white" : "bg-ink"} ${className}`}
     >
-      {deco && <DecoLogos spots={deco} />}
+      <DecoField tone={tone === "surface" ? "light" : "dark"} />
       <div className="container-site">{children}</div>
     </section>
   );
