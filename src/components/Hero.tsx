@@ -35,7 +35,7 @@ export function Hero({ page, hero, title, accent, children, actions }: Props) {
               <h1 id="page-title" className="text-[2rem] leading-[1.1] sm:text-[2.6rem] xl:text-[3.1rem]">
                 {title}
               </h1>
-              {children && <div className="mt-4 space-y-3 text-[1.05rem] text-body sm:text-lg">{children}</div>}
+              {children && <div className="mt-4 space-y-3 text-[1.05rem] font-semibold text-body sm:text-lg">{children}</div>}
               {actions && <div className="mt-6 flex flex-wrap gap-3">{actions}</div>}
             </div>
           </div>
