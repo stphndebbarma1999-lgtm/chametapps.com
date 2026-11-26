@@ -1,0 +1,258 @@
+{
+ "/images/guides/agency-withdrawal/01-open-my-profile.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/agency-withdrawal/02-bind-wallet.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/agency-withdrawal/03-go-to-metwallet.webp": [
+  1086,
+  1448
+ ],
+ "/images/guides/agency-withdrawal/04-choose-phone.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/agency-withdrawal/05-enter-phone-number.webp": [
+  973,
+  1616
+ ],
+ "/images/guides/agency-withdrawal/06-verification-code.webp": [
+  1173,
+  1341
+ ],
+ "/images/guides/agency-withdrawal/07-authorize-chamet.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/agency-withdrawal/08-open-basic-level.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/agency-withdrawal/09-basic-details.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/agency-withdrawal/10-metwallet-linked.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-agency/01-enter-phone-number.webp": [
+  901,
+  1745
+ ],
+ "/images/guides/create-agency/02-security-check.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/create-agency/03-code-and-password.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/create-agency/04-login-successful.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/create-agency/05-contact-details.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/create-agency/06-invitation-links.webp": [
+  901,
+  1745
+ ],
+ "/images/guides/create-host/01-register-email.webp": [
+  1199,
+  1312
+ ],
+ "/images/guides/create-host/02-download-chamet.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/03-log-in-with-email.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/04-verify-email.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/05-choose-language.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/06-open-face-verification.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/07-face-verification.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/08-open-my-profile.webp": [
+  1033,
+  1522
+ ],
+ "/images/guides/create-host/09-profile-photo.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/10-set-nickname.webp": [
+  1167,
+  1347
+ ],
+ "/images/guides/create-host/11-second-language.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/12-select-tags.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/create-host/13-self-introduction.webp": [
+  1138,
+  1382
+ ],
+ "/images/guides/create-host/14-open-live.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/dashboard/01-agency-login.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/dashboard/02-dashboard-homepage.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/dashboard/03-dashboard-menu.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/host-withdrawal/01-open-profile-icon.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/host-withdrawal/02-my-earning.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/host-withdrawal/03-tap-withdraw.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/host-withdrawal/04-metwallet-condition.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/host-withdrawal/05-go-to-metwallet.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/host-withdrawal/06-choose-phone.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/host-withdrawal/07-enter-phone-number.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/host-withdrawal/08-verification-code.webp": [
+  1173,
+  1341
+ ],
+ "/images/guides/host-withdrawal/09-authorize-chamet.webp": [
+  901,
+  1746
+ ],
+ "/images/guides/host-withdrawal/10-metwallet-linked.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/01-open-metwallet.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/02-basic-details.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/03-tap-cash-out.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/04-bind-method.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/05-payment-password.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/06-amount-and-fee.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/07-confirm-password.webp": [
+  1024,
+  1536
+ ],
+ "/images/guides/metwallet-cash-out/08-request-completed.webp": [
+  1024,
+  1536
+ ],
+ "/images/heroes/chamet-agency-dashboard-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-agency-host-registration-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-agency-registration-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-agency-withdrawal-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-app-download-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-help-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-host-registration-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-host-withdrawal-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chamet-recruitment-banner.webp": [
+  2172,
+  724
+ ],
+ "/images/heroes/chamet-support-banner.webp": [
+  2172,
+  724
+ ],
+ "/images/heroes/chamet-withdrawal-guide-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/chametapps-about-contact-hero.webp": [
+  1536,
+  1024
+ ],
+ "/images/heroes/metwallet-cash-out-hero.webp": [
+  1536,
+  1024
+ ]
+}

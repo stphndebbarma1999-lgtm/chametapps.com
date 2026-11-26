@@ -1,0 +1,83 @@
+{
+  "create-agency": {
+    "folder": "01-Create-Agency",
+    "images": [
+      ["01", "01-enter-phone-number", "Agency registration screen with country code and phone number field highlighted and the Send code button"],
+      ["02", "02-security-check", "On-screen security check completed with a Succeeded message above the Register button"],
+      ["03", "03-code-and-password", "Verification code, password and re-entered password fields with the Register button highlighted"],
+      ["04", "04-login-successful", "Login successful message at the top of the newly opened agency dashboard"],
+      ["05", "05-contact-details", "Contact details form with phone, WhatsApp, Telegram and Facebook fields and a Confirm button"],
+      ["06", "06-invitation-links", "Dashboard showing separate New Hosts and New Agents invitation cards with Share buttons and the commission ratio"]
+    ]
+  },
+  "create-host": {
+    "folder": "02-Create-Host-Account",
+    "images": [
+      ["01", "01-register-email", "Host registration form with Gmail address, image code, email code and Register button"],
+      ["02", "02-download-chamet", "Pre-registration successful screen with a Download button for the Chamet app"],
+      ["03", "03-log-in-with-email", "Chamet app Hello screen with the Gmail field used for registration and a Next button"],
+      ["04", "04-verify-email", "Six-digit email verification code boxes with a Next button"],
+      ["05", "05-choose-language", "My Language list with English, Bengali, Hindi, Urdu and Arabic options and a Confirm button"],
+      ["06", "06-open-face-verification", "My Greeting Words screen with a link to pass face verification first"],
+      ["07", "07-face-verification", "Face verification screen asking you to position your face inside the circular frame"],
+      ["08", "08-open-my-profile", "Chamet profile tab with the My Profile menu item highlighted"],
+      ["09", "09-profile-photo", "My Profile settings list with My Avatar highlighted to add a profile photo"],
+      ["10", "10-set-nickname", "Nickname editor with an example name and the checkmark to save"],
+      ["11", "11-second-language", "Second Language list with None and other language options"],
+      ["12", "12-select-tags", "Tags screen with preference, personality and profession options to select"],
+      ["13", "13-self-introduction", "Self-introduction text box with the checkmark to save"],
+      ["14", "14-open-live", "Bottom menu opened with the plus button showing the Live option"]
+    ]
+  },
+  "agency-withdrawal": {
+    "folder": "03-Agency-Withdrawal-and-MetWallet",
+    "images": [
+      ["01", "01-open-my-profile", "Agency dashboard menu open with My Profile highlighted"],
+      ["02", "02-bind-wallet", "My Profile page scrolled to the MetWallet Account section with the Bind Wallet button"],
+      ["03", "03-go-to-metwallet", "Authorization notice with a Go to MetWallet button"],
+      ["04", "04-choose-phone", "Welcome to MetWallet screen with Email and Phone sign-in options and the agreement checkbox"],
+      ["05", "05-enter-phone-number", "MetWallet phone screen with India selected, phone number field and Next button"],
+      ["06", "06-verification-code", "MetWallet verification code field with a countdown and Next button"],
+      ["07", "07-authorize-chamet", "Chamet access request in MetWallet with Authorize and Switch Account buttons"],
+      ["08", "08-open-basic-level", "MetWallet home with a zero balance and the Basic Level option highlighted"],
+      ["09", "09-basic-details", "Basic Level form with name, gender, birthday, email verification and address fields"],
+      ["10", "10-metwallet-linked", "Agency profile showing masked MetWallet phone and email with a Withdraw From Wallet button"]
+    ]
+  },
+  "host-withdrawal": {
+    "folder": "04-Host-Withdrawal-and-MetWallet",
+    "images": [
+      ["01", "01-open-profile-icon", "Chamet app home feed with the bottom-right profile icon highlighted"],
+      ["02", "02-my-earning", "Profile menu with My Earning highlighted next to the Withdraw label"],
+      ["03", "03-tap-withdraw", "My Earnings screen with the Withdraw button beside the withdrawable money"],
+      ["04", "04-metwallet-condition", "Withdraw screen listing conditions with Metwallet still marked incomplete"],
+      ["05", "05-go-to-metwallet", "Authorization notice with a Go to MetWallet button"],
+      ["06", "06-choose-phone", "Welcome to MetWallet screen with Email and Phone options and the agreement checkbox"],
+      ["07", "07-enter-phone-number", "MetWallet phone screen with India selected, phone number field and Next button"],
+      ["08", "08-verification-code", "MetWallet verification code field with a countdown and Next button"],
+      ["09", "09-authorize-chamet", "Chamet access request in MetWallet with Authorize and Switch Account buttons"],
+      ["10", "10-metwallet-linked", "Withdraw screen with all conditions checked, Metwallet linked and the Withdraw button"]
+    ]
+  },
+  "metwallet-cash-out": {
+    "folder": "05-MetWallet-Cash-Out",
+    "images": [
+      ["01", "01-open-metwallet", "MetWallet balance screen with the Basic Level option highlighted"],
+      ["02", "02-basic-details", "Basic Level form with name, gender, birthday, email and address fields and Submit information"],
+      ["03", "03-tap-cash-out", "MetWallet home with the Cash Out button highlighted"],
+      ["04", "04-bind-method", "Linked Withdrawal Account list with Bind buttons for Bank Card, PayPal, EPay and USDT"],
+      ["05", "05-payment-password", "Cash Out screen with a six-digit payment password keypad"],
+      ["06", "06-amount-and-fee", "Cash Out form with linked EPay account, a $10 example amount, the fee and Submit button"],
+      ["07", "07-confirm-password", "Payment password prompt shown before the cash-out request is sent"],
+      ["08", "08-request-completed", "Completed confirmation with an example estimated arrival time and a Back button"]
+    ]
+  },
+  "dashboard": {
+    "folder": "06-Dashboard-Guide",
+    "images": [
+      ["01", "01-agency-login", "Chamet Agent login screen with username, password, Forget My Password and Login via Phone Number"],
+      ["02", "02-dashboard-homepage", "Agency dashboard homepage with New Hosts and New Agents invitation links and commission ratio"],
+      ["03", "03-dashboard-menu", "Agency dashboard menu with Home, My Profile, My Invitation, reports, Diamonds Seller, Notification, Report and Help Center"]
+    ]
+  }
+}
