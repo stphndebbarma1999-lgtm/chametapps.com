@@ -353,10 +353,6 @@
 .tone-light .table-stack td::before {
   color: #6a1bb3;
 }
-.tone-light .deco-logo {
-  /* white emblem → soft purple on white backgrounds */
-  filter: brightness(0) saturate(100%) invert(22%) sepia(93%) saturate(4400%) hue-rotate(268deg) drop-shadow(0 0 10px rgb(146 43 238 / 0.5));
-}
 .tone-light .glow-frame {
   box-shadow:
     0 0 16px rgb(146 43 238 / 0.45),
@@ -405,32 +401,55 @@
   }
 }
 
-/* ---------- Decorative floating logos ---------- */
-.deco-logo {
+/* ---------- Decorative floating logos (DecoField) ---------- */
+.deco-field {
   position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
   pointer-events: none;
-  user-select: none;
-  opacity: 0.09;
-  filter: drop-shadow(0 0 14px rgb(197 132 255 / 0.9));
-  animation: float-logo 9s ease-in-out infinite alternate;
+}
+.deco-mark {
+  position: absolute;
+  display: block;
+  aspect-ratio: 92 / 110;
+  background: currentColor;
+  -webkit-mask: url("/images/brand/chamet-emblem-white.svg") center / contain no-repeat;
+  mask: url("/images/brand/chamet-emblem-white.svg") center / contain no-repeat;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: rotate(var(--rot, 0deg));
+  animation: deco-float var(--dur, 8s) ease-in-out var(--delay, 0s) infinite alternate;
   will-change: transform;
 }
-@keyframes float-logo {
+.deco-white {
+  color: #ffffff;
+  opacity: 0.26;
+}
+.deco-violet {
+  color: #b57bff;
+  opacity: 0.42;
+}
+.deco-violet-light {
+  color: #922bee;
+  opacity: 0.28;
+}
+.deco-violet-light:nth-child(even) {
+  opacity: 0.2;
+}
+@keyframes deco-float {
   0% {
-    transform: translate3d(0, 0, 0) rotate(var(--rot, -8deg));
-    opacity: 0.07;
+    transform: translate3d(0, 0, 0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translate3d(7px, -14px, 0) rotate(calc(var(--rot, 0deg) + 5deg));
   }
   100% {
-    transform: translate3d(0, -14px, 0) rotate(calc(var(--rot, -8deg) + 4deg));
-    opacity: 0.13;
+    transform: translate3d(-5px, -26px, 0) rotate(calc(var(--rot, 0deg) - 3deg));
   }
 }
-.deco-hide-mobile {
-  display: none;
-}
-@media (min-width: 768px) {
-  .deco-hide-mobile {
-    display: block;
+@media (max-width: 639px) {
+  .deco-mark {
+    scale: 0.8;
   }
 }
 

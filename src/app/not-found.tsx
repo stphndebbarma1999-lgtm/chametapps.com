@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DecoLogos } from "@/components/DecoLogos";
+import { DecoField } from "@/components/DecoField";
 
 export const metadata: Metadata = {
   title: { absolute: "Page Not Found | ChametApps.com" },
@@ -19,7 +19,7 @@ const LINKS_404 = [
 export default function NotFound() {
   return (
     <section className="relative isolate overflow-hidden py-20" aria-labelledby="nf-title">
-      <DecoLogos spots={[{ top: "10%", right: "6%", size: 140, mobile: true }, { bottom: "10%", left: "4%", size: 100 }]} />
+      <DecoField />
       <div className="container-site max-w-2xl">
         <p className="eyebrow-italic mb-2">Error 404</p>
         <h1 id="nf-title" className="text-4xl sm:text-5xl">This page could not be found</h1>

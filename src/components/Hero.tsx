@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { heroImage, type HeroKey, type RouteKey } from "@/lib/routes";
 import { Breadcrumbs } from "./Breadcrumbs";
-import { DecoLogos } from "./DecoLogos";
+import { DecoField } from "./DecoField";
 
 type Props = {
   page: RouteKey;
@@ -21,7 +21,7 @@ export function Hero({ page, hero, title, accent, children, actions }: Props) {
   const img = heroImage(hero);
   return (
     <section className="relative isolate overflow-hidden" aria-labelledby="page-title">
-      <DecoLogos spots={[{ top: "12%", left: "-30px", size: 120, rot: -12, mobile: true }, { bottom: "8%", right: "2%", size: 90, rot: 10 }]} />
+      <DecoField />
       <div className="container-site grid items-center gap-8 pt-6 pb-10 lg:grid-cols-[1fr_1.1fr] lg:gap-10 lg:pt-10 lg:pb-16">
         <div className="relative z-10 max-w-xl">
           {page !== "home" && (
