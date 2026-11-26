@@ -13,7 +13,8 @@ function reducedMotion() {
 
 /**
  * Two fixed screenshots side by side (also on 320px phones). Images stay intact
- * (width 100%, height auto, contain). The right photo appears a moment after the left one.
+ * (width 100%, height auto, contain). On first view the left photo slides in from the left and
+ * the right photo from the right, meeting in the middle together.
  * Clicking one opens an accessible enlarged view that zooms smoothly out of the tapped photo
  * and back into it on close (no motion when the visitor prefers reduced motion).
  */
@@ -80,7 +81,7 @@ export function GuidePhotos({ images, label }: { images: GuideImage[]; label: st
 
   return (
     <div role="group" aria-label={label}>
-      <div className="guide-photos" data-reveal-stagger="180">
+      <div className="guide-photos" data-reveal-stagger="0">
         {images.map((img, i) => (
           <div key={img.src} className="glow-frame">
             <button

@@ -21,7 +21,7 @@ export function Section({
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={`relative isolate py-12 sm:py-16 ${tone === "surface" ? "tone-light bg-white" : "bg-ink"} ${className}`}
+      className={`relative isolate overflow-x-clip py-12 sm:py-16 ${tone === "surface" ? "tone-light bg-white" : "bg-ink"} ${className}`}
     >
       <DecoField tone={tone === "surface" ? "light" : "dark"} />
       <div className="container-site">{children}</div>

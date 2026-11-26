@@ -30,7 +30,8 @@ export function SiteEffects() {
       const targets: HTMLElement[] = [];
       document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => targets.push(el));
       document.querySelectorAll<HTMLElement>("[data-reveal-stagger]").forEach((group) => {
-        const step = Number(group.dataset.revealStagger) || 90;
+        const raw = group.dataset.revealStagger;
+        const step = raw !== undefined && raw !== "" && !Number.isNaN(Number(raw)) ? Number(raw) : 90;
         Array.from(group.children).forEach((child, i) => {
           const c = child as HTMLElement;
           c.style.setProperty("--reveal-delay", `${Math.min(i, 6) * step}ms`);
