@@ -7,7 +7,8 @@ import { useEffect } from "react";
  * Progressive enhancements, all optional:
  *  - Scroll reveal for [data-reveal] elements that start BELOW the viewport (content stays
  *    visible without JS, and anything already on screen is never hidden).
- *  - Children of [data-reveal-stagger] reveal with a small stagger.
+ *  - Children of [data-reveal-stagger] reveal with a small stagger (the attribute value, if set,
+ *    is the step in ms; default 90).
  *  - Pauses CSS animations of [data-anim] elements while they are offscreen.
  */
 export function SiteEffects() {
@@ -29,9 +30,10 @@ export function SiteEffects() {
       const targets: HTMLElement[] = [];
       document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => targets.push(el));
       document.querySelectorAll<HTMLElement>("[data-reveal-stagger]").forEach((group) => {
+        const step = Number(group.dataset.revealStagger) || 90;
         Array.from(group.children).forEach((child, i) => {
           const c = child as HTMLElement;
-          c.style.setProperty("--reveal-delay", `${Math.min(i, 6) * 90}ms`);
+          c.style.setProperty("--reveal-delay", `${Math.min(i, 6) * step}ms`);
           targets.push(c);
         });
       });
