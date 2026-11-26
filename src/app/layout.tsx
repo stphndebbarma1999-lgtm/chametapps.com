@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@/components/Analytics";
+import { ChannelPopup } from "@/components/ChannelPopup";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </main>
         <Footer />
         <WhatsAppFab />
+        <ChannelPopup />
         <SiteEffects />
         <Analytics />
         <JsonLd

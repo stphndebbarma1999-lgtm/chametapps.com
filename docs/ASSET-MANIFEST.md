@@ -15,21 +15,23 @@ Why not the reference site's logo file: https://www.chametagency.org/ does not r
 
 ## Page heroes and banners (13)
 
+**Centred one-creator versions:** `scripts/extend-heroes.py` crops each original to one creator plus the Chamet logo, erases leftover parts of a second person by blending in the surrounding background, and extends the background sideways to a centred 16:10 frame (no AI service). Sizes and alt text below are kept current in `src/content/hero-images.json`.
+
 | Delivery file | Original | Size | Used on | Alt text |
 |---|---|---|---|---|
-| `public/images/heroes/chamet-agency-host-registration-hero.webp` | `assets/heroes/01-home-hero.webp` | 1536×1024 | / | Two adult livestream creators beside the Chamet logo on a colourful purple background |
-| `public/images/heroes/chamet-agency-registration-hero.webp` | `assets/heroes/02-agency-hero.webp` | 1536×1024 | /agency.html | Adult creators in colourful livestream panels beside the Chamet logo and a team symbol |
-| `public/images/heroes/chamet-host-registration-hero.webp` | `assets/heroes/03-host-hero.webp` | 1536×1024 | /host.html | Adult creator at a streaming desk beside the Chamet logo |
-| `public/images/heroes/chamet-agency-dashboard-hero.webp` | `assets/heroes/04-dashboard-hero.webp` | 1536×1024 | /chamet-agency-login/ | Woman using a laptop beside Chamet branding and livestream portrait tiles |
-| `public/images/heroes/chamet-withdrawal-guide-hero.webp` | `assets/heroes/05-withdrawals-hero.webp` | 1536×1024 | /chamet-withdrawal/ | Two creators with a wallet symbol and Chamet branding |
-| `public/images/heroes/chamet-host-withdrawal-hero.webp` | `assets/heroes/06-host-withdrawal-hero.webp` | 1536×1024 | /chamet-host-withdrawal/ | Host checking a smartphone beside Chamet and wallet symbols |
-| `public/images/heroes/chamet-agency-withdrawal-hero.webp` | `assets/heroes/07-agency-withdrawal-hero.webp` | 1536×1024 | /chamet-agency-withdrawal/ | Woman at a laptop with Chamet, team and wallet symbols |
-| `public/images/heroes/metwallet-cash-out-hero.webp` | `assets/heroes/08-metwallet-hero.webp` | 1536×1024 | /metwallet-withdrawal/ | Creator checking a phone beside Chamet, wallet and lock symbols |
-| `public/images/heroes/chamet-app-download-hero.webp` | `assets/heroes/09-download-hero.webp` | 1536×1024 | /chamet-app-download/ | Adult woman holding a phone beside the Chamet logo and download arrow |
-| `public/images/heroes/chamet-help-hero.webp` | `assets/heroes/10-help-hero.webp` | 1536×1024 | /chamet-help/ | Woman wearing a headset beside Chamet branding and chat symbols |
-| `public/images/heroes/chametapps-about-contact-hero.webp` | `assets/heroes/11-about-contact-hero.webp` | 1536×1024 | /about/, /contact/, legal pages (OG image only) | Two women collaborating at a creator desk beside Chamet branding |
-| `public/images/heroes/chamet-recruitment-banner.webp` | `assets/heroes/12-recruitment-banner.webp` | 2172×724 | / (before final CTA) | Adult livestream creators in colourful video tiles beside the Chamet logo |
-| `public/images/heroes/chamet-support-banner.webp` | `assets/heroes/13-support-banner.webp` | 2172×724 | /chamet-withdrawal/, /chamet-host-withdrawal/, /chamet-agency-withdrawal/, /metwallet-withdrawal/, /chamet-help/ (near help CTA) | Creator checking a phone beside Chamet branding and chat and wallet symbols |
+| `public/images/heroes/chamet-agency-host-registration-hero-centred.webp` | `assets/heroes/01-home-hero.webp` | 1536×1024 | / | Two adult livestream creators beside the Chamet logo on a colourful purple background |
+| `public/images/heroes/chamet-agency-registration-hero-centred.webp` | `assets/heroes/02-agency-hero.webp` | 1536×1024 | /agency.html | Adult creators in colourful livestream panels beside the Chamet logo and a team symbol |
+| `public/images/heroes/chamet-host-registration-hero-centred.webp` | `assets/heroes/03-host-hero.webp` | 1536×1024 | /host.html | Adult creator at a streaming desk beside the Chamet logo |
+| `public/images/heroes/chamet-agency-dashboard-hero-centred.webp` | `assets/heroes/04-dashboard-hero.webp` | 1536×1024 | /chamet-agency-login/ | Woman using a laptop beside Chamet branding and livestream portrait tiles |
+| `public/images/heroes/chamet-withdrawal-guide-hero-centred.webp` | `assets/heroes/05-withdrawals-hero.webp` | 1536×1024 | /chamet-withdrawal/ | Two creators with a wallet symbol and Chamet branding |
+| `public/images/heroes/chamet-host-withdrawal-hero-centred.webp` | `assets/heroes/06-host-withdrawal-hero.webp` | 1536×1024 | /chamet-host-withdrawal/ | Host checking a smartphone beside Chamet and wallet symbols |
+| `public/images/heroes/chamet-agency-withdrawal-hero-centred.webp` | `assets/heroes/07-agency-withdrawal-hero.webp` | 1536×1024 | /chamet-agency-withdrawal/ | Woman at a laptop with Chamet, team and wallet symbols |
+| `public/images/heroes/metwallet-cash-out-hero-centred.webp` | `assets/heroes/08-metwallet-hero.webp` | 1536×1024 | /metwallet-withdrawal/ | Creator checking a phone beside Chamet, wallet and lock symbols |
+| `public/images/heroes/chamet-app-download-hero-centred.webp` | `assets/heroes/09-download-hero.webp` | 1536×1024 | /chamet-app-download/ | Adult woman holding a phone beside the Chamet logo and download arrow |
+| `public/images/heroes/chamet-help-hero-centred.webp` | `assets/heroes/10-help-hero.webp` | 1536×1024 | /chamet-help/ | Woman wearing a headset beside Chamet branding and chat symbols |
+| `public/images/heroes/chametapps-about-contact-hero-centred.webp` | `assets/heroes/11-about-contact-hero.webp` | 1536×1024 | /about/, /contact/, legal pages (OG image only) | Two women collaborating at a creator desk beside Chamet branding |
+| `public/images/heroes/chamet-recruitment-banner-centred.webp` | `assets/heroes/12-recruitment-banner.webp` | 2172×724 | / (before final CTA) | Adult livestream creators in colourful video tiles beside the Chamet logo |
+| `public/images/heroes/chamet-support-banner-centred.webp` | `assets/heroes/13-support-banner.webp` | 2172×724 | /chamet-withdrawal/, /chamet-host-withdrawal/, /chamet-agency-withdrawal/, /metwallet-withdrawal/, /chamet-help/ (near help CTA) | Creator checking a phone beside Chamet branding and chat and wallet symbols |
 
 ## Tutorial screenshots (51 instances)
 

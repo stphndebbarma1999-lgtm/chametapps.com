@@ -37,7 +37,6 @@ export default function DashboardPage() {
       <Hero
         page="dashboard"
         hero="dashboard"
-        accent="For agency accounts — not the personal app sign-in"
         title="Chamet Agency Login and Dashboard Guide"
         actions={
           <>
@@ -78,7 +77,12 @@ export default function DashboardPage() {
             carouselLabel="Agency login and dashboard screenshots"
             images={guideImages("dashboard")}
             steps={[
-              <>Log in with your agency username and password, or use the phone login option where offered.</>,
+              <>
+                <a href={LINKS.agencyDashboard} target="_blank" rel="noopener" data-track="dashboard_outbound">
+                  Click on this link
+                </a>{" "}
+                to open the agency dashboard. Log in with your agency username and password, or use the phone login option where offered.
+              </>,
               <>
                 On the homepage, use the <strong>Share</strong> button on the New Hosts or New Agents invitation card and check your commission ratio.
               </>,

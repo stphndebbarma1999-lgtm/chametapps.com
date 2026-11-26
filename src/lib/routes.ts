@@ -32,7 +32,7 @@ export const ROUTES = {
     label: "Agency",
     title: "Chamet Agency Registration: Create Your Agent Account",
     description:
-      "Follow six Chamet agency registration steps, verify your phone, complete your profile and find separate invitation links for hosts and agents.",
+      "Follow the Chamet agency registration steps, verify your phone, complete your profile and find separate invitation links for hosts and agents.",
     hero: "agency",
     priority: 0.9,
   },
@@ -41,7 +41,7 @@ export const ROUTES = {
     label: "Host",
     title: "Chamet Host Registration & Account Setup Guide",
     description:
-      "Create your Chamet host account with an illustrated registration guide. Learn sign-in, profile setup, verification and the next steps for withdrawals.",
+      "Create your Chamet host account with a step-by-step registration guide. Learn sign-in, profile setup, verification and the next steps for withdrawals.",
     hero: "host",
     priority: 0.9,
   },
@@ -68,7 +68,7 @@ export const ROUTES = {
     label: "Host Withdrawal",
     title: "How to Withdraw Money From Chamet: Host Guide",
     description:
-      "Find My Earning, check withdrawal conditions and bind MetWallet in Chamet. Follow ten illustrated steps and continue to wallet cash out.",
+      "Find My Earning, check withdrawal conditions and bind MetWallet in Chamet. Follow the steps and continue to wallet cash out.",
     hero: "hostWithdrawal",
     parent: "withdrawal",
     priority: 0.7,
@@ -88,7 +88,7 @@ export const ROUTES = {
     label: "MetWallet Cash Out",
     title: "MetWallet Withdrawal for Chamet: Cash-Out Steps",
     description:
-      "Complete MetWallet details, link a withdrawal method, set your payment password and review your cash-out request with an eight-step guide.",
+      "Complete MetWallet details, link a withdrawal method, set your payment password and review your cash-out request step by step.",
     hero: "metwallet",
     parent: "withdrawal",
     priority: 0.7,
@@ -160,40 +160,9 @@ export const ROUTES = {
 
 export type RouteKey = keyof typeof ROUTES;
 
-/**
- * Fraction of each image's width that is empty purple space on the left (reserved for
- * overlaid text). When the image is shown without overlaid text it is trimmed by this much
- * so the people and logo sit centred, with similar margins on both sides. Faces and logos
- * are never cut (measured per image).
- */
-const HERO_TRIM_LEFT: Record<HeroKey, number> = {
-  home: 0.37,
-  agency: 0.39,
-  host: 0.34,
-  dashboard: 0.34,
-  withdrawals: 0.39,
-  hostWithdrawal: 0.31,
-  agencyWithdrawal: 0.35,
-  metwallet: 0.35,
-  download: 0.36,
-  help: 0.37,
-  aboutContact: 0.31,
-  recruitment: 0.51,
-  support: 0.45,
-};
-
 export function heroImage(key: HeroKey) {
   const [, file, alt, width, height] = heroes[key] as [string, string, string, number, number];
-  const trim = HERO_TRIM_LEFT[key];
-  return {
-    src: `/images/heroes/${file}`,
-    alt,
-    width,
-    height,
-    og: `/og/${file.replace(".webp", ".jpg")}`,
-    /** CSS aspect ratio of the centred (trimmed) view. */
-    centredRatio: `${Math.round(width * (1 - trim))} / ${height}`,
-  };
+  return { src: `/images/heroes/${file}`, alt, width, height, og: `/og/${file.replace(".webp", ".jpg")}` };
 }
 
 /** Builds unique, self-canonical metadata for a route. */
@@ -212,7 +181,7 @@ export function pageMetadata(key: RouteKey): Metadata {
       locale: SITE.locale,
       title: r.title,
       description: r.description,
-      images: [{ url: absoluteUrl(img.og), width: 1200, height: 800, alt: img.alt }],
+      images: [{ url: absoluteUrl(img.og), width: 1200, height: 750, alt: img.alt }],
     },
     twitter: {
       card: "summary_large_image",

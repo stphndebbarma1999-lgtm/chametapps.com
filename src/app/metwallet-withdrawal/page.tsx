@@ -13,7 +13,7 @@ export const metadata = pageMetadata("metwallet");
 export default function MetWalletPage() {
   return (
     <>
-      <Hero page="metwallet" hero="metwallet" accent="From wallet balance to your payout method" title="How to Withdraw From MetWallet">
+      <Hero page="metwallet" hero="metwallet" title="How to Withdraw From MetWallet">
         <p>This guide starts inside MetWallet. Check your available balance and follow the account requirements displayed before choosing a withdrawal method.</p>
       </Hero>
 
@@ -24,7 +24,7 @@ export default function MetWalletPage() {
         </div>
         <GuideBlock
           id="steps"
-          heading="Eight Cash-Out Steps"
+          heading="Cash-Out Steps"
           carouselLabel="MetWallet cash-out screenshots"
           images={guideImages("metwallet-cash-out")}
           steps={[

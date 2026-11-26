@@ -472,23 +472,19 @@
   }
 }
 
-/* Hero: text over the empty left area on wide screens, above the full image on small screens. */
-.hero-grid {
-  display: grid;
-}
-@media (min-width: 1280px) {
-  .hero-grid > * {
-    grid-area: 1 / 1;
-  }
-}
 
-.hero-media {
-  aspect-ratio: var(--ratio-centred);
+
+/* WhatsApp channel popup */
+dialog.channel-popup {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  width: min(92vw, 24rem);
+  margin: auto;
+  color: var(--color-body);
 }
-@media (min-width: 1280px) {
-  .hero-media {
-    aspect-ratio: var(--ratio-full);
-  }
+dialog.channel-popup::backdrop {
+  background: rgb(8 3 14 / 0.75);
 }
 
 /* Native dialog for enlarged screenshots */

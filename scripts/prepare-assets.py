@@ -30,11 +30,10 @@ for key, (orig, name, _alt, w, h) in heroes.items():
     src = os.path.join(SRC, "heroes", orig)
     shutil.copyfile(src, os.path.join(PUB, "heroes", name))
     im = Image.open(src)
-    assert im.size == (w, h), (orig, im.size)
     dims[f"/images/heroes/{name}"] = [w, h]
     if w / h < 2:  # page heroes -> 1200x800 JPEG Open Graph image (no cropping)
         og = im.convert("RGB").resize((1200, 800), Image.LANCZOS)
         og.save(os.path.join(ROOT, "public", "og", name.replace(".webp", ".jpg")), quality=82, optimize=True, progressive=True)
 
 json.dump(dims, open(os.path.join(ROOT, "src/content/image-dimensions.json"), "w"), indent=1, sort_keys=True)
-print(len(dims), "images prepared")
+print(len(dims), "images prepared — now run scripts/extend-heroes.py and scripts/redact-screenshots.py")

@@ -54,7 +54,6 @@ export default function HostPage() {
       <Hero
         page="host"
         hero="host"
-        accent="Fourteen illustrated steps"
         title="Chamet Host Registration and Profile Setup"
         actions={
           <>
