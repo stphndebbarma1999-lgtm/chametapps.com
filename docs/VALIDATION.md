@@ -14,7 +14,9 @@ Run locally on 26 November 2026 against a production build (`next build` + `next
 | URL behaviour | `/agency.html` and `/host.html` return 200. `/agency.html/` returns a single 308 to `/agency.html`. `/chamet-help` returns a single 308 to `/chamet-help/`. |
 | Preview indexing | With `VERCEL_ENV=preview`: `<meta name="robots" content="noindex, nofollow">`, `X-Robots-Tag: noindex, nofollow`, `Disallow: /`, empty sitemap. In production: `index, follow`. |
 
-## Responsive layout and carousel (Playwright)
+## Responsive layout and guide photos (Playwright)
+
+> Update: the sliding carousel was replaced (at the owner's request) with a fixed layout — two written steps, then their two screenshots side by side, repeated. Re-checked: no overflow at all widths; two photos per row (132 px each at 320 px, 352 px each at 1440 px); build, lint, validator and axe (0 violations) pass. Carousel-specific rows below describe the earlier version.
 
 | Check | Result |
 |---|---|

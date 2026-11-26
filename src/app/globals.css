@@ -269,30 +269,21 @@
   }
 }
 
-/* ---------- Carousel: exactly two portrait screenshots per view from 320px up ---------- */
-.carousel-track {
-  --gap: 0.75rem;
-  display: flex;
-  gap: var(--gap);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  overscroll-behavior-x: contain;
-  scrollbar-width: none;
-  padding: 10px 6px 14px;
-  margin-inline: -6px;
-  -webkit-overflow-scrolling: touch;
+/* ---------- Fixed guide layout: two steps, then their two screenshots side by side ---------- */
+.guide-pair + .guide-pair {
+  margin-top: 2rem;
 }
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
-.carousel-slide {
-  flex: 0 0 calc((100% - var(--gap)) / 2);
-  min-width: 0;
-  scroll-snap-align: start;
+.guide-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: start;
+  max-width: 46rem;
+  margin-top: 1rem;
 }
 @media (min-width: 1024px) {
-  .carousel-track {
-    --gap: 1.25rem;
+  .guide-photos {
+    gap: 1.25rem;
   }
 }
 @layer components {
@@ -303,9 +294,6 @@
     object-fit: contain;
     background: #fff;
   }
-}
-.carousel-wrap {
-  max-width: 46rem;
 }
 
 /* ---------- Animated wavy dividers (transform only) ---------- */

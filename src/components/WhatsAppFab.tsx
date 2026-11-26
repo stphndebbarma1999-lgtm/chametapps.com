@@ -20,8 +20,7 @@ const MESSAGES: Record<string, string> = {
 
 /**
  * Sticky direct-chat button (purple/white, no green). It hides while the footer or any
- * carousel control row ([data-avoid-fab]) is in the bottom zone of the viewport, so it
- * never covers those controls, and it respects the device safe area.
+ * [data-avoid-fab] element is in the bottom zone of the viewport, so it never covers it, and it respects the device safe area.
  */
 export function WhatsAppFab() {
   const pathname = usePathname();

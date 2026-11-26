@@ -38,7 +38,7 @@ npm run dev                  # http://localhost:3000
 src/app/                 routes (one folder per URL; agency.html/ and host.html/ keep the legacy URLs)
 src/app/layout.tsx       header, footer, sticky WhatsApp button, Organization/WebSite JSON-LD
 src/app/sitemap.ts       robots.ts, manifest.ts, not-found.tsx
-src/components/          Hero, GuideBlock (steps + carousel), GuideCarousel, WaveDivider, DecoLogos, Faq, …
+src/components/          Hero, GuideBlock (two steps + two photos, repeated), GuidePhotos, WaveDivider, DecoLogos, Faq, …
 src/content/links.json   ← single source of all outbound links (copied from LINKS.json)
 src/content/*.json       image filenames, alt text and dimensions
 src/lib/site.ts          link helpers, WhatsApp messages, indexing switch, CONTENT_UPDATED date
