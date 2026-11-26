@@ -4,7 +4,8 @@
  *  - every sitemap URL returns 200 and has exactly one H1, a unique title/description,
  *    a self-referencing absolute canonical on https://chametapps.com
  *  - every internal link and local image/asset returns 200 (after at most one redirect)
- *  - JSON-LD parses; BreadcrumbList matches the visible breadcrumb; FAQPage questions are visible
+ *  - JSON-LD parses; BreadcrumbList matches the visible breadcrumb; every FAQPage question AND answer
+ *    matches a visible FAQ card word for word (after removing markup)
  *  - registration links: the agency page uses only the agency link, the host page only the host link,
  *    and the two links are never swapped anywhere
  *  - no canonical points at chametagency.org; no "SD Agency" text; no lorem ipsum
@@ -20,6 +21,21 @@ const warn = (m) => errors.push(m);
 
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 const attrAll = (html, re) => [...html.matchAll(re)].map((m) => decode(m[1]));
+
+/** Text content of HTML: comments and tags removed, entities decoded, whitespace collapsed. */
+function norm(htmlOrText) {
+  return decode(htmlOrText.replace(/<!--.*?-->/gs, "").replace(/<[^>]+>/g, ""))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Map of visible FAQ question → visible answer text, read from the server-rendered FAQ cards. */
+function visibleFaqs(html) {
+  const out = new Map();
+  const re = /<h3[^>]*data-faq-question[^>]*>(.*?)<\/h3>\s*<div[^>]*data-faq-answer[^>]*>(.*?)<\/div><\/div>/gs;
+  for (const m of html.matchAll(re)) out.set(norm(m[1]), norm(m[2]));
+  return out;
+}
 
 async function get(path, redirect = "manual") {
   const res = await fetch(new URL(path, BASE), { redirect });
@@ -89,7 +105,14 @@ for (const path of pages) {
       for (const it of data.itemListElement) if (!decode(html).includes(`>${it.name}<`)) warn(`${path}: breadcrumb "${it.name}" not visible`);
     }
     if (data["@type"] === "FAQPage") {
-      for (const q of data.mainEntity) if (!decode(html).includes(q.name)) warn(`${path}: FAQ "${q.name}" not visible`);
+      const visible = visibleFaqs(html);
+      if (visible.size !== data.mainEntity.length) warn(`${path}: ${data.mainEntity.length} FAQ schema entries but ${visible.size} visible FAQ cards`);
+      for (const q of data.mainEntity) {
+        const shown = visible.get(norm(q.name));
+        if (shown === undefined) warn(`${path}: FAQ "${q.name}" not visible`);
+        else if (shown !== norm(q.acceptedAnswer.text))
+          warn(`${path}: FAQ answer for "${q.name}" differs from visible text\n    schema:  ${norm(q.acceptedAnswer.text)}\n    visible: ${shown}`);
+      }
     }
     if (/Review|AggregateRating|LocalBusiness/.test(JSON.stringify(data))) warn(`${path}: forbidden schema type`);
   }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Banner } from "@/components/Banner";
 import { Hero } from "@/components/Hero";
+import { PaymentStagesTable } from "@/components/PaymentStagesTable";
 import { Section, SectionHeading } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { pageMetadata } from "@/lib/routes";
@@ -78,12 +79,16 @@ export default function WithdrawalPage() {
       <Section tone="surface" labelledBy="minimums">
         <div className="prose-site max-w-3xl">
           <h2 id="minimums" data-reveal>
-            Minimums, Fees and Timing
+            Host, Agency and MetWallet Payments Compared
           </h2>
           <p>
-            Host withdrawals have a minimum amount, currently US$10. MetWallet cash-out requirements and charges depend on the available method. Review the values
-            displayed before submitting — your account&apos;s screen always takes priority.
+            These are separate stages with different requirements. Chamet currently publishes a US$10 minimum only for withdrawing an eligible host balance to
+            MetWallet; agency commission and MetWallet cash-out methods have their own conditions. Review the values displayed before submitting — your account&apos;s
+            screen always takes priority.
           </p>
+        </div>
+        <div className="mt-6">
+          <PaymentStagesTable />
         </div>
       </Section>
 

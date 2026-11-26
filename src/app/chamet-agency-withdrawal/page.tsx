@@ -117,6 +117,17 @@ export default function AgencyWithdrawalPage() {
               A report total is not necessarily a settled payment. Check the period, payment status and notices in the agency dashboard, then compare them with the wallet
               transaction history. A newly linked wallet alone does not prove that a commission transfer has occurred.
             </p>
+            <h3 className="text-lg">Agency payment checklist</h3>
+            <ol className="list-decimal space-y-1 pl-6">
+              <li>Confirm the reporting period.</li>
+              <li>Distinguish team revenue from calculated commission.</li>
+              <li>Check the payment status and dashboard notices.</li>
+              <li>Confirm the intended MetWallet account is linked.</li>
+              <li>Compare the payment record with your wallet transaction history.</li>
+              <li>
+                If it is still unresolved, contact the relevant support channel with the transaction or reference details. Never share passwords or OTPs.
+              </li>
+            </ol>
           </div>
           <div className="card prose-site" data-reveal>
             <h2 id="next" className="text-2xl!">

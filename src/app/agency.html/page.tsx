@@ -23,7 +23,7 @@ const REGISTER = (
 const FAQ: FaqItem[] = [
   {
     q: "Is agency registration the same as downloading Chamet?",
-    text: "No. Agency registration creates access to the management journey shown here. Download instructions for the Chamet app are provided separately.",
+    text: "No. Agency registration creates access to the management journey shown here. Download instructions for the Chamet app are provided separately in our app download guide.",
     a: (
       <p>
         No. Agency registration creates access to the management journey shown here. Download instructions for the Chamet app are provided separately in our{" "}
@@ -34,17 +34,10 @@ const FAQ: FaqItem[] = [
   {
     q: "Where do I find my agency ID?",
     text: "Open My Profile after signing in. Check the identification fields shown for your agency account.",
-    a: <p>Open My Profile after signing in. Check the identification fields shown for your agency account.</p>,
   },
   {
     q: "I did not receive the code. What should I check?",
     text: "Check the number and country code, wait for the resend option and request a fresh code when allowed. If the problem continues, use the available support route rather than repeatedly creating new accounts.",
-    a: (
-      <p>
-        Check the number and country code, wait for the resend option and request a fresh code when allowed. If the problem continues, use the available support
-        route rather than repeatedly creating new accounts.
-      </p>
-    ),
   },
   {
     q: "What should I do after registration?",

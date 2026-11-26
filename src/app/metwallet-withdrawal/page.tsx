@@ -3,6 +3,7 @@ import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
 import { NextSteps } from "@/components/NextSteps";
+import { PaymentStagesTable } from "@/components/PaymentStagesTable";
 import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { guideImages } from "@/lib/guides";
@@ -16,6 +17,21 @@ export default function MetWalletPage() {
       <Hero page="metwallet" hero="metwallet" title="How to Withdraw From MetWallet">
         <p>This guide starts inside MetWallet. Check your available balance and follow the account requirements displayed before choosing a withdrawal method.</p>
       </Hero>
+
+      <Section labelledBy="stages">
+        <div className="prose-site max-w-3xl">
+          <h2 id="stages" data-reveal>
+            Where MetWallet Cash Out Fits
+          </h2>
+          <p>
+            Cashing out from MetWallet is a separate stage from moving money into the wallet. A linked wallet, a submitted request and money received in your account are
+            different milestones — check each one.
+          </p>
+        </div>
+        <div className="mt-6">
+          <PaymentStagesTable current="metwallet" />
+        </div>
+      </Section>
 
       <WaveDivider />
       <Section tone="surface" labelledBy="steps" deco={[{ top: "4%", right: "3%", size: 100, mobile: true }, { top: "50%", left: "1%", size: 80 }]}>
