@@ -3,7 +3,7 @@ import { DecoLogos } from "./DecoLogos";
 
 type Spot = Parameters<typeof DecoLogos>[0]["spots"][number];
 
-/** Page section with optional heading id, tone and decorative logos. */
+/** Page section with optional heading id, tone and decorative logos. tone="surface" renders a white (light) section. */
 export function Section({
   id,
   children,
@@ -23,7 +23,7 @@ export function Section({
     <section
       id={id}
       aria-labelledby={labelledBy}
-      className={`relative isolate py-12 sm:py-16 ${tone === "surface" ? "bg-surface" : "bg-ink"} ${className}`}
+      className={`relative isolate py-12 sm:py-16 ${tone === "surface" ? "tone-light bg-white" : "bg-ink"} ${className}`}
     >
       {deco && <DecoLogos spots={deco} />}
       <div className="container-site">{children}</div>
