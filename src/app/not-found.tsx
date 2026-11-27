@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 };
 
 const LINKS_404 = [
-  { href: "/agency.html", label: "Chamet agency registration" },
-  { href: "/host.html", label: "Chamet host registration" },
+  { href: "/chamet-agency-registration/", label: "Chamet agency registration" },
+  { href: "/chamet-host-registration/", label: "Chamet host registration" },
   { href: "/chamet-agency-login/", label: "Agency login & dashboard guide" },
   { href: "/chamet-withdrawal/", label: "Withdrawal guides" },
   { href: "/chamet-help/", label: "Help with login and payments" },

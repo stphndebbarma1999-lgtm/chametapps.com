@@ -18,6 +18,8 @@ export const LINKS = {
   officialChamet: links.officialChamet,
   officialChametLabel: new URL(links.officialChamet).host,
   whatsappChat: links.whatsappChat,
+  /** Alias used by older page copy. */
+  whatsapp: links.whatsappChat,
   whatsappDisplay: links.whatsappDisplay,
   whatsappChannel: links.whatsappChannel,
   whatsappChannelName: links.whatsappChannelName,

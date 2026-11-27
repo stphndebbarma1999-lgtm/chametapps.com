@@ -5,8 +5,8 @@ import { DecoField } from "./DecoField";
 import { Logo } from "./Logo";
 
 const GUIDES = [
-  { href: "/agency.html", label: "Agency registration" },
-  { href: "/host.html", label: "Host registration" },
+  { href: "/chamet-agency-registration/", label: "Agency registration" },
+  { href: "/chamet-host-registration/", label: "Host registration" },
   { href: "/chamet-agency-login/", label: "Agency login & dashboard" },
   { href: "/chamet-withdrawal/", label: "Withdrawal overview" },
   { href: "/chamet-host-withdrawal/", label: "Host withdrawal" },
@@ -16,6 +16,8 @@ const GUIDES = [
 ];
 const SITE_LINKS = [
   { href: "/chamet-app-download/", label: "App download" },
+  { href: "/chamet-agency-india/", label: "Chamet agency in India" },
+  { href: "/blog/", label: "Guides blog" },
   { href: "/about/", label: "About" },
   { href: "/contact/", label: "Contact" },
   { href: "/privacy/", label: "Privacy policy" },
@@ -72,6 +74,11 @@ export function Footer() {
               <li>
                 <a href={LINKS.agencyDashboard} target="_blank" rel="noopener" className={`${linkCls} inline-flex items-center gap-1.5`} data-track="dashboard_outbound">
                   Chamet agency portal ({LINKS.agencyDashboardLabel}) <ExternalIcon />
+                </a>
+              </li>
+              <li>
+                <a href="/rss.xml" className={linkCls}>
+                  RSS feed for new guides
                 </a>
               </li>
             </ul>

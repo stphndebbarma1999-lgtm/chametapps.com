@@ -1,16 +1,23 @@
 import { Banner } from "@/components/Banner";
 import { ExternalButton } from "@/components/Buttons";
+import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
+import { LongForm } from "@/components/LongForm";
 import { NextSteps } from "@/components/NextSteps";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { Section } from "@/components/Section";
+import { Toc } from "@/components/Toc";
 import { WaveDivider } from "@/components/WaveDivider";
+import { agencyWithdrawalContent } from "@/content/pages/agency-withdrawal";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
 import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("agencyWithdrawal");
+
+const FAQ: FaqItem[] = agencyWithdrawalContent.faqs.map((f) => ({ q: f.q, text: f.a }));
 
 export default function AgencyWithdrawalPage() {
   return (
@@ -33,24 +40,30 @@ export default function AgencyWithdrawalPage() {
 
       <WaveDivider />
       <Section tone="surface" labelledBy="open-profile" deco={[{ top: "6%", right: "3%", size: 100, mobile: true }, { bottom: "8%", left: "1%", size: 80 }]}>
-        <div className="mb-6">
+        <QuickAnswer answer={agencyWithdrawalContent.quickAnswer} />
+        <div className="mt-6">
+          <Toc sections={agencyWithdrawalContent.sections} />
+        </div>
+        <div className="mt-8">
           <ImageNote />
         </div>
-        <GuideBlock
-          id="open-profile"
-          heading="Open My Profile"
-          intro={<p>Sign in to the agency portal, open the menu and select My Profile. Scroll to the MetWallet account section and choose Bind Wallet.</p>}
-          carouselLabel="Agency My Profile and Bind Wallet screenshots"
-          images={guideImages("agency-withdrawal", 1, 2)}
-          steps={[
-            <>
-              Open the dashboard menu and tap <strong>My Profile</strong>.
-            </>,
-            <>
-              Scroll down to <strong>MetWallet Account</strong> and tap <strong>Bind Wallet</strong>.
-            </>,
-          ]}
-        />
+        <div className="mt-6">
+          <GuideBlock
+            id="open-profile"
+            heading="Open My Profile"
+            intro={<p>Sign in to the agency portal, open the menu and select My Profile. Scroll to the MetWallet account section and choose Bind Wallet.</p>}
+            carouselLabel="Agency My Profile and Bind Wallet screenshots"
+            images={guideImages("agency-withdrawal", 1, 2)}
+            steps={[
+              <>
+                Open the dashboard menu and tap <strong>My Profile</strong>.
+              </>,
+              <>
+                Scroll down to <strong>MetWallet Account</strong> and tap <strong>Bind Wallet</strong>.
+              </>,
+            ]}
+          />
+        </div>
       </Section>
       <WaveDivider from="#180725" flip />
 
@@ -107,38 +120,15 @@ export default function AgencyWithdrawalPage() {
         />
       </Section>
 
-      <Section labelledBy="commission">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="card prose-site" data-reveal>
-            <h2 id="commission" className="text-2xl!">
-              Where Is My Agency Commission?
-            </h2>
-            <p>
-              A report total is not necessarily a settled payment. Check the period, payment status and notices in the agency dashboard, then compare them with the wallet
-              transaction history. A newly linked wallet alone does not prove that a commission transfer has occurred.
-            </p>
-            <h3 className="text-lg">Agency payment checklist</h3>
-            <ol className="list-decimal space-y-1 pl-6">
-              <li>Confirm the reporting period.</li>
-              <li>Distinguish team revenue from calculated commission.</li>
-              <li>Check the payment status and dashboard notices.</li>
-              <li>Confirm the intended MetWallet account is linked.</li>
-              <li>Compare the payment record with your wallet transaction history.</li>
-              <li>
-                If it is still unresolved, contact the relevant support channel with the transaction or reference details. Never share passwords or OTPs.
-              </li>
-            </ol>
-          </div>
-          <div className="card prose-site" data-reveal>
-            <h2 id="next" className="text-2xl!">
-              What Happens Next?
-            </h2>
-            <p>When funds are available in MetWallet, follow the cash-out guide. Choose a supported destination and check the amount and charges before submitting.</p>
-          </div>
-        </div>
+      <Section labelledBy="details">
+        <LongForm sections={agencyWithdrawalContent.sections} />
       </Section>
 
-      <Section tone="surface" labelledBy="help-cta">
+      <Section tone="surface" labelledBy="faq">
+        <Faq id="faq" heading="Agency Withdrawal Questions" items={FAQ} />
+      </Section>
+
+      <Section labelledBy="help-cta">
         <Banner kind="support" />
         <div className="mt-10">
           <NextSteps

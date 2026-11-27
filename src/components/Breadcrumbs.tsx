@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { breadcrumbTrail, type RouteKey } from "@/lib/routes";
+import { ROUTES, breadcrumbTrail, type RouteKey } from "@/lib/routes";
 import { absoluteUrl } from "@/lib/site";
 import { JsonLd } from "./JsonLd";
 
@@ -28,6 +28,7 @@ export function Breadcrumbs({ page }: { page: RouteKey }) {
         data={{
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
+          "@id": `${absoluteUrl(ROUTES[page].path)}#breadcrumb`,
           itemListElement: trail.map((c, i) => ({ "@type": "ListItem", position: i + 1, name: c.name, item: absoluteUrl(c.path) })),
         }}
       />

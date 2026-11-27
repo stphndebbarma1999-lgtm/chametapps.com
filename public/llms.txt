@@ -1,0 +1,77 @@
+# ChametApps.com
+
+> Independent, source-checked guidance for Chamet agency and host onboarding in India. Not the official Chamet website. The site publishes an agency referral registration route and explains registration, the agency dashboard, Beans and MetWallet withdrawals in plain English.
+
+Last reviewed: 27 November 2026
+
+## What this site is
+
+- An independent guidance site for adults (18+) considering a Chamet host account or agency account.
+- Written for readers in India, with English and Hindi support through WhatsApp.
+- Registration links are agency referral links with company ID 87692. Joining an agency is optional.
+- The site does not process payments, hold funds, verify identities or operate a wallet.
+- No income, approval, exchange rate or payment time is guaranteed.
+
+## Core guides
+
+- [Chamet agency registration](https://chametapps.com/chamet-agency-registration/): six-step agency account creation, phone verification, password setup, profile and invitation links.
+- [Chamet host registration](https://chametapps.com/chamet-host-registration/): 14-step host sign-up, email verification, face check and profile setup.
+- [Agency login and dashboard](https://chametapps.com/chamet-agency-login/): portal sign-in, password recovery, invite links, host and agent reports, MetWallet binding.
+- [Withdrawal overview](https://chametapps.com/chamet-withdrawal/): the three withdrawal stages and who controls each one.
+- [Host withdrawal](https://chametapps.com/chamet-host-withdrawal/): My Earning, conditions, MetWallet binding and request confirmation.
+- [Agency withdrawal](https://chametapps.com/chamet-agency-withdrawal/): linking MetWallet from My Profile and when commission becomes payable.
+- [MetWallet cash out](https://chametapps.com/metwallet-withdrawal/): verification, payout method, payment password and transfer tracking.
+- [App download](https://chametapps.com/chamet-app-download/): official install routes for Android and iPhone, and why modified APKs are risky.
+- [Help by stage](https://chametapps.com/chamet-help/): registration, login and payment troubleshooting with anchors.
+- [Chamet agency in India](https://chametapps.com/chamet-agency-india/): what "agency near me" means for an online-first service, rupee payouts and how to verify a team.
+
+## Blog guides
+
+- [Guides blog hub](https://chametapps.com/blog/): index of all 10 long-form Chamet guides grouped by topic.
+- [Agency commission explained](https://chametapps.com/blog/chamet-agency-commission-explained/): ratio versus base, reports versus payments, monthly review.
+- [Beans to dollars](https://chametapps.com/blog/chamet-beans-to-dollars/): the published 10,000 Beans = US$1 rule and why the rupee credit differs.
+- [Withdrawal pending](https://chametapps.com/blog/chamet-withdrawal-pending/): seven checks, status stages, when to contact support.
+- [MetWallet KYC verification](https://chametapps.com/blog/metwallet-kyc-verification/): Basic Level documents, rejection fixes, privacy.
+- [Agency login problems](https://chametapps.com/blog/chamet-agency-login-problems/): wrong portal, password recovery, browser fixes, restrictions.
+- [Host earnings guide](https://chametapps.com/blog/chamet-host-earnings-guide/): how Beans are earned, the US$10 published minimum, realistic first month.
+- [App download and install](https://chametapps.com/blog/chamet-app-download-install/): Android and iPhone steps, install errors, post-install setup.
+- [Host profile tips](https://chametapps.com/blog/chamet-host-profile-tips/): photo, nickname, bio, languages, privacy boundaries.
+- [Agency vs host account](https://chametapps.com/blog/chamet-agency-vs-host-account/): role comparison, income paths, switching rules.
+- [Chamet agency near me](https://chametapps.com/blog/chamet-agency-near-me/): verifying local claims and avoiding pressure offers.
+
+## Key facts used on this site
+
+- Chamet's published host earnings page states 10,000 Beans = US$1 and a US$10 minimum for an eligible host balance to MetWallet.
+- Host and agency income is activity-based; the site does not present a salary or a guaranteed monthly figure.
+- The site does not publish a fixed USD-to-INR rate; the MetWallet cash-out quote governs each conversion.
+- Agency commission is a percentage applied to an eligible base under the platform's rules, not a salary.
+- Screenshots are annotated examples; interface labels and conditions can differ by app version and account.
+- Banner portraits are generated illustrations, not staff, hosts or testimonials.
+
+## Trust and limits
+
+- The site is not operated by Chamet and cannot verify or reinstate accounts.
+- "Certified Chamet agency" appears as a description provided by the site owner; no certificate number or official badge is displayed.
+- Identity verification and payment decisions belong to Chamet, MetWallet and the relevant payment providers.
+- The site never asks for passwords, OTPs or payment passwords.
+
+## About & policies
+
+- [Home](https://chametapps.com/): overview of agency and host onboarding, dashboard, withdrawals and independent guidance scope.
+- [About ChametApps.com](https://chametapps.com/about/): who publishes the site, how sources are checked and the independence statement.
+- [Contact](https://chametapps.com/contact/): WhatsApp support, what to share safely and what the site cannot do.
+- [Privacy Policy](https://chametapps.com/privacy/): technical request data, optional analytics consent, WhatsApp messages and DPDP Act rights.
+- [Terms of Use](https://chametapps.com/terms/): guidance-only scope, referral links, acceptable use and governing law.
+- [Disclaimer](https://chametapps.com/disclaimer/): non-official status, referral disclosures, earnings examples and illustrations.
+
+## Contact
+
+- WhatsApp: https://wa.me/919233262700
+- WhatsApp channel: https://whatsapp.com/channel/0029VbCCYeQ2P59t8LBOSe1V
+- Contact page: https://chametapps.com/contact/
+
+## Machine-readable
+
+- Sitemap: https://chametapps.com/sitemap.xml
+- RSS: https://chametapps.com/rss.xml
+- Full context: https://chametapps.com/llms-full.txt

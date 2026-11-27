@@ -1,63 +1,60 @@
-# Validation report
+# Validation and QA
 
-Run locally on 26 November 2026 against a production build (`next build` + `next start`), in a sandboxed Linux container with Chromium (Playwright). These are lab results, not field data.
+Two gates protect the site: `npm run build` must compile every route, and `npm run validate` must crawl the running build without finding a broken rule. Both are expected to pass before a change is published.
 
-## Build and static checks
+```powershell
+npm run typecheck   # tsc --noEmit
+npm run lint        # eslint .
+npm run build       # next build (36 prerendered outputs incl. metadata routes)
+npm start -- -p 3123
+npm run validate -- http://localhost:3123
+```
 
-| Check | Result |
+The validator reads the sitemap, so a route that is missing from the sitemap is a route that is not checked. It currently expects **27 URLs**: 17 pages (including the three legal pages and the blog hub) and 10 articles. An intentional route change must update that number and `ROUTES` together.
+
+## What the crawl checks
+
+| Check | Rule |
 |---|---|
-| `npm run build` (Next.js 16.4.6, Turbopack) | ✅ Passes; 15 pages plus metadata routes, all prerendered as static (○) |
-| `npm run typecheck` | ✅ No errors |
-| `npm run lint` | ✅ No errors or warnings |
-| `npm run validate` (crawler, `scripts/validate-site.mjs`) | ✅ 15 sitemap pages, 15 internal link targets and 370 asset URLs return 200. Exactly one H1 per page. Titles and descriptions are unique. Canonicals are self-referencing on `https://chametapps.com`. Absolute `og:image` on every page. JSON-LD parses. BreadcrumbList matches the visible breadcrumb. Every FAQPage question is visible. No Review/AggregateRating/LocalBusiness. No "SD Agency". Unknown URLs return 404. robots.txt doesn't block assets. |
-| Registration link roles | ✅ `/agency.html` uses only `…/inviteAgent/bind.html?companyId=87692`. `/host.html` uses only `…/agent/bind.html?companyId=87692`. Neither appears on any other page. Query strings are preserved. |
-| URL behaviour | `/agency.html` and `/host.html` return 200. `/agency.html/` returns a single 308 to `/agency.html`. `/chamet-help` returns a single 308 to `/chamet-help/`. |
-| Preview indexing | With `VERCEL_ENV=preview`: `<meta name="robots" content="noindex, nofollow">`, `X-Robots-Tag: noindex, nofollow`, `Disallow: /`, empty sitemap. In production: `index, follow`. |
+| Status | Every sitemap URL returns 200. |
+| Headings | Exactly one `<h1>` per page. |
+| Metadata | Unique title and description; every page has an absolute `og:image` under `/og/`. |
+| Canonical | Self-referencing absolute URL on `https://chametapps.com`, matching the sitemap path. |
+| Breadcrumbs | `BreadcrumbList` ends at the page URL and each label is visible on the page. |
+| FAQ | `FAQPage` entry count matches the visible FAQ cards, and every question and answer matches the rendered text word for word. |
+| Schema hygiene | JSON-LD parses; no `Review`, `AggregateRating` or `LocalBusiness` schema types. Prose that merely contains the word "review" is allowed; the check inspects the `@type` value. |
+| Role links | `/chamet-agency-registration/` contains only the agency endpoint; `/chamet-host-registration/` contains only the host endpoint; no other page contains either endpoint. |
+| Internal links | Every internal `href` returns 200 without a redirect. |
+| Assets | Every local image and static asset returns 200. |
+| Forbidden text | No "SD Agency" and no lorem ipsum. |
+| Edge cases | An unknown path returns 404; robots.txt does not block `/_next` or `/images`. |
 
-## Responsive layout and guide photos (Playwright)
+## Content checks done by hand
 
-> Update: the sliding carousel was replaced (at the owner's request) with a fixed layout — two written steps, then their two screenshots side by side, repeated. Re-checked: no overflow at all widths; two photos per row (132 px each at 320 px, 352 px each at 1440 px); build, lint, validator and axe (0 violations) pass. Carousel-specific rows below describe the earlier version.
+The crawl cannot judge writing quality, so these are reviewed manually before publishing a page:
 
-| Check | Result |
-|---|---|
-| Horizontal overflow on all 15 pages at 320, 375, 390, 430, 768, 1024 and 1440 px | ✅ None (`scrollWidth − innerWidth = 0`) |
-| Two portrait screenshots side by side in every carousel at all widths | ✅ The second card is fully inside the track. At 320 px: track 300 px, cards 138 px each. At 390 px: cards 173 px each. |
-| Image integrity | ✅ `width:100%`, `height:auto`, `object-fit:contain`, no cropping or stretching. Odd final images leave an empty partner slot (no duplicates). |
-| Next/previous arrows | ✅ Scroll by one view (2 cards). Disabled at the ends. Accessible names. |
-| Keyboard | ✅ Arrow keys page the track. The enlarge dialog opens with focus on Close, Escape closes it, and focus returns to the screenshot that opened it. |
-| Sequence | ✅ Folders are used in numerical order. Host withdrawal is split into 4 Chamet screens + a 5-screen MetWallet sub-guide + the final linked screen. |
-| Lazy loading | ✅ A host page load at 390 px requests the hero plus 4 guide thumbnails (first two of each carousel). Further slides render only when their carousel nears the viewport, using fixed-aspect placeholders. |
-| Reduced motion (`prefers-reduced-motion: reduce`) | ✅ Animations and transitions effectively off. Nothing is hidden for reveal. |
-| JavaScript disabled | ✅ All written steps, tables, FAQs and links render and are visible. |
-| Scroll reveal | ✅ Only elements below the fold are hidden before reveal. All are revealed after scrolling. |
-| Mobile menu and Withdrawals submenu | ✅ Open, close and Escape work. |
+- Visible copy is at least 4,000 words on the eleven core pages (home, both registrations, agency login, the four withdrawal guides, download, India, help), excluding navigation and footer. Supporting pages (about, contact, legal) are proportionate rather than padded.
+- Articles run roughly 1,600–2,000 words, each with a quick answer, question-shaped H2s, tables or checklists, FAQs and at least three descriptive internal links.
+- Every statement about fees, minimums or timing is hedged and attributed to the screen or the platform, never presented as a fixed promise.
+- No invented certification, office, salary, testimonial or dollar-to-rupee rate.
+- Locations appear only where they fit: India, INR, IST, regional languages and online-first "near me" context.
+- Registration endpoints appear only on their role page, with `rel="sponsored noopener"`.
 
-## Accessibility (axe-core 4, WCAG 2 A/AA + best practice)
+## Word-count method
 
-✅ 0 violations on all 15 pages at 390 px and 1440 px (after fixing in-text links that weren't underlined). Palette contrast was computed rather than assumed. Body text `#DDC5F2` on `#08030E` is 12.9:1. Lavender `#C584FF` on `#08030E` is 7.9:1. CTA white text on the `#922BEE → #C2269F` gradient is ≥ 5.2:1. White on `#F02CC4` is only 3.6:1, so pink is used as an accent and never under text.
+The counts in the QA notes are taken from the rendered `<main>` element after removing scripts and tags, so they measure visible prose rather than JSON payloads. Re-run the count after any large content edit:
 
-## Lighthouse 12 (mobile preset, simulated throttling, localhost)
+```powershell
+# in a Node script or the browser console
+const html = await (await fetch("http://localhost:3123/chamet-help/")).text();
+const main = html.split('<main id="main"')[1].split("</main>")[0];
+main.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<[^>]+>/g, " ")
+  .split(/\s+/).filter(Boolean).length;
+```
 
-| Page | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
-|---|---|---|---|---|---|---|---|
-| `/` | 90 | 100 | 100 | 100 | 2.8 s | 0 | 280 ms |
-| `/agency.html` | 94 | 100 | 100 | 100 | 2.8 s | 0 | 160 ms |
-| `/host.html` | 96 | 100 | 100 | 100 | 2.3 s | 0 | 200 ms |
-| `/chamet-host-withdrawal/` | 91 | 100 | 100 | 100 | 3.0 s | 0 | 210 ms |
+## Known limitations
 
-The Lighthouse runs were made before the slide-gating change, which only reduces image work. The LCP element is the hero photo. Most of the simulated LCP is "render delay" under 4× CPU throttling rather than download time. Treat these as diagnostics. The LCP ≤ 2.5 s / CLS ≤ 0.1 / INP ≤ 200 ms targets can only be confirmed with field data (Search Console Core Web Vitals or CrUX) after launch.
-
-## Unresolved external checks
-
-The build environment's network policy blocks these hosts, so they were **not** tested:
-
-| Destination | Status |
-|---|---|
-| `https://h5.schamet.com/webH5/inviteAgent/bind.html?companyId=87692` (agency registration) | Not reachable from the build environment, so untested. Open it manually and confirm it shows agent registration. |
-| `https://h5.schamet.com/webH5/agent/bind.html?companyId=87692` (host registration) | Untested. Confirm it shows host registration. |
-| `https://agent.ichamet.com/` (agency portal, current reference) | Untested. Earlier research and screenshots used `agent.rchamet.com`. The config uses the current `agent.ichamet.com` as instructed. Confirm which one is live, and edit `agencyDashboard` in `src/content/links.json` if needed. Authenticated login was never tested, and this site never collects credentials. |
-| `https://www.chamet.com/` and `/host-earnings` | Untested. Recheck "10,000 Beans = US$1" and "US$10 host minimum" before launch. |
-| `https://wa.me/919233262700`, WhatsApp channel `0029VbCCYeQ2P59t8LBOSe1V` | Untested. The channel link came from an owner-provided message. Confirm it opens "Best Apps Hiring ✅💯". |
-| `https://www.chametagency.org/` (logo source) | Does not resolve here. The emblem was derived from the supplied screenshot instead (see the Brand section of `docs/ASSET-MANIFEST.md`). |
-
-Not done: no deployment, no DNS change, no field performance data, and no testing on real iOS or Android devices.
+- The validator does not execute JavaScript, so it sees the server-rendered HTML only. Interactive behaviour (analytics consent, mobile menu) is checked in a browser.
+- FAQ text comparison is literal. Styling inside an answer is fine, but changing the schema text without changing the visible card is a failure by design.
+- The crawl does not check external URLs. Platform links can change without notice; they are re-checked manually when a guide is reviewed.
+- `hreflang` currently declares `en-IN` only. Adding another locale means adding real translated pages, not just tags.

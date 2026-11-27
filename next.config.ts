@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
     // chametapps.com are unaffected. Query strings are forwarded automatically.
     const has = [{ type: "host" as const, value: "chametapps-com.vercel.app" }];
     return [
+      // Keyword-rich URLs replaced the original .html paths; keep one permanent hop.
+      { source: "/agency.html", destination: "/chamet-agency-registration/", permanent: true },
+      { source: "/host.html", destination: "/chamet-host-registration/", permanent: true },
+      { source: "/agency", destination: "/chamet-agency-registration/", permanent: true },
+      { source: "/host", destination: "/chamet-host-registration/", permanent: true },
       { source: "/", has, destination: "https://chametapps.com/", permanent: true },
       // Files keep their exact path (e.g. /agency.html, /sitemap.xml) — no trailing slash added.
       { source: "/:file(.*\\.[A-Za-z0-9]+)", has, destination: "https://chametapps.com/:file", permanent: true },
@@ -35,6 +40,7 @@ const nextConfig: NextConfig = {
       { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
       { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
       { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      { key: "X-DNS-Prefetch-Control", value: "on" },
     ];
     if (!isIndexable) headers.push({ key: "X-Robots-Tag", value: "noindex, nofollow" });
     return [{ source: "/:path*", headers }];

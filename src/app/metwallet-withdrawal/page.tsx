@@ -1,15 +1,22 @@
 import { Banner } from "@/components/Banner";
+import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
+import { LongForm } from "@/components/LongForm";
 import { NextSteps } from "@/components/NextSteps";
 import { PaymentStagesTable } from "@/components/PaymentStagesTable";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { Section } from "@/components/Section";
+import { Toc } from "@/components/Toc";
 import { WaveDivider } from "@/components/WaveDivider";
+import { metwalletContent } from "@/content/pages/metwallet";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
 
 export const metadata = pageMetadata("metwallet");
+
+const FAQ: FaqItem[] = metwalletContent.faqs.map((f) => ({ q: f.q, text: f.a }));
 
 export default function MetWalletPage() {
   return (
@@ -19,7 +26,11 @@ export default function MetWalletPage() {
       </Hero>
 
       <Section labelledBy="stages">
-        <div className="prose-site max-w-3xl">
+        <QuickAnswer answer={metwalletContent.quickAnswer} />
+        <div className="mt-6">
+          <Toc sections={metwalletContent.sections} />
+        </div>
+        <div className="prose-site mt-8 max-w-3xl">
           <h2 id="stages" data-reveal>
             Where MetWallet Cash Out Fits
           </h2>
@@ -66,39 +77,15 @@ export default function MetWalletPage() {
       </Section>
       <WaveDivider from="#180725" flip />
 
-      <Section labelledBy="india">
-        <div className="grid gap-5 lg:grid-cols-3" data-reveal-stagger>
-          <div className="card prose-site">
-            <h2 id="india" className="text-xl!">
-              Which Withdrawal Method Can I Use in India?
-            </h2>
-            <p>
-              Use the methods listed inside your own account. The methods in an example image do not establish availability for every Indian user. Check the displayed
-              currency, charges and recipient details before confirming.
-            </p>
-          </div>
-          <div className="card prose-site">
-            <h2 id="rupees" className="text-xl!">
-              How Much Will I Receive in Rupees?
-            </h2>
-            <p>
-              Use the payout quote provided for your selected method. A dollar wallet balance and the final rupee credit can differ because of currency conversion and
-              fees. This guide does not promise a fixed USD-to-INR rate.
-            </p>
-          </div>
-          <div className="card prose-site">
-            <h2 id="timing" className="text-xl!">
-              How Long Will It Take?
-            </h2>
-            <p>
-              Use the estimate displayed for your transaction. The seven-working-day message in our example is specific to that example. If the stated time passes, collect
-              the transaction reference and contact the relevant payment support.
-            </p>
-          </div>
-        </div>
+      <Section labelledBy="details">
+        <LongForm sections={metwalletContent.sections} />
       </Section>
 
-      <Section tone="surface" labelledBy="help-cta">
+      <Section tone="surface" labelledBy="faq">
+        <Faq id="faq" heading="MetWallet Questions" items={FAQ} />
+      </Section>
+
+      <Section labelledBy="help-cta">
         <Banner kind="support" />
         <div className="mt-10">
           <NextSteps

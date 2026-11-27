@@ -1,0 +1,311 @@
+import { list, note, p, steps, table, type PageContent } from "@/lib/content";
+
+export const helpContent: PageContent = {
+  quickAnswer:
+    "To get Chamet help quickly, identify the stage where you stopped: registration, app or agency login, invitation, payment or wallet cash out. Then note the exact message, the account type and the time. Most issues are fixed by completing a verification, using the right login door or waiting out a stated processing window.",
+  sections: [
+    {
+      id: "find-the-stage",
+      heading: "Find the stage where your Chamet process stopped",
+      blocks: [
+        p("Chamet support questions become much easier when they start with a stage. Registration problems are not login problems, login problems are not invitation problems, and a payment problem is not the same as a wallet problem. Naming the stage tells you which table to read and which team can actually help."),
+        table(
+          ["What you see", "Stage", "Start here"],
+          [
+            ["I cannot create an account", "Registration", "The registration section below"],
+            ["I cannot sign in", "App or agency login", "The login section below"],
+            ["My invitee is not in the list", "Invitation", "The invitation section below"],
+            ["My withdrawal is pending or failed", "Payment", "Payment problems below"],
+            ["My wallet cash out is stuck", "Wallet", "The wallet section below"],
+          ],
+          "Chamet help by stage",
+        ),
+        p("If you are not sure, open the last screen that showed a balance or a status. The label above the number usually identifies the stage. A screenshot with the label visible is more useful than a memory of the amount."),
+      ],
+    },
+    {
+      id: "registration-problems",
+      heading: "Chamet registration not working",
+      blocks: [
+        p("Registration failures usually come from one of four causes: an unsupported country or region, a phone number that cannot receive the code, an email that is already attached to another account, or an invitation link that was opened with the wrong role. The error message often points to the cause, but it can be generic."),
+        table(
+          ["Problem", "First check", "Next action"],
+          [
+            ["Code never arrives", "Country code, signal and spam folder", "Wait for the cooldown, try a different network, confirm the number"],
+            ["Phone already registered", "Whether you created an account earlier", "Sign in or recover the existing account instead of creating a duplicate"],
+            ["Email already in use", "Other Chamet accounts you own", "Use the existing account or recover access"],
+            ["Invitation link expired", "The link source and date", "Ask the inviter for a fresh link from the dashboard"],
+            ["Page will not load", "Browser, VPN and connection", "Try another browser or network; disable a VPN"],
+            ["Registration completes but no dashboard", "Agency versus host account type", "Open the correct portal or app for the role you registered"],
+          ],
+          "Chamet registration problems and fixes",
+        ),
+        p("Never create a second account to get around a registration error. Duplicate accounts split your history, complicate verification and can put both accounts at risk. Recover the first account instead."),
+        p("If you registered through an invitation, ask the inviter which link they sent. A host link and an agent link create different account types. Opening the wrong one can produce a successful registration with the wrong role."),
+      ],
+    },
+    {
+      id: "login-problems",
+      heading: "Chamet login not working: app and agency",
+      blocks: [
+        p("The login fix depends on which door you are using. The app uses a host or viewer account. The agency portal uses agency credentials. A password that works in one will not usually work in the other, and using the wrong door produces an error that looks like a wrong password."),
+        list([
+          "Confirm whether you are signing in to the app, the agency portal or MetWallet.",
+          "Check caps lock, keyboard language and trailing spaces.",
+          "Try the phone-number option if you registered with a phone.",
+          "Use the recovery flow for the correct surface, not a different one.",
+          "Clear the cache or try a private window if the page loops.",
+          "If a restriction message appears, use support; a browser change will not clear it.",
+        ]),
+        p("For a fuller walkthrough of the agency portal, including the menu, invitation cards, reports and password recovery, open the [Chamet agency login guide](/chamet-agency-login/). For app installation and sign-in, open the [download guide](/chamet-app-download/)."),
+        p("Password recovery depends on the contact method attached to the account. If you changed your phone number without updating the profile, recovery codes may go to a number you no longer control. Update contact details as soon as they change, before you need them."),
+      ],
+    },
+    {
+      id: "invitation-problems",
+      heading: "Invited member not showing in the agency dashboard",
+      blocks: [
+        p("An invitee appears in the list only after the correct link is used and the registration is complete. If a host is missing, check the Hosts List rather than the Agents List, and confirm which card the invitee used. The two lists are separate by design."),
+        steps([
+          "Confirm the invitation card used: New Hosts or New Agents.",
+          "Ask the invitee whether the registration reached the final confirmation screen.",
+          "Check the matching list in My Invitation.",
+          "Refresh after a short delay; lists are not always instant.",
+          "If the entry is still missing, collect the invitee's registered phone or email and the approximate time, then contact support.",
+        ]),
+        p("A common mistake is sending a host link to someone who wanted to become an agent, or the reverse. The registration may succeed, but the person appears in the other list. Correct the role before the invitee builds activity, because moving accounts later is not a simple switch."),
+        p("Invitation links can expire or be replaced. If an invitee used an old link from a screenshot or a forwarded message, ask them to use a fresh link from your dashboard and try again."),
+      ],
+    },
+    {
+      id: "payment-problems",
+      heading: "Payment problems: pending, failed or missing money",
+      blocks: [
+        p("Payment problems are stage problems. Money can be held in Chamet, in MetWallet or in the banking system, and each place has its own status. Before you contact anyone, identify the last screen where the amount was visible and the status attached to it."),
+        table(
+          ["What you see", "What it tells you", "What to check"],
+          [
+            ["MetWallet not linked", "The payment destination is incomplete", "Finish the wallet authorization and confirm the masked account"],
+            ["Cash Out unavailable", "A wallet requirement or minimum is unmet", "Read the balance, verification and method messages"],
+            ["Pending", "The request exists but is not finalised", "Note the time and the displayed estimate; avoid duplicates"],
+            ["Failed", "The request did not complete", "Read the reason, fix the details and retry once"],
+            ["Completed but not received", "The provider marked it done; the destination has not posted it", "Check the destination, reference and statement, then contact provider support"],
+            ["Sent to the wrong wallet", "The linked account was not the intended one", "Contact support immediately; do not send a second transfer"],
+          ],
+          "Chamet payment problems and checks",
+        ),
+        p("The [withdrawal hub](/chamet-withdrawal/) explains the four stages. Hosts should use the [host withdrawal guide](/chamet-host-withdrawal/), agencies the [agency withdrawal guide](/chamet-agency-withdrawal/), and wallet users the [MetWallet cash out guide](/metwallet-withdrawal/)."),
+        p("Keep the reference, amount, destination and timestamps. A support message with those four facts is far more actionable than a screenshot of a balance. Mask personal data before sharing anything in a group."),
+      ],
+    },
+    {
+      id: "wallet-problems",
+      heading: "MetWallet problems: verification, cash out and codes",
+      blocks: [
+        p("Wallet problems often start before the cash out. Basic Level verification may be incomplete, the payment password may be unset, or the destination account may not match the wallet holder's name. Fix those first; a cash-out request cannot succeed while a prerequisite is missing."),
+        list([
+          "Confirm you can receive codes on the wallet's registered phone or email.",
+          "Complete Basic Level or other verification the wallet requests.",
+          "Set or recover the payment password through the official flow.",
+          "Check the destination account details digit by digit.",
+          "Review the minimum, fee and exchange-rate quote before confirming.",
+          "Use the wallet's own support for wallet-side failures.",
+        ]),
+        p("A wallet support agent will not ask for your payment password or an OTP. If someone does, stop and report the message. Urgency, threats of account closure and requests for a release fee are common scam patterns."),
+        p("If a cash out is completed but the bank has not posted it, allow for banking hours and then check the statement. A bank can take time to reflect a transfer even after the provider marks it complete. If the destination was wrong, contact the wallet immediately; recovery is not guaranteed."),
+      ],
+    },
+    {
+      id: "account-safety",
+      heading: "Account safety: what never to share",
+      blocks: [
+        p("No legitimate Chamet, agency portal or MetWallet support process needs your password, OTP or payment password. Those secrets exist to protect you from other people. Anyone who asks for them is either not support or is breaking the rules."),
+        table(
+          ["Request", "Safe?", "What to do"],
+          [
+            ["Send your password to verify identity", "Never", "Refuse and report the message"],
+            ["Share an OTP to release a payment", "Never", "Close the chat; check your account and change passwords"],
+            ["Install a remote-access app", "Never", "Refuse; legitimate support does not need remote control"],
+            ["Pay a fee to a personal account", "Never", "Fees appear in the app or wallet, not in a chat"],
+            ["Send a screenshot with your full number", "Risky", "Mask personal details before sharing"],
+            ["Confirm your account name and stage", "Usually fine", "Share only what support needs to locate the issue"],
+          ],
+          "Safe and unsafe Chamet support requests",
+        ),
+        p("If you already shared something, act quickly: change the password, check the linked wallet, review recent payments and contact official support. Speed reduces the damage, and keeping the scammer's messages helps the investigation."),
+      ],
+    },
+    {
+      id: "ask-for-help",
+      heading: "How to ask for help with the right details",
+      blocks: [
+        p("A good support message is short and specific. It names the account type, the screen, the exact message and the time. It does not include passwords or codes. A screenshot with the error visible and personal data masked is often the fastest way to explain the problem."),
+        steps([
+          "State the account type: host, agency or wallet.",
+          "Name the screen and the action you were taking.",
+          "Paste the exact error message rather than a paraphrase.",
+          "Add the date and time, including the time zone.",
+          "Include the reference or transaction ID if there is one.",
+          "Attach one clear screenshot with private data masked.",
+          "List what you already tried so support does not repeat it.",
+        ]),
+        p("Avoid sending a long story before the facts. Put the stage, the error and the reference in the first two lines, then add context. Support teams handle many messages; clarity helps yours get to the right person."),
+        note("ChametApps.com is an independent guide site, not the official Chamet support desk. We can help you understand the flow, but account restrictions and payments must be handled by the relevant service."),
+      ],
+    },
+    {
+      id: "when-to-escalate",
+      heading: "When to escalate, and what to expect",
+      blocks: [
+        p("Escalate when the stated processing window has passed, when money went to the wrong destination, when an account is restricted, or when a support conversation has stalled without a reference. Do not escalate simply because a reply is slower than you hoped; repeated duplicate tickets can slow the process."),
+        p("For a payment escalation, have the reference, amount, destination, quote and statement ready. For an account escalation, have the registered contact method and any verification documents the platform requests. Send documents only through the official channel, never to an individual."),
+        p("Keep a simple log: date, channel, what you sent and what you were told. If a case is handed to another team, the log preserves the history. It also helps you notice when the same generic answer is repeated without progress."),
+        p("If a platform decision is final, a new account will not evade it. Read the reason, fix what can be fixed and follow the appeal route if one is offered. Creating duplicate accounts usually makes the situation worse."),
+      ],
+    },
+    {
+      id: "error-glossary",
+      heading: "Error message glossary for common Chamet failures",
+      blocks: [
+        p("Platforms often use short, generic messages. The same words can mean different things on different screens, so read the message together with the screen title. The table below groups the phrases readers ask about most and explains what each one usually points to."),
+        table(
+          ["Message or phrase", "Where it appears", "What it usually means"],
+          [
+            ["Invalid verification code", "Registration or login", "The code expired, was mistyped, or a newer code replaced it"],
+            ["Account already exists", "Registration", "A previous account uses that phone or email; recover it instead"],
+            ["User not found", "Login", "The identifier is not attached to an account on that surface"],
+            ["Incorrect password", "Login", "The password is wrong for that account, or the account uses a different sign-in method"],
+            ["Network error", "Any screen", "The request could not reach the service; check connection and retry"],
+            ["Too many attempts", "Login or code entry", "A cooldown is active; wait before trying again"],
+            ["Account restricted", "Login or dashboard", "A platform review or rule is applied; browser changes will not clear it"],
+            ["Wallet not bound", "Withdrawal", "The MetWallet link is missing or incomplete"],
+            ["Insufficient balance", "Withdrawal", "The eligible amount is below the minimum or includes non-withdrawable funds"],
+            ["Pending review", "Withdrawal or verification", "A human or automated check is still open"],
+          ],
+          "Chamet error messages explained",
+        ),
+        p("If the message is not in the table, copy it exactly rather than paraphrasing. A support agent can search an exact phrase; a description like “it says an error” gives them nothing to work with."),
+      ],
+    },
+    {
+      id: "five-minute-diagnosis",
+      heading: "A five-minute diagnosis you can do before contacting anyone",
+      blocks: [
+        p("Most support conversations begin with questions the reader could have answered alone. This short sequence is designed to rule out the common causes and to produce the facts a support team needs if the problem remains."),
+        steps([
+          "Write the exact stage: registration, app login, portal login, invitation, withdrawal or wallet cash out.",
+          "Screenshot the screen with the error and the account type visible.",
+          "Check the connection by opening another site or app.",
+          "Confirm you are on the right surface and the right account.",
+          "Read the smallest text on the screen, including notices under the button.",
+          "Try one controlled change: a different network, browser or device.",
+          "Record the time and what changed before contacting support.",
+        ]),
+        p("One controlled change matters. If you switch networks, clear the cache, reinstall the app and reset the password at the same time, you will not know which action fixed or worsened the issue. Change one thing, test, then decide."),
+        p("If the problem is a payment, add the reference, amount, destination and quote to the record. If it is an account restriction, add the restriction message and any case number. That record becomes the backbone of every follow-up."),
+      ],
+    },
+    {
+      id: "support-hours",
+      heading: "Language, time zone and support hours",
+      blocks: [
+        p("ChametApps.com answers WhatsApp messages in English and Hindi, generally during Indian daytime hours. The platform and wallet have their own support hours and languages, which can differ from ours. A message sent at midnight may be read the next morning, and that is normal for a small team."),
+        table(
+          ["Channel", "Best for", "Typical limitation"],
+          [
+            ["This site's WhatsApp", "Understanding a step, checking a guide, preparing a support message", "Cannot access accounts, wallets or payments"],
+            ["Chamet in-app support", "Account, verification, live-room and platform payment issues", "Response time varies; follow the in-app route"],
+            ["Agency portal Help Center", "Dashboard, invitations, reports and agency wallet binding", "Agency-specific; may require sign-in"],
+            ["MetWallet support", "Wallet verification, cash-out methods and wallet transfers", "Wallet-specific; cannot change platform balances"],
+            ["Your bank", "A posted transfer that is missing after a completed status", "Needs the reference and statement"],
+          ],
+          "Chamet support channels compared",
+        ),
+        p("When you write, say which language you prefer and include the stage in the first line. If you are sending a screenshot, mask names, phone numbers and balances that are not relevant. A clear message in one language is better than a translated message that loses the error text."),
+        p("Do not send the same issue to five channels at once. It creates duplicate tickets and inconsistent answers. Start with the channel that owns the stage, and escalate only when the stated window has passed or the case stalls."),
+      ],
+    },
+    {
+      id: "prevention",
+      heading: "A simple prevention routine",
+      blocks: [
+        p("Most urgent support requests are predictable. A verification that was never completed, a phone number that changed without an update, a wallet that was linked to the wrong account, or a payout requested before the destination was confirmed. A monthly routine prevents a surprising number of them."),
+        list([
+          "Keep the registered phone and email active and accessible.",
+          "Complete verification before you need a payout.",
+          "Review the masked wallet and bank details once a month.",
+          "Save every withdrawal reference in one note.",
+          "Update the app from the official source when an update is offered.",
+          "Review who has access to the device and the account.",
+          "Re-read the current minimum and fee notices before a large request.",
+        ]),
+        p("A five-minute check on the first day of each month is enough. It is also a good moment to download statements and reconcile payments, which makes tax filing and dispute resolution much easier later."),
+        p("If something does go wrong, return to the stage table at the top of this page. Naming the stage is still the fastest way to get from a vague problem to a specific fix."),
+      ],
+    },
+    {
+      id: "account-recovery",
+      heading: "Recovering access when the phone or email is lost",
+      blocks: [
+        p("Account recovery is the hardest support case because it starts with a broken proof of identity. If you lost the registered number, changed your email or cannot receive codes, the normal reset flow will not work. You need the platform's recovery route and as much account evidence as you can gather."),
+        table(
+          ["What is lost", "First step", "Useful evidence"],
+          [
+            ["Phone number", "Contact platform support from another channel", "Account name, approximate registration date, past payments"],
+            ["Email access", "Use the provider's own recovery first", "Recovery codes, device history"],
+            ["Password only", "Use the standard reset flow", "Registered phone or email"],
+            ["Both phone and password", "Formal account recovery", "Identity and activity records"],
+            ["Wallet access", "Wallet provider's recovery flow", "Verification details and linked bank"],
+          ],
+          "Account recovery routes",
+        ),
+        p("Gather evidence before you open the case: screenshots of the profile, a payment reference, the approximate join date and the names of people in your team. Evidence that only the owner would know is more persuasive than a long explanation."),
+        p("Do not pay a “recovery agent”. Legitimate recovery does not require a fee to an individual, and a stranger who promises access is more likely to take the account than return it. Work through the platform's official channel and keep every message."),
+      ],
+    },
+    {
+      id: "avoid-worsening",
+      heading: "Mistakes that make a support issue worse",
+      blocks: [
+        p("When something breaks, the instinct is to try everything at once. That usually creates new problems: duplicate accounts, locked verification, lost references and conflicting stories. The list below is drawn from the mistakes readers report most often."),
+        table(
+          ["Mistake", "Why it hurts", "Better move"],
+          [
+            ["Creating a second account", "Splits history and triggers duplicate review", "Recover the original account"],
+            ["Reinstalling repeatedly", "Triggers cooldowns and loses local data", "Read the error and try one change"],
+            ["Sharing an OTP", "Gives a stranger access", "Never share a code"],
+            ["Paying a release fee", "Money is gone and the request is unchanged", "Use official support only"],
+            ["Sending ten messages", "Creates duplicate tickets", "Wait for the stated window"],
+            ["Changing wallet mid-request", "Confuses the destination", "Resolve the request first"],
+          ],
+          "Support mistakes to avoid",
+        ),
+        p("One controlled change at a time is the rule. Change the network, test, then stop. Change the browser, test, then stop. That way you know what worked and can tell support exactly what you did."),
+        p("Keep a simple log: time, action, result. A log turns a frustrating week into a short timeline that a support agent can follow. It also stops you from repeating a step that already failed."),
+      ],
+    },
+    {
+      id: "when-to-wait",
+      heading: "When waiting is the right answer",
+      blocks: [
+        p("Not every problem needs action. A processing request, a verification review and a payout in transit are designed to take time. Refreshing constantly, cancelling and resubmitting, or sending repeated messages can reset a queue and make the wait longer."),
+        p("Set a reminder for the end of the stated window, then do something else. If the status has not changed by the reminder, contact support with the reference. Waiting with a deadline is different from waiting indefinitely."),
+        p("Finally, write down the resolution once it is fixed. The exact setting, screen or document that solved the problem is worth keeping, because platform flows repeat. A short personal note is often faster than searching the same issue again months later, and it turns one support case into knowledge you keep."),
+      ],
+    },
+  ],
+  faqs: [
+    { q: "How do I contact Chamet support?", a: "Use the support or help option inside the Chamet app, the agency portal's Help Center or the official Chamet website. ChametApps.com is an independent guide and cannot access your account or payments." },
+    { q: "Why is my Chamet verification code not arriving?", a: "Check the country code, signal, spam folder and whether the number on the account is current. Wait for the resend cooldown before trying again. If it still fails, use the platform's support route." },
+    { q: "I forgot which account type I registered. How do I check?", a: "Try signing in to the app and the agency portal separately. The surface that recognizes your credentials identifies the account type. Do not create a new account before checking both." },
+    { q: "Why is my invited host not in the list?", a: "Confirm the host used the New Hosts link, finished registration and appears in the Hosts List rather than the Agents List. If the entry is still missing, contact support with the invitee's details and the time." },
+    { q: "My withdrawal is pending. What should I do?", a: "Note the time, read the estimate and avoid submitting duplicate requests. If the window passes, contact support with the reference, amount, destination and screenshots. Pending is not the same as failed." },
+    { q: "My payment shows completed but I received nothing. Why?", a: "Completed usually means the provider marked the transfer successful, but the destination bank may still be posting it, or the destination may be wrong. Check the account and statement, then contact the provider with the reference." },
+    { q: "Why can I not cash out from MetWallet?", a: "A wallet requirement is probably incomplete, such as verification, a payment password or a minimum balance. Read the message in the wallet and complete the requested step. The wallet's support handles account-specific blocks." },
+    { q: "Is it safe to share my OTP with support?", a: "No. No legitimate support process needs your OTP, password or payment password. If someone asks, refuse, keep the messages and contact official support." },
+    { q: "Can ChametApps.com fix my account or release my payment?", a: "No. We are an independent guide site and cannot access your account, wallet or transactions. We can explain the steps and help you prepare the details for the official support team." },
+    { q: "How long should I wait before escalating?", a: "Wait until the processing estimate shown for your request has passed. For account restrictions, follow the stated review time. Escalate sooner if money went to a wrong destination or you suspect unauthorized access." },
+    { q: "What details should I include in a support message?", a: "Account type, screen, exact error, date and time, reference or transaction ID, and one masked screenshot. List what you already tried. Never include passwords or codes." },
+    { q: "Can I create a new account to bypass a restriction?", a: "No. Duplicate accounts can put both accounts at risk and do not resolve the original decision. Use the appeal or support route and fix the underlying issue." },
+  ],
+};

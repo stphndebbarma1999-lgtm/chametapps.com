@@ -7,8 +7,8 @@ import { Logo } from "./Logo";
 
 const NAV = [
   { href: "/", label: "Home" },
-  { href: "/agency.html", label: "Agency" },
-  { href: "/host.html", label: "Host" },
+  { href: "/chamet-agency-registration/", label: "Agency" },
+  { href: "/chamet-host-registration/", label: "Host" },
   { href: "/chamet-agency-login/", label: "Dashboard" },
 ] as const;
 
@@ -114,6 +114,11 @@ export function Header() {
             <li>
               <Link href="/chamet-help/" className={linkCls(isActive("/chamet-help/"))} aria-current={isActive("/chamet-help/") ? "page" : undefined}>
                 Help
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog/" className={linkCls(pathname.startsWith("/blog"))} aria-current={pathname.startsWith("/blog") ? "page" : undefined}>
+                Blog
               </Link>
             </li>
           </ul>

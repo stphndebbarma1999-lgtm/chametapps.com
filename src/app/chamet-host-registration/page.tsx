@@ -4,12 +4,18 @@ import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
+import { JsonLd } from "@/components/JsonLd";
+import { LongForm } from "@/components/LongForm";
 import { NextSteps } from "@/components/NextSteps";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { SourcesReview } from "@/components/SourcesReview";
 import { Section } from "@/components/Section";
+import { Toc } from "@/components/Toc";
 import { WaveDivider } from "@/components/WaveDivider";
+import { hostContent } from "@/content/pages/host";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
+import { howToSchema } from "@/lib/seo";
 import { LINKS, SOURCES } from "@/lib/site";
 
 export const metadata = pageMetadata("host");
@@ -35,14 +41,7 @@ const FAQ: FaqItem[] = [
       </p>
     ),
   },
-  {
-    q: "Why does my screen look different?",
-    text: "Menu names and available steps can vary with the app version and account. Follow the current instruction on your screen; the guide helps you recognize the overall process.",
-  },
-  {
-    q: "Is host salary a fixed monthly amount?",
-    text: "This guide uses “earnings” because the balance depends on eligible activity. A screenshot balance is an example, not a monthly salary promise.",
-  },
+  ...hostContent.faqs.map((f) => ({ q: f.q, text: f.a })),
 ];
 
 export default function HostPage() {
@@ -65,20 +64,38 @@ export default function HostPage() {
       </Hero>
 
       <WaveDivider />
-      <Section tone="surface" labelledBy="prepare">
-        <div className="prose-site">
-          <h2 id="prepare" data-reveal>
-            Prepare Your Account Details
-          </h2>
-          <p>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          ...howToSchema(
+            "How to create a Chamet host account",
+            "Register a Chamet host account, install the app, verify your email and complete the language and profile steps before going live.",
+            "/chamet-host-registration/",
+            [
+              { name: "Register with an email or phone", text: "Open the host registration link, enter your details and complete the image check." },
+              { name: "Verify the code and install the app", text: "Enter the code sent to your email, finish registration and download the Chamet app." },
+              { name: "Sign in to Chamet", text: "Open the app and sign in with the same email or phone method used during registration." },
+              { name: "Choose your language", text: "Select the language you speak best and confirm it." },
+              { name: "Complete face verification if requested", text: "Position your face inside the frame and follow the on-screen prompts." },
+              { name: "Finish your profile", text: "Add a photo, nickname, second language, tags and a short self-introduction, then open the live screen when ready." },
+            ],
+          ),
+        }}
+      />
+      <Section tone="surface" labelledBy="overview">
+        <QuickAnswer answer={hostContent.quickAnswer} />
+        <div className="mt-6">
+          <Toc sections={hostContent.sections} />
+        </div>
+        <div className="prose-site mt-8 max-w-3xl">
+          <p data-reveal>
             Chamet&apos;s published host guidance is for adults aged 18 or older. Prepare a smartphone with a working camera and microphone, a stable internet
-            connection, and access to the phone number or email used for registration. Complete the setup and verification requirements shown in your account (source:{" "}
+            connection, access to the phone number or email used for registration, a suitable profile photo and a short introduction (source:{" "}
             <a href={SOURCES.hostTraining} target="_blank" rel="noopener">
               Chamet host training page
             </a>
             ).
           </p>
-          <p>Have a suitable profile photo and a short introduction ready. Any extra conditions set by an individual agency are separate from Chamet&apos;s general host eligibility.</p>
           <ImageNote />
         </div>
       </Section>
@@ -88,6 +105,7 @@ export default function HostPage() {
         <GuideBlock
           id="register"
           heading="Register and Sign In"
+          stepAnchors
           carouselLabel="Host registration and sign-in screenshots"
           images={guideImages("create-host", 1, 4)}
           steps={[
@@ -113,6 +131,7 @@ export default function HostPage() {
           id="profile"
           heading="Complete Your Profile"
           start={5}
+          stepAnchors
           intro={<p>Choose your preferred language. Complete face verification if requested, then open My Profile to add your photo, nickname, languages, tags and introduction.</p>}
           carouselLabel="Host profile setup screenshots"
           images={guideImages("create-host", 5, 14)}
@@ -138,37 +157,11 @@ export default function HostPage() {
               When you are ready, open the menu with the <strong>+</strong> button and tap <strong>Live</strong> to open the live screen.
             </>,
           ]}
-          after={
-            <>
-              <p>
-                A useful introduction can be simple: “I enjoy music and everyday conversation. I speak Hindi and English.” Write your own description using the languages
-                and interests that apply to you.
-              </p>
-              <p>
-                <strong>Expected result:</strong> you can access your account and review your saved profile. Check the app for the features currently available to you.
-              </p>
-              <div className="flex flex-wrap gap-3 pt-2">{REGISTER}</div>
-            </>
-          }
         />
       </Section>
 
-      <Section labelledBy="beans">
-        <div className="card prose-site max-w-3xl" data-reveal>
-          <h2 id="beans" className="text-2xl!">
-            Chamet Beans to Dollars
-          </h2>
-          <p>
-            Chamet&apos;s published host earnings page lists 10,000 Beans as US$1 (source:{" "}
-            <a href={SOURCES.hostEarnings} target="_blank" rel="noopener">
-              Chamet host earnings page
-            </a>
-            ). A simple conversion is Beans divided by 10,000. This dollar value is not a guaranteed net bank receipt.
-          </p>
-          <p>
-            For India, check the exchange rate, fee and final payout quote displayed by your withdrawal provider. Do not assume a fixed rupee value for every dollar.
-          </p>
-        </div>
+      <Section labelledBy="details">
+        <LongForm sections={hostContent.sections} />
         <SourcesReview
           sources={[
             { href: SOURCES.hostTraining, label: "Chamet host training", usedFor: "adult (18+) host guidance and device requirements" },
@@ -193,7 +186,7 @@ export default function HostPage() {
           {REGISTER}
         </div>
         <p className="mt-4 text-sm">
-          Want to recruit a team instead? See <Link href="/agency.html">Chamet agency registration</Link>.
+          Want to recruit a team instead? See <Link href="/chamet-agency-registration/">Chamet agency registration</Link>.
         </p>
       </Section>
     </>

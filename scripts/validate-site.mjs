@@ -44,7 +44,7 @@ async function get(path, redirect = "manual") {
 
 const sitemapXml = await (await get("/sitemap.xml")).text();
 const pages = attrAll(sitemapXml, /<loc>([^<]+)<\/loc>/g).map((u) => u.replace(SITE, ""));
-if (pages.length !== 15) warn(`sitemap has ${pages.length} URLs (expected 15)`);
+if (pages.length !== 27) warn(`sitemap has ${pages.length} URLs (expected 27)`);
 
 const titles = new Map();
 const descs = new Map();
@@ -85,9 +85,11 @@ for (const path of pages) {
   // Registration role matching
   const hasAgency = html.includes(links.agencyRegistration.replace(/&/g, "&amp;")) || html.includes(links.agencyRegistration);
   const hasHost = html.includes(links.hostRegistration.replace(/&/g, "&amp;")) || html.includes(links.hostRegistration);
-  if (path === "/agency.html" && (!hasAgency || hasHost)) warn(`/agency.html must link only the agency registration endpoint`);
-  if (path === "/host.html" && (!hasHost || hasAgency)) warn(`/host.html must link only the host registration endpoint`);
-  if (path !== "/agency.html" && path !== "/host.html" && (hasAgency || hasHost)) warn(`${path}: registration endpoint outside its role page`);
+  const agencyPath = "/chamet-agency-registration/";
+  const hostPath = "/chamet-host-registration/";
+  if (path === agencyPath && (!hasAgency || hasHost)) warn(`${agencyPath} must link only the agency registration endpoint`);
+  if (path === hostPath && (!hasHost || hasAgency)) warn(`${hostPath} must link only the host registration endpoint`);
+  if (path !== agencyPath && path !== hostPath && (hasAgency || hasHost)) warn(`${path}: registration endpoint outside its role page`);
 
   // JSON-LD
   const blocks = attrAll(html, /<script type="application\/ld\+json">(.*?)<\/script>/gs);
@@ -114,7 +116,8 @@ for (const path of pages) {
           warn(`${path}: FAQ answer for "${q.name}" differs from visible text\n    schema:  ${norm(q.acceptedAnswer.text)}\n    visible: ${shown}`);
       }
     }
-    if (/Review|AggregateRating|LocalBusiness/.test(JSON.stringify(data))) warn(`${path}: forbidden schema type`);
+    // Match schema types only, not prose that happens to contain words like "review".
+    if (/"@type"\s*:\s*"(Review|AggregateRating|LocalBusiness)"/.test(JSON.stringify(data))) warn(`${path}: forbidden schema type`);
   }
 }
 

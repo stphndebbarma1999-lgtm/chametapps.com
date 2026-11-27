@@ -4,11 +4,17 @@ import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
+import { JsonLd } from "@/components/JsonLd";
+import { LongForm } from "@/components/LongForm";
 import { NextSteps } from "@/components/NextSteps";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { Section } from "@/components/Section";
+import { Toc } from "@/components/Toc";
 import { WaveDivider } from "@/components/WaveDivider";
+import { agencyContent } from "@/content/pages/agency";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
+import { howToSchema } from "@/lib/seo";
 import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("agency");
@@ -23,32 +29,15 @@ const REGISTER = (
 const FAQ: FaqItem[] = [
   {
     q: "Is agency registration the same as downloading Chamet?",
-    text: "No. Agency registration creates access to the management journey shown here. Download instructions for the Chamet app are provided separately in our app download guide.",
+    text: "No. Agency registration creates access to the management dashboard shown here. The Chamet app is a separate download for hosts and viewers, explained in our app download guide.",
     a: (
       <p>
-        No. Agency registration creates access to the management journey shown here. Download instructions for the Chamet app are provided separately in our{" "}
+        No. Agency registration creates access to the management dashboard shown here. The Chamet app is a separate download for hosts and viewers, explained in our{" "}
         <Link href="/chamet-app-download/">app download guide</Link>.
       </p>
     ),
   },
-  {
-    q: "Where do I find my agency ID?",
-    text: "Open My Profile after signing in. Check the identification fields shown for your agency account.",
-  },
-  {
-    q: "I did not receive the code. What should I check?",
-    text: "Check the number and country code, wait for the resend option and request a fresh code when allowed. If the problem continues, use the available support route rather than repeatedly creating new accounts.",
-  },
-  {
-    q: "What should I do after registration?",
-    text: "Learn the dashboard controls, review your profile and follow the agency MetWallet setup guide.",
-    a: (
-      <p>
-        Learn the <Link href="/chamet-agency-login/">dashboard controls</Link>, review your profile and follow the{" "}
-        <Link href="/chamet-agency-withdrawal/">agency MetWallet setup guide</Link>.
-      </p>
-    ),
-  },
+  ...agencyContent.faqs.map((f) => ({ q: f.q, text: f.a })),
 ];
 
 export default function AgencyPage() {
@@ -70,14 +59,34 @@ export default function AgencyPage() {
       </Hero>
 
       <WaveDivider />
-      <Section tone="surface" labelledBy="before">
-        <div className="prose-site">
-          <h2 id="before" data-reveal>
-            Before You Start
-          </h2>
-          <p>
-            Prepare an active phone number, access to its verification messages and the contact details you want to use for agency communication. Choose a password
-            you can keep secure.
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          ...howToSchema(
+            "How to create a Chamet agency account",
+            "Register a Chamet agency account with a phone number, verification code and password, then find the host and agent invitation links.",
+            "/chamet-agency-registration/",
+            [
+              { name: "Open agency registration", text: "Open the agency invitation link, select the country code and enter your phone number." },
+              { name: "Complete the security check", text: "Complete the security check shown on screen and request the verification code." },
+              { name: "Create a password", text: "Enter the code, create and confirm a password, then select Register." },
+              { name: "Sign in to the dashboard", text: "Follow the login instructions and enter your new agency account." },
+              { name: "Complete contact details", text: "Fill in the requested phone, WhatsApp and contact fields and review the visibility notice before saving." },
+              { name: "Find invitation links", text: "Return to the dashboard home and locate the separate New Hosts and New Agents invitation cards." },
+            ],
+          ),
+        }}
+      />
+      <Section tone="surface" labelledBy="overview">
+        <QuickAnswer answer={agencyContent.quickAnswer} />
+        <div className="mt-6">
+          <Toc sections={agencyContent.sections} />
+        </div>
+        <div className="prose-site mt-8 max-w-3xl">
+          <p data-reveal>
+            This guide follows the six registration screens shown in our walkthrough. Prepare an active phone number, access to its verification messages,
+            your agency contact details and a password you can keep secure. The detailed sections below explain each screen, the invitation cards and the
+            commission information you see after login.
           </p>
           <ImageNote />
         </div>
@@ -88,6 +97,7 @@ export default function AgencyPage() {
         <GuideBlock
           id="how-to"
           heading="How to Create Your Agency"
+          stepAnchors
           carouselLabel="Agency registration screenshots"
           images={guideImages("create-agency")}
           steps={[
@@ -119,38 +129,15 @@ export default function AgencyPage() {
         />
       </Section>
 
-      <Section tone="surface" labelledBy="invite">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="card prose-site" data-reveal>
-            <h2 id="invite" className="text-2xl!">
-              Invite the Right Type of Member
-            </h2>
-            <p>
-              Share the <strong>New Hosts</strong> link with a prospective host and the <strong>New Agents</strong> link with a prospective agent. Explain which account
-              they are creating before sending the link. After registration, use the corresponding invitee list to check whether the person appears.
-            </p>
-          </div>
-          <div className="card prose-site" data-reveal>
-            <h2 id="commission" className="text-2xl!">
-              Understand Your Commission Information
-            </h2>
-            <p>
-              Check <strong>My Commission Ratio</strong> in the dashboard. The displayed rate and progress relate to your account. Team revenue, calculated commission
-              and available payment are different figures.
-            </p>
-            <p>
-              For example, if a rule applicable to your account pays 10% on $500 of eligible revenue, the arithmetic is $50. This example does not establish your rate, a
-              minimum payout or a guaranteed income. Use the dashboard&apos;s explanation for the actual calculation.
-            </p>
-          </div>
-        </div>
+      <Section tone="surface" labelledBy="details">
+        <LongForm sections={agencyContent.sections} />
       </Section>
 
+      <WaveDivider />
       <Section labelledBy="faq">
         <Faq id="faq" heading="Agency Registration Questions" items={FAQ} />
       </Section>
 
-      <WaveDivider />
       <Section tone="surface">
         <NextSteps
           items={[

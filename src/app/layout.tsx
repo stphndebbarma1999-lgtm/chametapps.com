@@ -8,7 +8,8 @@ import { ImageGuard } from "@/components/ImageGuard";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteEffects } from "@/components/SiteEffects";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
-import { IS_INDEXABLE, LINKS, SITE, absoluteUrl } from "@/lib/site";
+import { IS_INDEXABLE, SITE } from "@/lib/site";
+import { siteGraph } from "@/lib/seo";
 import "./globals.css";
 
 const inter = localFont({
@@ -18,12 +19,19 @@ const inter = localFont({
   weight: "100 900",
 });
 
+// Google Search Console HTML-tag verification token. Env var wins so previews can override.
+const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION || "V92Wpr7UKAM0hDzSY1RcO5GoFeyH74Ptqz6IG_6sHP4";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   applicationName: SITE.name,
-  title: { default: SITE.name, template: `%s | ${SITE.name}` },
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  category: "Chamet agency and host guidance",
+  title: { default: "Chamet Agency & Host Registration in India | ChametApps", template: `%s | ${SITE.name}` },
   robots: IS_INDEXABLE ? { index: true, follow: true } : { index: false, follow: false },
-  verification: process.env.NEXT_PUBLIC_GSC_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } : undefined,
+  verification: { google: GSC_VERIFICATION },
   formatDetection: { telephone: false },
 };
 
@@ -55,39 +63,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteEffects />
         <ImageGuard />
         <Analytics />
-        <JsonLd
-          data={{
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Organization",
-                "@id": absoluteUrl("/#organization"),
-                name: SITE.name,
-                url: absoluteUrl("/"),
-                logo: absoluteUrl("/images/brand/icon-512.png"),
-                description: "Certified Chamet agency website (owner-stated) providing Chamet agency and host registration guidance. Not the official Chamet platform.",
-                contactPoint: [
-                  {
-                    "@type": "ContactPoint",
-                    contactType: "customer support",
-                    telephone: "+91-9233262700",
-                    url: LINKS.whatsappChat,
-                    availableLanguage: ["English"],
-                  },
-                ],
-                sameAs: [LINKS.whatsappChannel],
-              },
-              {
-                "@type": "WebSite",
-                "@id": absoluteUrl("/#website"),
-                name: SITE.name,
-                url: absoluteUrl("/"),
-                inLanguage: "en-IN",
-                publisher: { "@id": absoluteUrl("/#organization") },
-              },
-            ],
-          }}
-        />
+        <JsonLd data={siteGraph()} />
       </body>
     </html>
   );

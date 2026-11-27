@@ -6,8 +6,8 @@ import { WA, whatsappHref } from "@/lib/site";
 import { WhatsAppIcon } from "./Buttons";
 
 const MESSAGES: Record<string, string> = {
-  "/agency.html": WA.agency,
-  "/host.html": WA.host,
+  "/chamet-agency-registration/": WA.agency,
+  "/chamet-host-registration/": WA.host,
   "/chamet-agency-login/": WA.dashboard,
   "/chamet-withdrawal/": WA.withdrawal,
   "/chamet-host-withdrawal/": WA.hostWithdrawal,

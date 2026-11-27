@@ -1,16 +1,25 @@
 import { Banner } from "@/components/Banner";
+import { Faq, type FaqItem } from "@/components/Faq";
 import { GuideBlock } from "@/components/GuideBlock";
 import { Hero } from "@/components/Hero";
 import { ImageNote } from "@/components/ImageNote";
+import { JsonLd } from "@/components/JsonLd";
+import { LongForm } from "@/components/LongForm";
 import { NextSteps } from "@/components/NextSteps";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { Section } from "@/components/Section";
 import { SourcesReview } from "@/components/SourcesReview";
+import { Toc } from "@/components/Toc";
 import { WaveDivider } from "@/components/WaveDivider";
+import { hostWithdrawalContent } from "@/content/pages/host-withdrawal";
 import { guideImages } from "@/lib/guides";
 import { pageMetadata } from "@/lib/routes";
+import { howToSchema } from "@/lib/seo";
 import { SOURCES } from "@/lib/site";
 
 export const metadata = pageMetadata("hostWithdrawal");
+
+const FAQ: FaqItem[] = hostWithdrawalContent.faqs.map((f) => ({ q: f.q, text: f.a }));
 
 export default function HostWithdrawalPage() {
   return (
@@ -23,8 +32,29 @@ export default function HostWithdrawalPage() {
       </Hero>
 
       <WaveDivider />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          ...howToSchema(
+            "How to withdraw money from the Chamet app as a host",
+            "Open My Earning, review the withdrawal conditions, link MetWallet and submit an eligible host withdrawal request.",
+            "/chamet-host-withdrawal/",
+            [
+              { name: "Open My Earning", text: "Tap the profile icon in the Chamet app and select My Earning." },
+              { name: "Start the withdrawal", text: "Tap Withdraw beside your withdrawable money." },
+              { name: "Review the conditions", text: "Check the phone, face-verification and MetWallet conditions shown on the withdrawal page." },
+              { name: "Link MetWallet", text: "Tap Go to MetWallet, sign in, enter the verification code and authorise the correct account." },
+              { name: "Confirm the request", text: "Return to Chamet, confirm MetWallet is linked and tap Withdraw to follow the remaining prompts." },
+            ],
+          ),
+        }}
+      />
       <Section tone="surface" labelledBy="overview">
-        <div className="prose-site">
+        <QuickAnswer answer={hostWithdrawalContent.quickAnswer} />
+        <div className="mt-6">
+          <Toc sections={hostWithdrawalContent.sections} />
+        </div>
+        <div className="prose-site mt-8">
           <h2 id="overview" data-reveal>
             The Host Withdrawal Journey
           </h2>
@@ -33,19 +63,6 @@ export default function HostWithdrawalPage() {
             their own 1–5 numbering because the same wallet steps are used in other guides.
           </p>
           <ImageNote />
-        </div>
-        <div className="card prose-site mt-8 max-w-3xl" data-reveal>
-          <h2 id="minimum" className="text-2xl!">
-            What is the minimum Chamet host withdrawal?
-          </h2>
-          <p>
-            Chamet currently publishes a US$10 minimum for withdrawing an eligible host balance to MetWallet (source:{" "}
-            <a href={SOURCES.hostEarnings} target="_blank" rel="noopener">
-              Chamet host earnings page
-            </a>
-            ). Cashing out from MetWallet to a bank account or e-wallet is a separate stage with its own method-specific conditions. Check the current requirements shown
-            in your account before submitting.
-          </p>
         </div>
       </Section>
       <WaveDivider from="#180725" flip />
@@ -120,22 +137,18 @@ export default function HostWithdrawalPage() {
         />
       </Section>
 
-      <Section tone="surface" labelledBy="no-button">
-        <div className="card prose-site max-w-3xl" data-reveal>
-          <h2 id="no-button" className="text-2xl!">
-            No Withdraw Button or an Incomplete Condition?
-          </h2>
-          <p>
-            Check the balance actually available for withdrawal, complete the conditions listed on the screen, and read any error message. Do not use an example
-            screenshot&apos;s balance to judge your own eligibility.
-          </p>
-        </div>
+      <Section tone="surface" labelledBy="details">
+        <LongForm sections={hostWithdrawalContent.sections} />
         <SourcesReview
-          sources={[{ href: SOURCES.hostEarnings, label: "Chamet host earnings", usedFor: "the US$10 minimum for withdrawing an eligible host balance to MetWallet" }]}
+          sources={[{ href: SOURCES.hostEarnings, label: "Chamet host earnings", usedFor: "the US$10 minimum for withdrawing an eligible host balance to MetWallet and the 10,000 Beans = US$1 rule" }]}
         />
       </Section>
 
-      <Section labelledBy="help-cta">
+      <Section labelledBy="faq">
+        <Faq id="faq" heading="Host Withdrawal Questions" items={FAQ} />
+      </Section>
+
+      <Section tone="surface" labelledBy="help-cta">
         <Banner kind="support" />
         <div className="mt-10">
           <NextSteps

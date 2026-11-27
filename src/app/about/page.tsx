@@ -1,12 +1,18 @@
-import Link from "next/link";
-import { ButtonLink } from "@/components/Buttons";
+import { ButtonLink, ExternalButton } from "@/components/Buttons";
+import { Faq, type FaqItem } from "@/components/Faq";
 import { Hero } from "@/components/Hero";
+import { LongForm } from "@/components/LongForm";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { Section } from "@/components/Section";
+import { Toc } from "@/components/Toc";
 import { WaveDivider } from "@/components/WaveDivider";
+import { aboutContent } from "@/content/pages/about";
 import { pageMetadata } from "@/lib/routes";
 import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("about");
+
+const FAQ: FaqItem[] = aboutContent.faqs.map((f) => ({ q: f.q, text: f.a }));
 
 export default function AboutPage() {
   return (
@@ -20,7 +26,11 @@ export default function AboutPage() {
 
       <WaveDivider />
       <Section tone="surface" labelledBy="what-we-do" deco={[{ top: "10%", right: "3%", size: 100, mobile: true }, { bottom: "10%", left: "2%", size: 80 }]}>
-        <div className="prose-site max-w-3xl">
+        <QuickAnswer answer={aboutContent.quickAnswer} />
+        <div className="mt-6">
+          <Toc sections={aboutContent.sections} />
+        </div>
+        <div className="prose-site mt-8 max-w-3xl">
           <h2 id="what-we-do" data-reveal>
             What We Do
           </h2>
@@ -32,25 +42,15 @@ export default function AboutPage() {
             The “certified Chamet agency” description is provided by the site owner. We do not display certificate numbers or official badges, and we do not operate the
             Chamet platform.
           </p>
-          <ul className="list-disc space-y-1 pl-6">
-            <li>
-              <Link href="/agency.html">Agency registration</Link> and <Link href="/host.html">host registration</Link> walkthroughs
-            </li>
-            <li>
-              The <Link href="/chamet-agency-login/">agency login and dashboard guide</Link>
-            </li>
-            <li>
-              <Link href="/chamet-withdrawal/">Withdrawal guides</Link> for hosts, agencies and MetWallet cash out
-            </li>
-            <li>
-              <Link href="/chamet-help/">Help tables</Link> for login, registration and payment problems
-            </li>
-          </ul>
         </div>
       </Section>
       <WaveDivider from="#180725" flip />
 
-      <Section labelledBy="relationship">
+      <Section labelledBy="details">
+        <LongForm sections={aboutContent.sections} />
+      </Section>
+
+      <Section tone="surface" labelledBy="relationship">
         <div className="card prose-site max-w-3xl" data-reveal>
           <h2 id="relationship" className="text-2xl!">
             Our Relationship With Chamet
@@ -79,7 +79,14 @@ export default function AboutPage() {
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/contact/">Contact ChametApps.com</ButtonLink>
+          <ExternalButton href={LINKS.whatsapp} track="whatsapp_about">
+            Chat on WhatsApp
+          </ExternalButton>
         </div>
+      </Section>
+
+      <Section labelledBy="faq">
+        <Faq id="faq" heading="About ChametApps.com Questions" items={FAQ} />
       </Section>
     </>
   );

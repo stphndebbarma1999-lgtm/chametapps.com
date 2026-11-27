@@ -14,6 +14,7 @@ export function GuideBlock({
   intro,
   steps,
   start = 1,
+  stepAnchors = false,
   images,
   carouselLabel,
   after,
@@ -24,6 +25,7 @@ export function GuideBlock({
   intro?: ReactNode;
   steps: ReactNode[];
   start?: number;
+  stepAnchors?: boolean;
   images: GuideImage[];
   carouselLabel: string;
   after?: ReactNode;
@@ -44,7 +46,9 @@ export function GuideBlock({
           {p.steps.length > 0 && (
             <ol className="steps" start={p.first} style={{ ["--start" as string]: p.first - 1 }} data-reveal-stagger>
               {p.steps.map((s, i) => (
-                <li key={i}>{s}</li>
+                <li key={i} id={stepAnchors ? `step-${p.first + i}` : undefined}>
+                  {s}
+                </li>
               ))}
             </ol>
           )}

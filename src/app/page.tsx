@@ -3,59 +3,27 @@ import { Banner } from "@/components/Banner";
 import { ButtonLink, ExternalButton } from "@/components/Buttons";
 import { Faq, type FaqItem } from "@/components/Faq";
 import { Hero } from "@/components/Hero";
+import { LongForm } from "@/components/LongForm";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { Section, SectionHeading } from "@/components/Section";
+import { Toc } from "@/components/Toc";
 import { WaveDivider } from "@/components/WaveDivider";
+import { homeContent } from "@/content/pages/home";
 import { pageMetadata } from "@/lib/routes";
 import { LINKS } from "@/lib/site";
 
 export const metadata = pageMetadata("home");
 
 const GUIDES = [
-  { href: "/agency.html", title: "Create an agency", text: "Every step from registration to your host and agent invitation links." },
-  { href: "/host.html", title: "Set up a host account", text: "Registration, sign-in, verification and profile preparation, step by step." },
+  { href: "/chamet-agency-registration/", title: "Create an agency", text: "Six illustrated steps from phone verification to your host and agent invitation links." },
+  { href: "/chamet-host-registration/", title: "Set up a host account", text: "Registration, sign-in, verification and profile preparation, step by step." },
   { href: "/chamet-agency-login/", title: "Use the agency dashboard", text: "Sign in, find your invitation links and learn what each menu does." },
   { href: "/chamet-agency-withdrawal/", title: "Prepare agency payments", text: "Connect MetWallet from My Profile in your agency dashboard." },
   { href: "/chamet-host-withdrawal/", title: "Withdraw host earnings", text: "Open My Earning, check the conditions and complete the wallet-linking steps." },
   { href: "/metwallet-withdrawal/", title: "Cash out from MetWallet", text: "Add a payment method, review the amount and fee, and confirm your request." },
 ];
 
-const STAGES = [
-  { t: "Account linked", d: "The wallet connection is present." },
-  { t: "Balance available", d: "Your account shows funds that can be withdrawn." },
-  { t: "Request submitted", d: "A withdrawal has been sent for processing." },
-  { t: "Money received", d: "The destination account confirms the credit." },
-];
-
-const FAQ: FaqItem[] = [
-  {
-    q: "Should I register as a host or an agent?",
-    text: "Choose host registration to create your personal profile. Choose agency registration if you want to recruit and support a team. The two buttons lead to different registration journeys.",
-    a: (
-      <p>
-        Choose <Link href="/host.html">host registration</Link> to create your personal profile. Choose <Link href="/agency.html">agency registration</Link> if you want to
-        recruit and support a team. The two buttons lead to different registration journeys.
-      </p>
-    ),
-  },
-  {
-    q: "Where is Chamet agency login?",
-    text: `The agency portal is ${LINKS.agencyDashboardLabel}. Our agency login and dashboard guide explains the sign-in screen and the menu you see afterward.`,
-    a: (
-      <p>
-        The agency portal is <strong>{LINKS.agencyDashboardLabel}</strong>. Our <Link href="/chamet-agency-login/">agency login and dashboard guide</Link> explains the
-        sign-in screen and the menu you see afterward.
-      </p>
-    ),
-  },
-  {
-    q: "Can I get help before registering?",
-    text: "Yes. Message ChametApps.com on WhatsApp and tell us whether you want to join as a host or an agency.",
-  },
-  {
-    q: "Can the agency promise a fixed income?",
-    text: "No. Account activity and applicable rules determine earnings. A commission percentage or example balance is not a guaranteed salary.",
-  },
-];
+const FAQ: FaqItem[] = homeContent.faqs.map((f) => ({ q: f.q, text: f.a }));
 
 export default function HomePage() {
   return (
@@ -67,8 +35,8 @@ export default function HomePage() {
         title="Chamet Agency — Join as an Agency or Host"
         actions={
           <>
-            <ButtonLink href="/agency.html">Join as Agency</ButtonLink>
-            <ButtonLink href="/host.html" variant="secondary">
+            <ButtonLink href="/chamet-agency-registration/">Join as Agency</ButtonLink>
+            <ButtonLink href="/chamet-host-registration/" variant="secondary">
               Join as Host
             </ButtonLink>
           </>
@@ -96,7 +64,7 @@ export default function HomePage() {
               commission information available to your account.
             </p>
             <div className="mt-5">
-              <ButtonLink href="/agency.html">Create Your Agency</ButtonLink>
+              <ButtonLink href="/chamet-agency-registration/">Create Your Agency</ButtonLink>
             </div>
           </article>
           <article className="card flex flex-col">
@@ -105,46 +73,19 @@ export default function HomePage() {
               Create your personal account and prepare your profile. Follow our illustrated guide for registration, sign-in, language selection and profile setup.
             </p>
             <div className="mt-5">
-              <ButtonLink href="/host.html">Create Your Host Account</ButtonLink>
+              <ButtonLink href="/chamet-host-registration/">Create Your Host Account</ButtonLink>
             </div>
           </article>
         </div>
       </Section>
       <WaveDivider from="#180725" flip />
 
-      <Section labelledBy="what-is">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
-          <div className="prose-site">
-            <h2 id="what-is" data-reveal>
-              What Is Chamet?
-            </h2>
-            <p>
-              Chamet is a video chat and live-streaming platform. Hosts and agencies use different account journeys: hosts use the app, while agents manage
-              invitations and reports through the agency portal.
-            </p>
-            <p>
-              If you are here to install the app, open our <Link href="/chamet-app-download/">Chamet app download guide</Link>. If you already manage an agency, go
-              directly to <Link href="/chamet-agency-login/">agency login</Link>.
-            </p>
-          </div>
-          <aside className="card" aria-labelledby="dash-shortcut" data-reveal>
-            <h3 id="dash-shortcut" className="text-xl">
-              Agency dashboard shortcut
-            </h3>
-            <p className="mt-2">
-              The agency portal opens at <strong className="text-white">{LINKS.agencyDashboardLabel}</strong>. Sign in on the portal itself — ChametApps.com never asks
-              for your password.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              <ExternalButton href={LINKS.agencyDashboard} track="dashboard_outbound">
-                Open Agency Login
-              </ExternalButton>
-              <ButtonLink href="/chamet-agency-login/" variant="secondary">
-                Dashboard Guide
-              </ButtonLink>
-            </div>
-          </aside>
+      <Section labelledBy="guide-content">
+        <div className="space-y-6">
+          <QuickAnswer answer={homeContent.quickAnswer} />
+          <Toc sections={homeContent.sections} />
         </div>
+        <LongForm sections={homeContent.sections} />
       </Section>
 
       <Section tone="surface" labelledBy="guides" deco={[{ top: "4%", left: "45%", size: 70 }, { bottom: "8%", right: "4%", size: 100, mobile: true }]}>
@@ -169,30 +110,8 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      <Section labelledBy="stages">
-        <SectionHeading id="stages" accent="Linked, submitted and received are different milestones">
-          Know Where You Are in the Payment Process
-        </SectionHeading>
-        <p className="max-w-3xl" data-reveal>
-          A linked wallet means your accounts are connected. A submitted withdrawal means a request has been sent. Payment receipt is the final stage. Our withdrawal
-          guides explain what to check at each point.
-        </p>
-        <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" data-reveal-stagger>
-          {STAGES.map((s, i) => (
-            <li key={s.t} className="card">
-              <span className="text-sm font-bold tracking-wider text-pink uppercase">Stage {i + 1}</span>
-              <h3 className="mt-1 text-lg">{s.t}</h3>
-              <p className="mt-1">{s.d}</p>
-            </li>
-          ))}
-        </ol>
-        <div className="mt-6">
-          <ButtonLink href="/chamet-withdrawal/">Choose Your Withdrawal Guide</ButtonLink>
-        </div>
-      </Section>
-
       <WaveDivider />
-      <Section tone="surface" labelledBy="about-snippet">
+      <Section labelledBy="about-snippet">
         <div className="prose-site max-w-3xl">
           <h2 id="about-snippet" data-reveal>
             About ChametApps.com
@@ -216,11 +135,11 @@ export default function HomePage() {
       </Section>
       <WaveDivider from="#180725" flip />
 
-      <Section labelledBy="faq">
+      <Section tone="surface" labelledBy="faq">
         <Faq id="faq" heading="Common Questions" items={FAQ} />
       </Section>
 
-      <Section tone="surface" labelledBy="cta" deco={[{ top: "8%", left: "3%", size: 90, mobile: true }, { bottom: "10%", right: "3%", size: 120 }]}>
+      <Section labelledBy="cta" deco={[{ top: "8%", left: "3%", size: 90, mobile: true }, { bottom: "10%", right: "3%", size: 120 }]}>
         <Banner kind="recruitment" />
         <div className="mt-8 max-w-2xl">
           <h2 id="cta" className="text-[1.75rem] sm:text-[2.2rem]" data-reveal>
@@ -228,8 +147,11 @@ export default function HomePage() {
           </h2>
           <p className="mt-3">Choose your role and follow the corresponding guide.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <ButtonLink href="/agency.html">Join as Agency</ButtonLink>
-            <ButtonLink href="/host.html">Join as Host</ButtonLink>
+            <ButtonLink href="/chamet-agency-registration/">Join as Agency</ButtonLink>
+            <ButtonLink href="/chamet-host-registration/">Join as Host</ButtonLink>
+            <ExternalButton href={LINKS.whatsappChat} variant="secondary" track="whatsapp_enquiry">
+              Ask on WhatsApp
+            </ExternalButton>
           </div>
         </div>
       </Section>

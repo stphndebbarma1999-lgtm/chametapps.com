@@ -3,12 +3,14 @@ import type { ReactNode } from "react";
 import { heroImage, type HeroKey, type RouteKey } from "@/lib/routes";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { DecoField } from "./DecoField";
+import { PageSchema } from "./PageSchema";
 
 type Props = {
   page: RouteKey;
   hero: HeroKey;
   title: ReactNode;
   accent?: ReactNode;
+  wordCount?: number;
   children?: ReactNode;
   actions?: ReactNode;
 };
@@ -17,10 +19,11 @@ type Props = {
  * Page hero. The photo is a centred 16:10 landscape image (one creator + Chamet logo).
  * Phones/tablets: text first, photo below. Large screens: text left, photo right.
  */
-export function Hero({ page, hero, title, accent, children, actions }: Props) {
+export function Hero({ page, hero, title, accent, wordCount, children, actions }: Props) {
   const img = heroImage(hero);
   return (
     <section className="relative isolate overflow-hidden" aria-labelledby="page-title">
+      <PageSchema page={page} wordCount={wordCount} />
       <DecoField />
       <div className="container-site grid items-center gap-8 pt-6 pb-10 lg:grid-cols-[1fr_1.1fr] lg:gap-10 lg:pt-10 lg:pb-16">
         <div className="relative z-10 max-w-xl">

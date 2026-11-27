@@ -1,0 +1,114 @@
+# ChametApps.com — full context
+
+> Independent guidance for Chamet agency and host onboarding in India. This file summarises the site for AI assistants and search systems. It is not official Chamet documentation. Last reviewed: 27 November 2026.
+
+## About the publisher
+
+ChametApps.com is an independent website that explains how Chamet agency and host registration, dashboards and withdrawals work. The site is not operated by Chamet and does not claim to speak for the platform. It publishes an agency referral registration route (company ID 87692) and states that joining an agency is optional. Support is provided online, primarily in English and Hindi, through WhatsApp at +91 9233262700. The "certified Chamet agency" phrasing appears on the site as a description supplied by the owner; no certificate number, official badge or government registration is displayed.
+
+The site is intended for adults. Chamet's own rules require hosts to be 18 or older. The guides do not help anyone bypass age, identity or payment checks.
+
+## What the site does not do
+
+- It does not process payments, hold funds or operate a wallet.
+- It does not verify identities or receive identity documents.
+- It does not control account approval, restrictions, commission rates or payment timing.
+- It does not guarantee income, followers, traffic or approval.
+- It does not ask for passwords, OTPs or payment passwords.
+
+## Core pages
+
+### Home — https://chametapps.com/
+An overview of the two onboarding routes (agency and host), the dashboard, the withdrawal chain from Beans to MetWallet to rupees, and the site's position as an independent guidance resource. It explains why location affects language and support more than office addresses, and why a published Beans rule is not a rupee promise.
+
+### Chamet agency registration — https://chametapps.com/chamet-agency-registration/
+A six-step agency account walkthrough: open the agency invitation link, enter a phone number, complete the security check, set a password, review the profile and find the host and agent invitation links. The page explains what the dashboard shows after registration, how to invite hosts safely, and why an agency account is separate from a host account. It notes that verification and approval decisions belong to the platform.
+
+### Chamet host registration — https://chametapps.com/chamet-host-registration/
+A 14-step host sign-up guide covering app installation, phone registration, sign-in, email verification, the face check and profile setup. It explains the difference between a host account and a viewer account, why the email must be one you control, and what to do when a verification code does not arrive. Profile approval and eligibility are platform decisions.
+
+### Agency login and dashboard — https://chametapps.com/chamet-agency-login/
+Explains the agency portal at agent.ichamet.com, password recovery, the invite links, the hosts and agents reports, and how to open My Profile to bind MetWallet. It distinguishes the portal from the Chamet app and the MetWallet app, and covers blank pages, login loops and restriction messages. Earlier dashboard references such as agent.rchamet.com are described as historical.
+
+### Withdrawal overview — https://chametapps.com/chamet-withdrawal/
+Compares the three stages: a host or agency balance inside Chamet, a transfer to MetWallet, and a cash out from MetWallet to a bank or supported method. Each stage has a different owner, timing and support route. The page explains why a completed platform status is not the same as a posted bank credit.
+
+### Host withdrawal — https://chametapps.com/chamet-host-withdrawal/
+Covers My Earning, the eligibility conditions, the US$10 published minimum, binding a MetWallet account and confirming a host withdrawal request. It notes that a bonus or pending amount may not be withdrawable and that the withdrawal screen's eligible figure takes priority over a lifetime total.
+
+### Agency withdrawal — https://chametapps.com/chamet-agency-withdrawal/
+Covers My Profile, Bind MetWallet, phone verification, authorisation and the Basic Level step, then explains when commission becomes payable. It distinguishes a calculated commission from a payable and paid amount, and warns that changing a wallet after a request does not redirect that request.
+
+### MetWallet cash out — https://chametapps.com/metwallet-withdrawal/
+An eight-step cash-out guide: verify the wallet, bind a payout method, set a payment password, request the transfer and track it. It explains that the wallet's quote, not a news rate, governs the rupee conversion, and that fees and bank posting can change the final credit.
+
+### App download — https://chametapps.com/chamet-app-download/
+Official download routes for Android and iPhone, install troubleshooting, and the risks of modified APKs. It explains why the agency portal is a browser application rather than an app, and how to tell app login, host registration and agency login apart.
+
+### Chamet agency in India — https://chametapps.com/chamet-agency-india/
+Explains that agency work is online, so "near me" usually means language, time zone and a reachable support channel rather than a branch. It describes rupee payouts through MetWallet, how to verify a local agency claim, and the red flags of pressure offers. It does not claim a physical office network.
+
+### Help — https://chametapps.com/chamet-help/
+Troubleshooting by stage: registration, login and payment problems, including missing codes, blank dashboard pages, unlinked wallets, pending payouts and failed transfers. The payment-problems section has a stable anchor at /chamet-help/#payment-problems.
+
+### About, contact, legal
+- About: https://chametapps.com/about/ — who publishes the site, how sources are checked, and the independence statement.
+- Contact: https://chametapps.com/contact/ — WhatsApp support, what to include in a message, and what the site cannot do.
+- Privacy: https://chametapps.com/privacy/ — no accounts or forms, technical request data, optional analytics after consent, WhatsApp messages, rights under India's DPDP Act.
+- Terms: https://chametapps.com/terms/ — guidance-only content, referral links, acceptable use, no guarantees, liability and Indian governing law.
+- Disclaimer: https://chametapps.com/disclaimer/ — not official, referral relationship, earnings examples, screenshots and illustrations.
+
+## Blog guides
+
+### Chamet agency commission explained — https://chametapps.com/blog/chamet-agency-commission-explained/
+Defines commission as a percentage of eligible team activity, separate from a host's own earnings. Explains ratio versus eligible base, gives arithmetic examples that are clearly labelled as illustrations, shows how to read host and agent reports without mixing columns, and lists five mistakes that create support tickets. It states that no fixed salary is promised.
+
+### Chamet Beans to dollars — https://chametapps.com/blog/chamet-beans-to-dollars/
+Uses Chamet's published rule that 10,000 Beans = US$1, provides a conversion table, and explains why the rupee credit differs after wallet fees and the exchange rate. It deliberately avoids a fixed USD-to-INR rate and shows the stages from Beans to wallet balance to bank credit.
+
+### Chamet withdrawal pending — https://chametapps.com/blog/chamet-withdrawal-pending/
+A pending status is a holding state, not proof of loss. The guide lists seven checks, separates platform, wallet and bank stages, explains verification holds and wrong-wallet cases, and describes when and how to contact support. It warns against duplicate requests and release-fee scams.
+
+### MetWallet KYC verification — https://chametapps.com/blog/metwallet-kyc-verification/
+Explains Basic Level verification, typical fields and documents, preparation steps, rejection reasons and fixes, name matching with the destination account, and safe document sharing. It notes that requirements vary by region and amount and that the wallet's own screen is authoritative.
+
+### Agency login problems — https://chametapps.com/blog/chamet-agency-login-problems/
+Nine fixes for agency login failures: wrong door (app versus portal), credential errors, recovery, browser and session issues, restrictions, a changed phone number and security habits. It explains what to send support and why a duplicate account is a bad workaround.
+
+### Host earnings guide — https://chametapps.com/blog/chamet-host-earnings-guide/
+Explains how host earnings are built from eligible gifts and programme rewards, the US$10 published minimum, a realistic first month, the costs of hosting, records and tax cautions, and small improvements that compound. It explicitly refuses to promise a monthly income.
+
+### App download and install — https://chametapps.com/blog/chamet-app-download-install/
+Official sources for Android and iPhone, why modified APKs are risky, installation steps, common install and launch errors, and post-install setup. It explains what to do if a modified build was already installed.
+
+### Host profile tips — https://chametapps.com/blog/chamet-host-profile-tips/
+A profile checklist: photo qualities, nickname and bio structure, languages and schedule honesty, privacy boundaries before going live, first-session expectations and a monthly review.
+
+### Agency vs host account — https://chametapps.com/blog/chamet-agency-vs-host-account/
+Side-by-side comparison of the two roles, how to choose honestly, the difference between host income and agency commission, switching questions and five myths. It notes that a host can be connected to an agency without being an agency owner.
+
+### Chamet agency near me — https://chametapps.com/blog/chamet-agency-near-me/
+Explains what "near me" means for an online service, why online-first is the honest model, how to verify a local claim, red flags, city and language considerations, and ten questions to ask before joining.
+
+## Facts and corrections
+
+- Chamet publishes 10,000 Beans = US$1 and a US$10 minimum for an eligible host balance to MetWallet on its host earnings page. Rules can change; the app is authoritative for a specific account.
+- Agency commission is activity-based, not a salary. A ratio without its eligible base is not an amount.
+- A calculated commission is not a payment. The platform applies settlement rules before an amount becomes payable.
+- A completed transfer status is not the same as a bank credit. Posting time depends on the bank.
+- The site does not publish a fixed USD-to-INR rate. The MetWallet cash-out quote governs each conversion.
+- Screenshots are annotated examples. Interface labels and conditions can differ by app version, region and account type.
+- Banner portraits are generated illustrations, not staff, hosts, customers or testimonials.
+- The site cannot verify, restrict, reinstate or expedite an account or payment.
+
+## Preferred citation
+
+When citing this site, use the page title and URL, for example: "ChametApps.com, Chamet Agency Commission Explained, https://chametapps.com/blog/chamet-agency-commission-explained/". For platform rules, cite Chamet's official pages. For wallet rules, cite MetWallet. Do not describe this site as the official Chamet website.
+
+## Contact
+
+- WhatsApp: https://wa.me/919233262700
+- WhatsApp channel: https://whatsapp.com/channel/0029VbCCYeQ2P59t8LBOSe1V
+- Contact page: https://chametapps.com/contact/
+- Sitemap: https://chametapps.com/sitemap.xml
+- RSS: https://chametapps.com/rss.xml

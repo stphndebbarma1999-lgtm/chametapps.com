@@ -8,7 +8,7 @@ Built with Next.js 16 (App Router, TypeScript), React 19 and Tailwind CSS 4. Eve
 
 ## Requirements
 
-- Node.js 20.9 or newer (tested with Node 22)
+- Node.js 20.9 or newer (tested with Node 24)
 - npm (lockfile: `package-lock.json`)
 
 ## Setup and local development
@@ -35,10 +35,14 @@ npm run dev                  # http://localhost:3000
 ## Where things live
 
 ```
-src/app/                 routes (one folder per URL; agency.html/ and host.html/ keep the legacy URLs)
+src/app/                 routes (one folder per URL; blog/[slug] renders the articles)
 src/app/layout.tsx       header, footer, sticky WhatsApp button, Organization/WebSite JSON-LD
-src/app/sitemap.ts       robots.ts, manifest.ts, not-found.tsx
-src/components/          Hero, GuideBlock (two steps + two photos, repeated), GuidePhotos, WaveDivider, DecoLogos, Faq, …
+src/app/sitemap.ts       sitemap, robots.ts, manifest.ts, rss.xml/route.ts, not-found.tsx
+src/app/blog/            blog hub and article template
+src/components/          Hero, LongForm, QuickAnswer, Toc, Faq, Breadcrumbs, PageSchema, RichText, …
+src/content/pages/       one PageContent module per page (prose, sections, quick answer, FAQs)
+src/content/blog/        one BlogPost module per article and the BLOG_POSTS registry
+public/llms.txt          short AI orientation file (llms-full.txt is the long version)
 src/content/links.json   ← single source of all outbound links (copied from LINKS.json)
 src/content/*.json       image filenames, alt text and dimensions
 src/lib/site.ts          link helpers, WhatsApp messages, indexing switch, cited sources + date checked
@@ -49,11 +53,11 @@ docs/                    asset manifest, route/metadata map, validation report
 
 ### Changing links
 
-Edit `src/content/links.json` only. The agency and host registration URLs are **different endpoints** (`inviteAgent/bind.html` vs `agent/bind.html`, both `companyId=87692`). `/agency.html` uses only the agency link and `/host.html` uses only the host link; `npm run validate` fails if they are swapped or used elsewhere.
+Edit `src/content/links.json` only. The agency and host registration URLs are **different endpoints** (`inviteAgent/bind.html` vs `agent/bind.html`, both `companyId=87692`). `/chamet-agency-registration/` uses only the agency link and `/chamet-host-registration/` uses only the host link; `npm run validate` fails if they are swapped or used elsewhere.
 
 ### Changing content
 
-Page copy is in each `src/app/**/page.tsx`. When you materially change a page, update that route's `lastModified` in `src/lib/routes.ts` so its sitemap `lastmod` stays truthful (dates are never generated at build time). If you re-check the official Chamet sources, update `SOURCES_CHECKED` / `SOURCES_CHECKED_LABEL` in `src/lib/site.ts`.
+Page copy lives in `src/content/pages/*.ts`; article copy lives in `src/content/blog/*.ts` and is registered in `src/content/blog/index.ts`. The page components only render the content and add layout, schema and links. When you materially change a page, update that route's `lastModified` in `src/lib/routes.ts` so its sitemap `lastmod` stays truthful (dates are never generated at build time). If you re-check the official Chamet sources, update `SOURCES_CHECKED` / `SOURCES_CHECKED_LABEL` in `src/lib/site.ts`. A new article also needs a `ROUTES` entry, a sitemap entry (automatic from `ROUTES`), a line in `public/llms.txt` / `llms-full.txt`, and a `BLOG_POSTS` entry with a unique slug.
 
 FAQ answers: each FAQ item's `text` is used for the FAQPage structured data. Leave out `a` to render the same text visibly; if you add `a` (for links), keep its wording identical — `npm run validate` fails otherwise.
 
@@ -65,7 +69,7 @@ See `.env.example`. None are secrets.
 |---|---|
 | `NEXT_PUBLIC_ALLOW_INDEXING` | Only used off Vercel. Set to `false` on a staging host to make every page `noindex` and disallow robots. |
 | `NEXT_PUBLIC_GA4_ID` | Optional GA4 ID. If it's empty, no analytics code or consent notice is rendered. If it's set, a notice asks for consent and GA4 loads only after the visitor clicks Accept. Events: `agency_registration`, `host_registration`, `dashboard_outbound`, `whatsapp_chat`, `whatsapp_channel_follow`, `official_chamet`, `guide_interaction`. Each event records only the destination domain and page path, with no personal data. |
-| `NEXT_PUBLIC_GSC_VERIFICATION` | Optional Google Search Console HTML-tag token. |
+| `NEXT_PUBLIC_GSC_VERIFICATION` | Optional Google Search Console HTML-tag token. Defaults to the token in `src/app/layout.tsx`. |
 
 On Vercel, indexing follows `VERCEL_ENV`: **production** is indexable, while **preview** deployments get `noindex, nofollow` (meta and `X-Robots-Tag`), `Disallow: /` and an empty sitemap.
 
@@ -93,7 +97,7 @@ Put it behind HTTPS (reverse proxy such as Nginx or Caddy) on `chametapps.com`. 
 
 ### Replacing the old site
 
-The old site's `/agency.html` and `/host.html` URLs are preserved as real pages, so they need no redirects. If the previous host served other URLs that still get traffic (for example a blog), list them before switching DNS. Each one should then either be kept or redirected once to its exact replacement in `next.config.ts` (`redirects()`). Don't redirect everything to the homepage.
+The old `.html` URLs are kept as one-hop permanent redirects in `next.config.ts`: `/agency.html` → `/chamet-agency-registration/`, `/host.html` → `/chamet-host-registration/`, plus the slashless legacy paths. If the previous host served other URLs that still get traffic, list them before switching DNS and redirect each one once to its exact replacement. Don't redirect everything to the homepage.
 
 ### Vercel production alias
 
