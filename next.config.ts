@@ -41,6 +41,7 @@ const nextConfig: NextConfig = {
       { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
       { key: "X-Frame-Options", value: "SAMEORIGIN" },
       { key: "X-DNS-Prefetch-Control", value: "on" },
+      { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
     ];
     if (!isIndexable) headers.push({ key: "X-Robots-Tag", value: "noindex, nofollow" });
     return [{ source: "/:path*", headers }];

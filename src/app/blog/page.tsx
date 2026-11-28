@@ -4,6 +4,7 @@ import { Faq, type FaqItem } from "@/components/Faq";
 import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { NextSteps } from "@/components/NextSteps";
+import { QuickAnswer } from "@/components/QuickAnswer";
 import { Section } from "@/components/Section";
 import { WaveDivider } from "@/components/WaveDivider";
 import { BLOG_CATEGORIES, BLOG_POSTS } from "@/content/blog";
@@ -42,8 +43,8 @@ function fmt(date: string) {
 export default function BlogPage() {
   const featured = BLOG_POSTS[0];
   const featuredRoute = featured
-    ? Object.values(ROUTES).find((r) => r.path === `/blog/${featured.slug}/`)
-    : undefined;
+    ? (Object.values(ROUTES).find((r) => r.path === `/blog/${featured.slug}/`) ?? ROUTES.postNearMe)
+    : ROUTES.postNearMe;
   return (
     <>
       <Hero
@@ -61,15 +62,16 @@ export default function BlogPage() {
         }
       >
         <p>
-          Ten long-form guides on commission, Beans, withdrawals, login problems and agency checks, written for readers in India who want the honest version of how the
-          platform workflow fits together.
+          Eighteen long-form guides on commission, Beans, withdrawals, verification, login problems and agency checks, written for readers in India who want the honest
+          version of how the platform workflow fits together.
         </p>
       </Hero>
 
       <WaveDivider />
 
       <Section tone="surface" labelledBy="blog-intro">
-        <div className="prose-site max-w-3xl">
+        <QuickAnswer answer="This library holds eighteen long-form guides for Chamet hosts and agencies in India, grouped into agency basics, payments, troubleshooting and hosting. Every guide names the party that controls each decision, carries a last-updated date and avoids fixed exchange rates or promised income." />
+        <div className="prose-site mt-8 max-w-3xl">
           <h2 id="blog-intro" data-reveal>
             What this blog covers, and what it avoids
           </h2>

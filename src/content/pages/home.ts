@@ -182,6 +182,9 @@ export const homeContent: PageContent = {
           "The rupee estimate requires three inputs that only your wallet or payment provider can supply at the moment of cash out: the exchange rate, the fee and the method. A useful habit is to write down the quote before you confirm. Then compare the amount that arrives with the quote, not with the dollar figure in Chamet. A lower rupee credit is often explained by conversion and charges rather than by a missing payment.",
         ),
         p(
+          "Use the free [Chamet Beans to rupees calculator](/chamet-beans-to-rupees-calculator/) to run this conversion with your own balance and rate; it shows the dollar value and the published minimum, then leaves the exchange rate to you."
+        ),
+        p(
           "This site does not publish a fixed USD-to-INR rate because rates move and the provider decides the applicable rate. It also does not promise that every dollar of wallet balance becomes a dollar of bank credit. For a worked explanation with more examples, read [Chamet Beans to dollars](/blog/chamet-beans-to-dollars/) and the [host earnings guide](/blog/chamet-host-earnings-guide/).",
         ),
       ],

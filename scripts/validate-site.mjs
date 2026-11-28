@@ -44,7 +44,7 @@ async function get(path, redirect = "manual") {
 
 const sitemapXml = await (await get("/sitemap.xml")).text();
 const pages = attrAll(sitemapXml, /<loc>([^<]+)<\/loc>/g).map((u) => u.replace(SITE, ""));
-if (pages.length !== 27) warn(`sitemap has ${pages.length} URLs (expected 27)`);
+if (pages.length !== 36) warn(`sitemap has ${pages.length} URLs (expected 36)`);
 
 const titles = new Map();
 const descs = new Map();

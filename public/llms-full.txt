@@ -1,6 +1,6 @@
 # ChametApps.com — full context
 
-> Independent guidance for Chamet agency and host onboarding in India. This file summarises the site for AI assistants and search systems. It is not official Chamet documentation. Last reviewed: 27 November 2026.
+> Independent guidance for Chamet agency and host onboarding in India. This file summarises the site for AI assistants and search systems. It is not official Chamet documentation. Last reviewed: 28 November 2026.
 
 ## About the publisher
 
@@ -48,6 +48,9 @@ Official download routes for Android and iPhone, install troubleshooting, and th
 ### Chamet agency in India — https://chametapps.com/chamet-agency-india/
 Explains that agency work is online, so "near me" usually means language, time zone and a reachable support channel rather than a branch. It describes rupee payouts through MetWallet, how to verify a local agency claim, and the red flags of pressure offers. It does not claim a physical office network.
 
+### Beans to rupees calculator — https://chametapps.com/chamet-beans-to-rupees-calculator/
+A client-side estimator that divides Beans by 10,000 to get dollars and multiplies by a rupee rate the visitor enters. It shows whether the balance is above the published US$10 host minimum and states clearly that wallet rates, fees and the app remain authoritative. It does not connect to any account.
+
 ### Help — https://chametapps.com/chamet-help/
 Troubleshooting by stage: registration, login and payment problems, including missing codes, blank dashboard pages, unlinked wallets, pending payouts and failed transfers. The payment-problems section has a stable anchor at /chamet-help/#payment-problems.
 
@@ -89,6 +92,30 @@ Side-by-side comparison of the two roles, how to choose honestly, the difference
 
 ### Chamet agency near me — https://chametapps.com/blog/chamet-agency-near-me/
 Explains what "near me" means for an online service, why online-first is the honest model, how to verify a local claim, red flags, city and language considerations, and ten questions to ask before joining.
+
+### Commission not received — https://chametapps.com/blog/chamet-agency-commission-not-received/
+Separates calculated, payable and paid figures, the period and time-zone mismatches that look like missing money, the old-wallet trap, eligible-base differences and what to include in a support message. It does not claim to trace an individual payment.
+
+### Host verification failed — https://chametapps.com/blog/chamet-host-verification-failed/
+Explains what a face or document check looks for, how to read the exact failure message, lighting and framing fixes, cooldowns and retry limits, and what to send support. It warns that no one should be given remote access or a code to "verify" an account.
+
+### Customer care number — https://chametapps.com/blog/chamet-customer-care-number/
+Explains that no verified public phone helpline is published, that support lives inside the app and the official site, how fake numbers operate (OTP requests, fees, APK installs, screen sharing), what to prepare before contacting support and the correct order for payment disputes.
+
+### Is Chamet safe — https://chametapps.com/blog/is-chamet-safe/
+A safety overview for adults in India: money risks from off-platform actors, privacy settings, scam patterns, live-session safety, age rules and the limits of what any independent guide can verify.
+
+### App not working — https://chametapps.com/blog/chamet-app-not-working/
+Separates the failing layer (launch, network, permissions, app version, stream) and gives fixes in increasing order of risk, ending with what to include in a support report. Warns against third-party APKs and against reinstalling to "fix" an account restriction.
+
+### Account banned — https://chametapps.com/blog/chamet-account-banned/
+Explains restriction, verification hold, suspension and permanent ban, the common enforcement reasons, how to write one factual appeal, what makes it worse (paid unban offers, duplicate accounts, OTP sharing) and what may happen to an eligible balance.
+
+### Coins price — https://chametapps.com/blog/chamet-coins-price/
+Explains the viewer-side ledger: coins, gifts and Beans. Covers why pack prices differ by store, region and tax, how to compute cost per coin and gift cost, budgeting methods, refund routes through the app store, the host-side arithmetic, and the coin scams (generators, resellers, fee messages) that cost accounts.
+
+### Paise kaise kamaye — https://chametapps.com/blog/chamet-me-paise-kaise-kamaye/
+Answers the Hindi-English query directly: three legitimate routes (host gifts, agency commission, platform rewards), the published Bean conversion with clearly labelled illustrative rupee figures, a four-week first-month plan, the real costs, record-keeping and the deposit/task schemes that never pay.
 
 ## Facts and corrections
 

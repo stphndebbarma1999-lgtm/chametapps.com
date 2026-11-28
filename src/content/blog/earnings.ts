@@ -129,8 +129,33 @@ export const postEarnings: BlogPost = {
         p("If a number does not match, resolve it before the next payout. A small unresolved difference becomes a large one after several months, and reconstructing old requests is much harder than checking a current one."),
       ],
     },
+    {
+      id: "salary-question",
+      heading: "Is there a fixed Chamet host salary?",
+      blocks: [
+        p("No fixed monthly salary is published for hosts. Earnings come from what viewers send as gifts during live sessions, converted into Beans, minus any platform deductions and any agency arrangement you have. A month with more consistent sessions and repeat viewers can pay more than a month with one long night, and a month with a holiday break can pay less. That variability is the job, not a fault in the system."),
+        p("This is why screenshots promising a set monthly figure should be read carefully. A figure can be a real result for one host in one month and still be a poor guide for you. The honest way to plan is to look at your own last two or three months, not at someone else's best week."),
+        table(
+          ["What people ask", "What the platform actually does", "What you should do"],
+          [
+            ["Is there a monthly salary?", "No published fixed salary for hosts", "Plan from your own history"],
+            ["Is there a minimum guarantee?", "No guarantee is stated in the public rules", "Keep a cash buffer for slow months"],
+            ["Do agencies pay a salary?", "An agency may offer support, not a guaranteed wage", "Ask for the arrangement in writing"],
+            ["Can I predict next month?", "Only within a range, from past months", "Track sessions, gifts and repeat viewers"],
+          ],
+          "Salary expectations versus the actual earnings model",
+        ),
+        p("If an agency promises a fixed salary, ask who pays it, on what date, from which account and against what condition. A genuine support arrangement can be described in a sentence. A vague promise of “monthly income” usually means commission from your own gifts, described to sound like a wage."),
+        p("For a month-by-month plan, use the [host withdrawal guide](/chamet-host-withdrawal/) for the payout steps and the [Beans to dollars explainer](/blog/chamet-beans-to-dollars/) for the conversion maths."),
+      ],
+    },
   ],
+
   faqs: [
+    {
+      q: "Does Chamet pay a fixed monthly salary to hosts?",
+      a: "No fixed monthly salary is published for hosts. Earnings depend on gifts from viewers, converted through the Beans rule, minus platform deductions and any agency arrangement. Plan from your own last two or three months rather than a screenshot of someone else's best week.",
+    },
     { q: "How much do Chamet hosts earn?", a: "Earnings vary widely and depend on audience, schedule, language, gifts and platform programmes. Chamet publishes a conversion of 10,000 Beans = US$1, but no honest guide can promise a monthly income." },
     { q: "Does Chamet pay hosts a salary?", a: "No fixed salary is promised. Hosts earn from eligible activity such as gifts, and the balance is converted and withdrawn through MetWallet." },
     { q: "What is the Chamet host withdrawal minimum?", a: "Chamet's published host earnings page lists a US$10 minimum for an eligible balance to MetWallet, equivalent to 100,000 Beans at the published conversion. Check your app for the current figure." },
@@ -146,5 +171,6 @@ export const postEarnings: BlogPost = {
     { href: "/chamet-host-registration/", label: "Host registration guide" },
     { href: "/chamet-host-withdrawal/", label: "Host withdrawal steps" },
     { href: "/blog/chamet-host-profile-tips/", label: "Host profile tips" },
+    { href: "/blog/chamet-me-paise-kaise-kamaye/", label: "All three earning routes" },
   ],
 };

@@ -154,6 +154,30 @@ export const disclaimerContent: PageContent = {
         p("This page is a disclaimer, not a contract for a service we do not provide. The [terms of use](/terms/) and [privacy policy](/privacy/) explain the site's obligations; the platform's own terms explain the account's obligations."),
       ],
     },
+    {
+      id: "referral-disclosure",
+      heading: "Referral links and how they are disclosed",
+      blocks: [
+        p("Some registration links on this site include a company ID that identifies the agency behind the invitation. If you register through one of those links, the agency may receive a benefit from the platform. That is a referral relationship, and it is why the links are marked as sponsored where they appear."),
+        p("A referral link does not change what you pay. Registration is free, and the platform's rules apply the same way whether you arrive from a search result, a friend's message or this site. What it can change is who supports you afterwards, so read the support terms before you join."),
+        list([
+          "The link is labelled as sponsored or as an invitation where it appears.",
+          "The guide explains the role before the link, not after it.",
+          "No payment is requested for registration through this site.",
+          "You can register directly with the platform without using any link here.",
+        ]),
+        p("If a page recommends a route, it is because the route matches the question being answered, not because a link pays more. Where two routes exist, the guide explains the trade-off rather than pushing one."),
+      ],
+    },
+    {
+      id: "external-links",
+      heading: "External links and third-party content",
+      blocks: [
+        p("Guides link to the official platform for rules and to public sources for facts such as the Beans conversion. Those links are provided for verification. We do not control the destination, and a page can change or disappear after we link to it."),
+        p("A link to another site is not an endorsement of everything on it. If an external page contradicts this guide, treat the official platform as authoritative for your account and tell us so the guide can be corrected."),
+        p("We do not accept paid links, guest posts with hidden sponsorship or comments that exist only to place a link. Any future commercial relationship will be disclosed on the page where it applies."),
+      ],
+    },
   ],
 
   faqs: [

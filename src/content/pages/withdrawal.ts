@@ -8,7 +8,8 @@ export const withdrawalContent: PageContent = {
       id: "find-your-stage",
       heading: "Which Chamet withdrawal guide do you need?",
       blocks: [
-        p("Withdrawal questions are easier to answer when you name the stage you are in. There are four common situations: a host whose balance is still inside the app, an agency whose commission sits in the portal, a person whose money is already in MetWallet, and a person whose request is pending or failed. Each has a different starting screen and a different support route."),
+        p("If you want a quick estimate first, the [Chamet Beans to rupees calculator](/chamet-beans-to-rupees-calculator/) converts a balance using the published rule and your own rate."),
+    p("Withdrawal questions are easier to answer when you name the stage you are in. There are four common situations: a host whose balance is still inside the app, an agency whose commission sits in the portal, a person whose money is already in MetWallet, and a person whose request is pending or failed. Each has a different starting screen and a different support route."),
         table(
           ["Your situation", "Where the money is", "Guide to open"],
           [

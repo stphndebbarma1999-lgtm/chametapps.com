@@ -10,7 +10,7 @@ npm start -- -p 3123
 npm run validate -- http://localhost:3123
 ```
 
-The validator reads the sitemap, so a route that is missing from the sitemap is a route that is not checked. It currently expects **27 URLs**: 17 pages (including the three legal pages and the blog hub) and 10 articles. An intentional route change must update that number and `ROUTES` together.
+The validator reads the sitemap, so a route that is missing from the sitemap is a route that is not checked. It currently expects **36 URLs**: 18 pages (including the three legal pages and the blog hub) and 18 articles. An intentional route change must update that number and `ROUTES` together.
 
 ## What the crawl checks
 

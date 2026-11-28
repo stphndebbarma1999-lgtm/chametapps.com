@@ -140,8 +140,32 @@ export const postCommission: BlogPost = {
         p("If something looks wrong, contact support with those five items. A short, specific message is more likely to get a useful answer than a long complaint, and it gives you a record for next month."),
       ],
     },
+    {
+      id: "india-rupees",
+      heading: "Commission in India: rupees, records and the questions agencies ask",
+      blocks: [
+        p("Indian agency owners usually ask three questions that the dashboard does not answer directly: what the commission is worth in rupees, when it lands, and what records to keep for tax. The dashboard reports in dollars; the wallet and bank work in rupees. The gap between them is the exchange rate and the fees at each stage, not extra commission."),
+        table(
+          ["Question", "Where the answer lives", "What to record"],
+          [
+            ["What is it worth in rupees?", "Wallet credit after conversion", "Dollar figure, rupee credit, date"],
+            ["When will it arrive?", "Payment status and wallet history", "Status changes with dates"],
+            ["What do I owe tax on?", "Your own books and a tax professional", "Income, fees and transfers out"],
+            ["What if a host is paid in cash?", "Your internal record", "Host, amount, date, purpose"],
+          ],
+          "Rupee questions Indian agencies ask about commission",
+        ),
+        p("Keep one sheet per month: team revenue, eligible base, calculated commission, paid amount, wallet credit and bank credit. Five columns make a support question specific and a tax conversation short. Do not rely on screenshots alone; export or note the figures while the report is open."),
+        p("Commission paid to sub-agents or shared with hosts is a separate transfer. Record it as a payout, not as a reduction in platform commission, or your monthly totals will never reconcile. The [agency withdrawal guide](/chamet-agency-withdrawal/) covers wallet binding and the payout order."),
+      ],
+    },
   ],
+
   faqs: [
+    {
+      q: "How much is Chamet agency commission in rupees?",
+      a: "The commission is reported in dollars and converted to rupees when it reaches the wallet, so the rupee value depends on the rate and the fees at each stage. Check the wallet credit and the bank credit separately instead of converting the dashboard figure at today's rate.",
+    },
     { q: "How is Chamet agency commission calculated?", a: "A commission ratio is applied to an eligible base of team activity for a period, under the rules attached to the account. The dashboard shows the ratio, report totals and payment status separately." },
     { q: "Is Chamet agency commission a salary?", a: "No. It is activity-based and can vary by month. A salary is fixed by an employer. Anyone promising a guaranteed monthly salary is misrepresenting how commission works." },
     { q: "What is a good commission ratio?", a: "There is no universal number. A ratio only matters with its base, its rules and its payment reliability. Compare the total outcome and the support you receive, not the percentage alone." },

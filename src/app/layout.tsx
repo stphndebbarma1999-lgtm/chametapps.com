@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ImageGuard } from "@/components/ImageGuard";
 import { JsonLd } from "@/components/JsonLd";
+import { RelatedGuides } from "@/components/RelatedGuides";
 import { SiteEffects } from "@/components/SiteEffects";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { IS_INDEXABLE, SITE } from "@/lib/site";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main id="main" tabIndex={-1} className="outline-none">
           {children}
+          <RelatedGuides />
         </main>
         <Footer />
         <WhatsAppFab />

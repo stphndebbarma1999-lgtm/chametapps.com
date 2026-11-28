@@ -16,6 +16,7 @@ export const postBeans: BlogPost = {
       id: "rule",
       heading: "The published conversion rule",
       blocks: [
+        p("Try the free [Beans to rupees calculator](/chamet-beans-to-rupees-calculator/) to see the conversion with your own balance and rate before reading the rest of this guide."),
         p("Chamet's host earnings page states that 10,000 Beans equal US$1. That is the cleanest starting point for understanding a Beans balance. It converts a platform unit into a familiar currency, which makes a large Beans number easier to interpret."),
         p("The rule is a conversion, not a promise of payout. Your eligible balance, the minimum, wallet fees and the exchange rate still determine what reaches your bank. A Beans balance of 250,000 is roughly US$25 before those later steps, not 250,000 rupees."),
         note("ChametApps.com does not set the conversion or the payout rate. Use the figures shown in your app and wallet, especially before submitting a withdrawal."),

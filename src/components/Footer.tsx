@@ -12,6 +12,7 @@ const GUIDES = [
   { href: "/chamet-host-withdrawal/", label: "Host withdrawal" },
   { href: "/chamet-agency-withdrawal/", label: "Agency withdrawal" },
   { href: "/metwallet-withdrawal/", label: "MetWallet cash out" },
+  { href: "/chamet-beans-to-rupees-calculator/", label: "Beans to rupees calculator" },
   { href: "/chamet-help/", label: "Help & payment problems" },
 ];
 const SITE_LINKS = [

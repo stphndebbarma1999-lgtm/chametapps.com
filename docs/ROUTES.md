@@ -27,6 +27,7 @@ Legacy URLs redirect permanently in `next.config.ts`:
 | `/metwallet-withdrawal/` | How to Withdraw From MetWallet | MetWallet Withdrawal for Chamet: Cash Out in India | metwallet withdrawal, metwallet cash out |
 | `/chamet-app-download/` | Chamet App Download and Login | Chamet App Download & Login Guide (Android & iOS) | chamet app download |
 | `/chamet-agency-india/` | Chamet Agency in India: Online Registration and Support | Chamet Agency in India: Registration, Login & Support | chamet agency in india, chamet agency near me |
+| `/chamet-beans-to-rupees-calculator/` | Beans to Rupees Calculator | Chamet Beans to Rupees Calculator (Free Estimate) | chamet beans to rupees |
 | `/chamet-help/` | Chamet Help by Stage | Chamet Help: Login, Registration & Withdrawal Problems | chamet help, chamet withdrawal problem |
 | `/blog/` | Chamet Agency and Host Guides | Chamet Agency & Host Blog: Guides, Tips & Payout Help | chamet blog, chamet agency guide |
 | `/about/` | About ChametApps.com | About ChametApps.com: Chamet Agency Guidance in India | about chametapps |
@@ -35,7 +36,7 @@ Legacy URLs redirect permanently in `next.config.ts`:
 | `/terms/` | Terms of Use | Terms of Use \| ChametApps.com | terms of use |
 | `/disclaimer/` | Disclaimer | Disclaimer \| ChametApps.com | chamet agency disclaimer |
 
-## Blog articles (10)
+## Blog articles (18)
 
 | Path | Primary keyword | Published |
 |---|---|---|
@@ -49,6 +50,14 @@ Legacy URLs redirect permanently in `next.config.ts`:
 | `/blog/chamet-host-profile-tips/` | chamet host profile | 2026-11-08 |
 | `/blog/chamet-agency-vs-host-account/` | chamet agency vs host | 2026-11-14 |
 | `/blog/chamet-agency-near-me/` | chamet agency near me | 2026-11-20 |
+| `/blog/chamet-host-verification-failed/` | chamet host verification failed | 2026-11-22 |
+| `/blog/chamet-agency-commission-not-received/` | chamet agency commission not received | 2026-11-24 |
+| `/blog/chamet-customer-care-number/` | chamet customer care number | 2026-11-26 |
+| `/blog/is-chamet-safe/` | is chamet safe | 2026-11-27 |
+| `/blog/chamet-app-not-working/` | chamet app not working | 2026-11-27 |
+| `/blog/chamet-account-banned/` | chamet account banned | 2026-11-27 |
+| `/blog/chamet-coins-price/` | chamet coins price | 2026-11-27 |
+| `/blog/chamet-me-paise-kaise-kamaye/` | chamet me paise kaise kamaye | 2026-11-27 |
 
 Article copy lives in `src/content/blog/*.ts` and is registered in `src/content/blog/index.ts`. Slug, publication date and keyword ownership must match `ROUTES`; the validator and `generateStaticParams` both depend on that match.
 
@@ -65,9 +74,9 @@ Article copy lives in `src/content/blog/*.ts` and is registered in `src/content/
 
 | File | Purpose |
 |---|---|
-| `/sitemap.xml` | All 27 canonical routes with `lastModified`, priority, change frequency and hero images. Empty when indexing is disabled. |
+| `/sitemap.xml` | All 36 canonical routes with `lastModified`, priority, change frequency and hero images. Empty when indexing is disabled. |
 | `/robots.txt` | Allows all crawlers and explicitly allows named search and AI agents; points to the sitemap. Disallows everything on previews. |
-| `/rss.xml` | RSS 2.0 feed of the 10 articles, newest first. Linked from `<link rel="alternate">` on every page and from the footer. |
+| `/rss.xml` | RSS 2.0 feed of the 18 articles, newest first. Linked from `<link rel="alternate">` on every page and from the footer. |
 | `/llms.txt` | Short, structured orientation for AI assistants: what the site is, key pages, core facts and limits. |
 | `/llms-full.txt` | Longer per-page summaries and a citation guide for AI systems. |
 | `/manifest.webmanifest` | App name, scope, colours and icons. |

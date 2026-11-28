@@ -28,7 +28,7 @@ export type RouteDef = {
   lastModified: string;
 };
 
-const UPDATED = "2026-11-27";
+const UPDATED = "2026-11-28";
 
 export const ROUTES = {
   home: {
@@ -359,6 +359,135 @@ export const ROUTES = {
     priority: 0.7,
     type: "article",
     published: "2026-11-20",
+    lastModified: UPDATED,
+  },
+  beansCalculator: {
+    path: "/chamet-beans-to-rupees-calculator/",
+    label: "Beans to Rupees Calculator",
+    title: "Chamet Beans to Rupees Calculator (Free Estimate)",
+    description:
+      "Convert Chamet Beans to dollars at 10,000 Beans = US$1, then estimate rupees using your own exchange rate. Includes minimum and fee notes.",
+    keywords: ["chamet beans to rupees", "chamet beans calculator", "chamet beans to dollars", "chamet beans value"],
+    hero: "withdrawals",
+    parent: "withdrawal",
+    priority: 0.8,
+    lastModified: UPDATED,
+  },
+  postPaise: {
+    path: "/blog/chamet-me-paise-kaise-kamaye/",
+    label: "Paise Kaise Kamaye",
+    title: "Chamet Me Paise Kaise Kamaye: Real Routes & Maths",
+    description:
+      "Host, agency or platform rewards: the three routes that actually pay, the Bean-to-rupee maths, first-month plan and the offers that never pay.",
+    keywords: [
+      "chamet me paise kaise kamaye",
+      "chamet se paise kaise kamaye",
+      "chamet par paise kaise kamaye",
+      "chamet money earning",
+    ],
+    hero: "withdrawals",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-27",
+    lastModified: UPDATED,
+  },
+  postCoins: {
+    path: "/blog/chamet-coins-price/",
+    label: "Coins Price",
+    title: "Chamet Coins Price: Packs, Gifts and Real Cost",
+    description:
+      "Why a coin pack costs what it does, how to work out the real cost of a gift, and how to spot resellers and generators that cost you the account.",
+    keywords: ["chamet coins price", "chamet coins", "chamet coin rate", "chamet recharge"],
+    hero: "withdrawals",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-27",
+    lastModified: UPDATED,
+  },
+  postAccountBanned: {
+    path: "/blog/chamet-account-banned/",
+    label: "Account Banned",
+    title: "Chamet Account Banned? Appeal Steps and Scam Warnings",
+    description:
+      "Read the notice, tell a restriction from a ban, and appeal once with evidence. Plus why paid 'unban' offers make the situation worse.",
+    keywords: ["chamet account banned", "chamet account suspended", "chamet account restricted", "chamet unban"],
+    hero: "help",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-27",
+    lastModified: UPDATED,
+  },
+  postAppNotWorking: {
+    path: "/blog/chamet-app-not-working/",
+    label: "App Not Working",
+    title: "Chamet App Not Working? Fix Crashes and Black Camera",
+    description:
+      "Diagnose the failing layer: launch, network, permissions, version or stream. Safe fixes in order, and what to send support if nothing works.",
+    keywords: ["chamet app not working", "chamet app crash", "chamet app not opening", "chamet app problem"],
+    hero: "download",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-27",
+    lastModified: UPDATED,
+  },
+  postCustomerCare: {
+    path: "/blog/chamet-customer-care-number/",
+    label: "Customer Care Number",
+    title: "Chamet Customer Care Number: Real Support vs Scams",
+    description:
+      "Chamet does not publish a public phone helpline. Learn the official support route, what to have ready and how to spot fake customer care numbers.",
+    keywords: ["chamet customer care number", "chamet customer care", "chamet support number", "chamet helpline"],
+    hero: "help",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-26",
+    lastModified: UPDATED,
+  },
+  postIsChametSafe: {
+    path: "/blog/is-chamet-safe/",
+    label: "Is Chamet Safe?",
+    title: "Is Chamet Safe? Money, Privacy and Scam Risks",
+    description:
+      "An honest safety read for Indian hosts and agencies: the common scams, privacy settings worth changing, age rules and what no guide can verify.",
+    keywords: ["is chamet safe", "chamet app safe or not", "chamet scam", "chamet safety"],
+    hero: "home",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-27",
+    lastModified: UPDATED,
+  },
+  postCommissionMissing: {
+    path: "/blog/chamet-agency-commission-not-received/",
+    label: "Commission Not Received",
+    title: "Chamet Agency Commission Not Received? 8 Checks",
+    description:
+      "Commission shows calculated but never arrives? Check the period, the payable status and the wallet used before treating an agency payment as missing.",
+    keywords: ["chamet agency commission not received", "chamet commission payment pending", "chamet agency payment problem", "chamet commission not showing"],
+    hero: "agency",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-24",
+    lastModified: UPDATED,
+  },
+  postVerificationFailed: {
+    path: "/blog/chamet-host-verification-failed/",
+    label: "Host Verification Failed",
+    title: "Chamet Host Verification Failed: Fixes and Next Steps",
+    description:
+      "Fix a failed Chamet host verification: face check lighting, document matching, cooldowns and what to send support after a rejected attempt.",
+    keywords: ["chamet host verification failed", "chamet face verification failed", "chamet verification problem", "chamet host verification fix"],
+    hero: "host",
+    parent: "blog",
+    priority: 0.7,
+    type: "article",
+    published: "2026-11-22",
     lastModified: UPDATED,
   },
 } as const satisfies Record<string, RouteDef>;

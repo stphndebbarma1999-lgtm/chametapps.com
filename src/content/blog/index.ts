@@ -1,6 +1,12 @@
 import type { BlogPost } from "@/lib/content";
 import { postBeans } from "./beans";
 import { postCommission } from "./commission";
+import { postAccountBanned } from "./account-banned";
+import { postAppNotWorking } from "./app-not-working";
+import { postCoins } from "./coins-price";
+import { postPaise } from "./paise-kamaye";
+import { postCommissionMissing } from "./commission-missing";
+import { postCustomerCare } from "./customer-care";
 import { postDownload } from "./download";
 import { postEarnings } from "./earnings";
 import { postLogin } from "./login-problems";
@@ -9,9 +15,19 @@ import { postNearMe } from "./near-me";
 import { postPending } from "./pending";
 import { postProfile } from "./profile";
 import { postVersus } from "./versus";
+import { postIsChametSafe } from "./is-chamet-safe";
+import { postVerificationFailed } from "./verification-failed";
 
 /** All published guides, newest first. */
 export const BLOG_POSTS: BlogPost[] = [
+  postPaise,
+  postCoins,
+  postAppNotWorking,
+  postAccountBanned,
+  postIsChametSafe,
+  postCustomerCare,
+  postCommissionMissing,
+  postVerificationFailed,
   postNearMe,
   postVersus,
   postProfile,
