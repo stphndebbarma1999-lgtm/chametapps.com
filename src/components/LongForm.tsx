@@ -15,7 +15,7 @@ function Blocks({ blocks }: { blocks: ContentBlock[] }) {
         if (block.kind === "list") {
           const Tag = block.ordered ? "ol" : "ul";
           return (
-            <Tag key={i} className={block.ordered ? "list-decimal" : "list-disc"} style={{ paddingLeft: "1.5rem" }}>
+            <Tag key={i} className={`prose-list ${block.ordered ? "list-decimal" : "list-disc"}`}>
               {block.items.map((item, j) => (
                 <li key={j}>
                   <RichText text={item} />
@@ -72,8 +72,14 @@ function Blocks({ blocks }: { blocks: ContentBlock[] }) {
         }
         if (block.kind === "note") {
           return (
-            <aside key={i} className="rounded-2xl border border-lavender/30 bg-surface/80 p-4 text-sm" role="note">
-              <RichText text={block.text} />
+            <aside key={i} className="prose-note" role="note">
+              <span className="prose-note-icon" aria-hidden="true">
+                i
+              </span>
+              <div>
+                <span className="prose-note-label">Good to know</span>
+                <RichText text={block.text} />
+              </div>
             </aside>
           );
         }
@@ -92,7 +98,7 @@ function Blocks({ blocks }: { blocks: ContentBlock[] }) {
           );
         }
         return (
-          <div key={i} className="mt-6">
+          <div key={i} className="prose-sub">
             <h3>{block.heading}</h3>
             <Blocks blocks={block.blocks} />
           </div>

@@ -4,7 +4,7 @@ import type { ContentSection } from "@/lib/content";
 export function Toc({ sections, heading = "On this page" }: { sections: ContentSection[]; heading?: string }) {
   if (sections.length < 3) return null;
   return (
-    <nav aria-label={heading} className="my-8 rounded-2xl border border-lavender/25 bg-surface/70 p-4 sm:p-5">
+    <nav aria-label={heading} className="toc-box my-8 max-w-[50rem] rounded-2xl p-4 sm:p-5">
       <h2 className="text-base">{heading}</h2>
       <ol className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
         {sections.map((s, i) => (
